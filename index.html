@@ -1,217 +1,1346 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arthur Amorim | Matemática - UnB</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
-    .bg-navy { background-color: #1c2b39; }
-    .btn-teal { background-color: #2f7d6d; }
-    .btn-teal:hover { background-color: #246356; }
-    .btn-slate { background-color: #5a6b7c; }
-    .btn-slate:hover { background-color: #475569; }
-  </style>
-</head>
-<body class="antialiased">
-
-  <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
-  <header class="bg-navy text-white sticky top-0 z-50 shadow-md">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
-      <a href="#" class="text-lg font-bold tracking-wider uppercase">ARTHUR AMORIM</a>
-
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-200">
-        <a href="#inicio" class="text-teal-400 font-semibold">Início</a>
-        <a href="#sobre" class="hover:text-white transition">Sobre Mim</a>
-        <a href="#materiais" class="hover:text-white transition">Materiais</a>
-        <a href="#pesquisa" class="hover:text-white transition">Pesquisa</a>
-        <a href="#projetos" class="hover:text-white transition">Projetos</a>
-        <a href="#contato" class="hover:text-white transition">Contato</a>
-      </nav>
-
-      <div class="flex items-center space-x-4">
-        <!-- Substitua o # pelo link real do seu Currículo Lattes -->
-        <a href="http://lattes.cnpq.br/" target="_blank" rel="noopener noreferrer"
-           class="bg-slate-600/80 hover:bg-slate-500 text-white text-xs font-semibold px-4 py-2 rounded-full transition">
-          Currículo Lattes
-        </a>
-        <!-- Ícone GitHub -->
-        <a href="https://github.com/guimaraenslucas4-a11y" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-white" title="GitHub">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-        </a>
-        <!-- Ícone LinkedIn -->
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-white" title="LinkedIn">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- SEÇÃO PRINCIPAL (HERO) -->
-  <section id="inicio" class="bg-gradient-to-b from-slate-50 to-slate-100/70 border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-      
-      <!-- Foto de Perfil -->
-      <div class="md:col-span-5">
-        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white">
-          <!-- Para usar sua foto, suba um arquivo chamado perfil.jpg no GitHub e troque o src abaixo por "perfil.jpg" -->
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
-               alt="Foto de Arthur Amorim" 
-               class="w-full h-80 object-cover">
-        </div>
-      </div>
-
-      <!-- Apresentação Acadêmica -->
-      <div class="md:col-span-7 space-y-4">
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900">
-          Olá! Sou o Arthur Amorim
-        </h1>
-        <h2 class="text-lg md:text-xl font-semibold text-slate-800 leading-snug">
-          Pesquisador (PIBIC/CNPq), Monitor e Graduando em Matemática na UnB
-        </h2>
-        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
-          Este espaço é dedicado a compartilhar materiais didáticos, listas de exercícios, notas de estudo, apresentações de pesquisa e códigos que desenvolvo ao longo da minha trajetória no Departamento de Matemática da Universidade de Brasília (UnB).
-        </p>
-        <div class="pt-2 flex flex-wrap gap-4">
-          <a href="#materiais" class="btn-teal text-white font-medium text-sm px-6 py-3 rounded-lg shadow transition">
-            Ver Materiais (PDFs)
-          </a>
-          <a href="#sobre" class="btn-slate text-white font-medium text-sm px-6 py-3 rounded-lg shadow transition">
-            Meu Currículo
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SEÇÃO: MATERIAIS RECENTES -->
-  <section id="materiais" class="max-w-5xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-6">Materiais Recentes</h2>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur Amorim | Matemática — UnB | Portal Acadêmico</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Merriweather para estética acadêmica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- Grade de 4 Cartões -->
-    <div id="grade-materiais" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Os cartões são gerados automaticamente pelo script no final do arquivo -->
-    </div>
-  </section>
+    <!-- Configuração do Tailwind para fidelidade às cores do layout de referência -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        navNavy: '#1c2b39',
+                        navPill: '#4a5d6e',
+                        navTeal: '#4db6ac',
+                        heroBg: '#f4f7f9',
+                        ctaTeal: '#3d7b74',
+                        ctaTealHover: '#31655f',
+                        ctaSlate: '#5a6b7c',
+                        ctaSlateHover: '#495867',
+                        iconRed: '#c62828',
+                        iconBlue: '#1565c0',
+                        iconDark: '#263238',
+                        iconOrange: '#d84315',
+                    }
+                }
+            }
+        }
+    </script>
 
-  <!-- SEÇÃO: PESQUISA E INICIAÇÃO CIENTÍFICA -->
-  <section id="pesquisa" class="bg-white border-y border-slate-200 py-12">
-    <div class="max-w-5xl mx-auto px-6 space-y-6">
-      <h2 class="text-2xl font-bold text-slate-900">Pesquisa Acadêmica</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
-          <span class="text-xs font-semibold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1 rounded-full">PIBIC / CNPq • UnB</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-3">Dinâmica dos Fluidos e Aerodinâmica</h3>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Estudo das equações de Navier-Stokes e Euler, teoria da camada limite de Prandtl e aplicações de variáveis complexas e transformações conformes (Kármán-Trefftz e teorema de Kutta-Joukowski) sob orientação do Prof. Dr. Mauro Patrão.
-          </p>
+    <style>
+        /* Estilos customizados para acabamento visual refinado */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+        }
+
+        /* Efeito de desfoque de biblioteca acadêmica no fundo do retrato */
+        .library-backdrop {
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 236, 209, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 80% 25%, rgba(255, 224, 178, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #5c4938 0%, #3e2f23 35%, #2b2118 70%, #4a3b2c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Prateleiras estilizadas desfocadas simulando biblioteca universitária */
+        .library-shelves {
+            filter: blur(8px);
+            opacity: 0.65;
+            transform: scale(1.08);
+        }
+
+        /* Sombra suave idêntica aos cards da imagem de referência */
+        .academic-card {
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+            border: 1px solid #e2e8f0;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .academic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.12), 0 4px 8px -4px rgba(15, 23, 42, 0.06);
+            border-color: #cbd5e1;
+        }
+
+        /* Estilo das fórmulas matemáticas */
+        .math-formula {
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        /* Barra de rolagem sutil */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-ctaTeal selection:text-white">
+
+    <!-- ==========================================
+         1. TOP NAVIGATION BAR (Fiel ao Mockup)
+         ========================================== -->
+    <header class="sticky top-0 z-40 bg-navNavy text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                
+                <!-- Nome / Marca à esquerda -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="#inicio" class="text-lg sm:text-xl md:text-2xl font-bold tracking-wider uppercase text-white hover:opacity-90 transition">
+                        ARTHUR AMORIM
+                    </a>
+                </div>
+
+                <!-- Links de Navegação (Desktop) -->
+                <nav class="hidden lg:flex items-center space-x-7 text-[15px] font-medium">
+                    <a href="#inicio" data-nav="inicio" class="nav-link text-navTeal hover:text-navTeal transition-colors">Início</a>
+                    <a href="#sobre" data-nav="sobre" class="nav-link text-gray-200 hover:text-white transition-colors">Sobre Mim</a>
+                    <a href="#materiais" data-nav="materiais" class="nav-link text-gray-200 hover:text-white transition-colors">Materiais</a>
+                    <a href="#pesquisa" data-nav="pesquisa" class="nav-link text-gray-200 hover:text-white transition-colors">Pesquisa</a>
+                    <a href="#projetos" data-nav="projetos" class="nav-link text-gray-200 hover:text-white transition-colors">Projetos</a>
+                    <a href="#contato" data-nav="contato" class="nav-link text-gray-200 hover:text-white transition-colors">Contato</a>
+                </nav>
+
+                <!-- Botão Currículo Lattes + Ícones Sociais (Direita) -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button onclick="openLattesModal()" class="bg-navPill hover:bg-[#5b7083] text-white font-semibold text-sm px-4 py-2 rounded-lg transition shadow-sm">
+                        Currículo Lattes
+                    </button>
+                    
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="GitHub">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                    </a>
+
+                    <!-- LinkedIn Icon -->
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Botão Hamburger Mobile -->
+                <div class="flex lg:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-gray-200 hover:text-white focus:outline-none p-2 rounded-lg" aria-label="Abrir Menu">
+                        <svg id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
 
-        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
-          <span class="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Probabilidade & Finanças</span>
-          <h3 class="text-lg font-bold text-slate-900 mt-3">Teoria da Medida e Precificação de Opções</h3>
-          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-            Investigações em probabilidade com teoria da medida (sigma-álgebras, integração de Lebesgue) e modelagem matemática financeira pelo modelo binomial de Cox-Ross-Rubinstein e equação diferencial parcial de Black-Scholes.
-          </p>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#16222e] border-t border-slate-700 px-4 pt-3 pb-5 space-y-2">
+            <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-navTeal">Início</a>
+            <a href="#sobre" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Sobre Mim</a>
+            <a href="#materiais" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Materiais</a>
+            <a href="#pesquisa" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Pesquisa</a>
+            <a href="#projetos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Projetos</a>
+            <a href="#contato" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Contato</a>
+            <div class="pt-3 flex items-center justify-between border-t border-slate-700">
+                <button onclick="openLattesModal()" class="bg-navPill text-white font-semibold text-sm px-4 py-2 rounded-lg">
+                    Currículo Lattes
+                </button>
+                <div class="flex space-x-3">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-white p-2">GitHub</a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-white p-2">LinkedIn</a>
+                </div>
+            </div>
         </div>
+    </header>
 
-      </div>
+    <!-- ==========================================
+         2. HERO SECTION (Layout Duas Colunas do Mockup)
+         ========================================== -->
+    <section id="inicio" class="bg-heroBg py-10 sm:py-14 md:py-16 border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <!-- Coluna Esquerda: Foto de Perfil com Fundo de Biblioteca Universitária (BCE/UnB) -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] library-backdrop group border border-slate-300/60">
+                        
+                        <!-- Fundo artístico simulando prateleiras da biblioteca desfocadas -->
+                        <div class="absolute inset-0 library-shelves flex flex-col justify-between p-4 pointer-events-none">
+                            <div class="h-6 bg-amber-900/40 rounded flex space-x-2 px-2 items-end">
+                                <div class="w-4 h-5 bg-red-800/50"></div>
+                                <div class="w-6 h-4 bg-blue-900/50"></div>
+                                <div class="w-3 h-6 bg-emerald-800/50"></div>
+                                <div class="w-8 h-5 bg-amber-700/50"></div>
+                                <div class="w-5 h-6 bg-slate-700/50"></div>
+                            </div>
+                            <div class="h-6 bg-amber-900/40 rounded flex space-x-3 px-4 items-end">
+                                <div class="w-6 h-5 bg-teal-800/50"></div>
+                                <div class="w-4 h-6 bg-orange-800/50"></div>
+                                <div class="w-8 h-4 bg-indigo-900/50"></div>
+                            </div>
+                            <div class="h-8 bg-amber-950/60 rounded"></div>
+                        </div>
+
+                        <!-- Luzes bokeh suaves de biblioteca -->
+                        <div class="absolute top-6 left-8 w-20 h-20 rounded-full bg-amber-200/25 blur-xl pointer-events-none"></div>
+                        <div class="absolute top-10 right-10 w-24 h-24 rounded-full bg-orange-100/20 blur-xl pointer-events-none"></div>
+
+                        <!-- Imagem de Perfil (Customizável pelo usuário via Upload Local) -->
+                        <img id="profile-image" 
+                             src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80" 
+                             alt="Foto de Perfil de Arthur Amorim" 
+                             class="hidden w-full h-full object-cover object-center relative z-10"
+                             onerror="this.classList.add('hidden'); document.getElementById('default-scholar-avatar').classList.remove('hidden');" />
+
+                        <!-- Avatar Acadêmico Ilustrado de Alta Qualidade (Padrão Inicial) -->
+                        <div id="default-scholar-avatar" class="relative z-10 w-full h-full flex flex-col items-center justify-end pt-4 select-none">
+                            <!-- Ilustração SVG de estudante/pesquisador sorridente com óculos na biblioteca -->
+                            <svg class="w-64 sm:w-72 h-auto drop-shadow-xl" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Ombros / Camisa Social Verde-Oliva/Cinza sobre Camiseta Branca (igual à referência) -->
+                                <path d="M35 260C38 205 75 182 150 182C225 182 262 205 265 260H35Z" fill="#6b7065"/>
+                                <path d="M112 182L150 260L188 182H112Z" fill="#f8fafc"/>
+                                <!-- Gola da camisa aberta -->
+                                <path d="M105 180L128 235L100 260L75 190L105 180Z" fill="#5a5f54"/>
+                                <path d="M195 180L172 235L200 260L225 190L195 180Z" fill="#5a5f54"/>
+                                <!-- Pescoço -->
+                                <rect x="127" y="142" width="46" height="48" rx="16" fill="#e0ac8b"/>
+                                <path d="M127 158C140 168 160 168 173 158V148H127V158Z" fill="#c99373" opacity="0.5"/>
+                                <!-- Orelhas -->
+                                <circle cx="98" cy="112" r="12" fill="#e0ac8b"/>
+                                <circle cx="202" cy="112" r="12" fill="#e0ac8b"/>
+                                <!-- Rosto -->
+                                <rect x="100" y="52" width="100" height="114" rx="46" fill="#eab898"/>
+                                <!-- Cabelo Castanho Escuro Ondulado -->
+                                <path d="M96 98C92 65 110 34 152 34C192 34 210 62 204 98C202 78 190 62 165 58C140 54 115 62 104 78C100 84 98 92 96 98Z" fill="#2b1e16"/>
+                                <path d="M108 50C122 36 156 30 182 42C195 48 205 64 202 82C198 62 175 54 148 54C122 54 105 66 100 84C97 70 100 58 108 50Z" fill="#38281e"/>
+                                <!-- Sobrancelhas -->
+                                <path d="M116 90C123 86 134 86 140 89" stroke="#2b1e16" stroke-width="4" stroke-linecap="round"/>
+                                <path d="M160 89C166 86 177 86 184 90" stroke="#2b1e16" stroke-width="4" stroke-linecap="round"/>
+                                <!-- Olhos -->
+                                <circle cx="128" cy="103" r="5" fill="#1e1b18"/>
+                                <circle cx="172" cy="103" r="5" fill="#1e1b18"/>
+                                <circle cx="129.5" cy="101.5" r="1.5" fill="white"/>
+                                <circle cx="173.5" cy="101.5" r="1.5" fill="white"/>
+                                <!-- Óculos de Grau Acadêmico (Armação fina escura) -->
+                                <rect x="110" y="92" width="36" height="24" rx="9" stroke="#1f2937" stroke-width="3.2" fill="rgba(255,255,255,0.12)"/>
+                                <rect x="154" y="92" width="36" height="24" rx="9" stroke="#1f2937" stroke-width="3.2" fill="rgba(255,255,255,0.12)"/>
+                                <path d="M146 101H154" stroke="#1f2937" stroke-width="3"/>
+                                <path d="M100 102L110 100" stroke="#1f2937" stroke-width="2.5"/>
+                                <path d="M190 100L200 102" stroke="#1f2937" stroke-width="2.5"/>
+                                <!-- Nariz -->
+                                <path d="M150 104V122C150 125 146 127 143 126" stroke="#c58c6d" stroke-width="3" stroke-linecap="round"/>
+                                <!-- Sorriso Amigável -->
+                                <path d="M130 135C136 145 164 145 170 135Z" fill="#ffffff"/>
+                                <path d="M129 135C137 146 163 146 171 135" stroke="#a6684c" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+
+                            <!-- Badge discreto da UnB no canto -->
+                            <div class="absolute top-3 left-3 bg-black/45 backdrop-blur-md text-white/95 text-xs font-medium px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-navTeal animate-pulse"></span>
+                                MAT / UnB
+                            </div>
+                        </div>
+
+                        <!-- Botão Interativo para Trocar Foto de Perfil Localmente -->
+                        <label for="photo-upload" class="cursor-pointer absolute bottom-3 right-3 z-20 bg-slate-900/75 hover:bg-slate-900 text-white text-xs font-medium px-3 py-1.5 rounded-lg backdrop-blur-sm border border-white/20 flex items-center gap-1.5 transition opacity-90 group-hover:opacity-100 shadow-sm">
+                            <svg class="w-3.5 h-3.5 text-navTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>Trocar Minha Foto</span>
+                            <input id="photo-upload" type="file" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Coluna Direita: Apresentação Acadêmica & Botões CTA -->
+                <div class="lg:col-span-7 space-y-4 text-left">
+                    <h1 class="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#142330] tracking-tight leading-tight">
+                        Olá! Sou o Arthur Amorim
+                    </h1>
+                    
+                    <h2 class="text-xl sm:text-2xl font-bold text-[#1f2d3a] leading-snug">
+                        Pesquisador de Iniciação Científica (CNPq), Monitor e Graduando em Matemática — UnB
+                    </h2>
+                    
+                    <p class="text-slate-700 text-base sm:text-[17px] leading-relaxed pt-1 max-w-2xl">
+                        Este espaço é dedicado a compartilhar materiais didáticos, listas de exercícios de monitoria, notas de estudo, apresentações de pesquisa e códigos em LaTeX que desenvolvo ao longo da minha trajetória acadêmica na Universidade de Brasília.
+                    </p>
+
+                    <!-- Botões de Ação (Exatamente como no Mockup) -->
+                    <div class="pt-3 flex flex-wrap items-center gap-4">
+                        <a href="#materiais" class="bg-ctaTeal hover:bg-ctaTealHover text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition transform active:scale-95 inline-flex items-center gap-2">
+                            <span>Ver Materiais (PDFs)</span>
+                        </a>
+                        <button onclick="openLattesModal()" class="bg-ctaSlate hover:bg-ctaSlateHover text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition transform active:scale-95 inline-flex items-center gap-2">
+                            <span>Meu Currículo</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         3. MATERIAIS RECENTES & REPOSITÓRIO INTERATIVO
+         ========================================== -->
+    <section id="materiais" class="py-12 sm:py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabeçalho da Seção + Controles de Filtro -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-2xl sm:text-[26px] font-bold text-slate-900 tracking-tight">
+                        Materiais Recentes
+                    </h2>
+                    <p class="text-sm text-slate-500 mt-1">
+                        Clique em qualquer cartão para visualizar o resumo, fórmulas, código LaTeX/BibTeX e fazer o download.
+                    </p>
+                </div>
+
+                <!-- Busca e Botão de Adicionar Material -->
+                <div class="flex flex-wrap items-center gap-3">
+                    <div class="relative flex-grow sm:flex-grow-0">
+                        <input id="search-input" 
+                               type="text" 
+                               oninput="filterMaterials()"
+                               placeholder="Buscar lista, código, tema..." 
+                               class="w-full sm:w-64 pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-ctaTeal focus:bg-white transition">
+                        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <button onclick="openNewMaterialModal()" class="text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5 border border-slate-200/80" title="Simular publicação de novo material">
+                        <svg class="w-4 h-4 text-ctaTeal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                        <span>Novo Material</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Abas de Categorias -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-slate-100">
+                <button onclick="setCategory('all')" data-cat="all" class="cat-btn bg-navNavy text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
+                    Todos os Materiais (8)
+                </button>
+                <button onclick="setCategory('ensino')" data-cat="ensino" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
+                    Monitoria & Ensino (UnB)
+                </button>
+                <button onclick="setCategory('pesquisa')" data-cat="pesquisa" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
+                    Pesquisa & PIBIC
+                </button>
+                <button onclick="setCategory('codigo')" data-cat="codigo" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
+                    Templates LaTeX & Python
+                </button>
+            </div>
+
+            <!-- GRADE DE CARDS (Os 4 primeiros seguem exatamente o visual da imagem de referência) -->
+            <div id="materials-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Preenchido dinamicamente pelo JavaScript -->
+            </div>
+
+            <!-- Estado Vazio para Busca -->
+            <div id="empty-search-state" class="hidden text-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                <p class="text-slate-600 font-medium">Nenhum material encontrado para esse termo.</p>
+                <button onclick="resetFilters()" class="mt-3 text-sm text-ctaTeal font-semibold hover:underline">Limpar filtros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         4. SEÇÃO SOBRE MIM (Trajetória na UnB)
+         ========================================== -->
+    <section id="sobre" class="py-14 bg-heroBg border-t border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- Coluna Sobre & Formação -->
+                <div class="lg:col-span-7 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-ctaTeal text-xs font-semibold uppercase tracking-wider">
+                        Trajetória Acadêmica
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                        Departamento de Matemática — Universidade de Brasília (MAT/UnB)
+                    </h2>
+                    <p class="text-slate-700 leading-relaxed">
+                        Sou graduando em Matemática na <strong>Universidade de Brasília (UnB)</strong>, atuando como pesquisador de Iniciação Científica (PIBIC/CNPq) e monitor em disciplinas do ciclo básico e profissionalizante da Matemática.
+                    </p>
+                    <p class="text-slate-700 leading-relaxed">
+                        Meus interesses acadêmicos concentram-se na interseção entre <strong>Equações Diferenciais Parciais</strong> (com foco nas equações de Euler e Navier-Stokes na Dinâmica dos Fluidos), <strong>Teoria da Probabilidade e Finanças Quantitativas</strong> (processos estocásticos em tempo discreto e contínuo) e no uso de ferramentas computacionais livres e <strong>LaTeX</strong> para ensino e documentação científica.
+                    </p>
+
+                    <!-- Linha do Tempo Acadêmica -->
+                    <div class="pt-4 space-y-4">
+                        <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-navNavy text-navTeal flex items-center justify-center font-bold shrink-0 text-sm">
+                                IC
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <h3 class="font-bold text-slate-900">Pesquisador de Iniciação Científica (PIBIC / CNPq)</h3>
+                                    <span class="text-xs font-medium bg-teal-50 text-ctaTeal px-2.5 py-0.5 rounded-full">Atual</span>
+                                </div>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Investigação matemática em Dinâmica dos Fluidos (Transformação de Kármán-Trefftz e equações de Navier-Stokes) e modelos matemáticos de precificação de derivativos (Cox-Ross-Rubinstein e Black-Scholes).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-blue-900 text-blue-200 flex items-center justify-center font-bold shrink-0 text-sm">
+                                UnB
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <h3 class="font-bold text-slate-900">Monitoria Acadêmica — Cálculo de Probabilidade 1 & MAT0028</h3>
+                                    <span class="text-xs font-medium bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-full">2025 – 2026</span>
+                                </div>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Elaboração de listas de exercícios semanais em LaTeX, gabaritos detalhados, plantões de dúvidas e notas de aula suplementares para estudantes de graduação da UnB.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coluna Competências & Ferramentas -->
+                <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
+                        Áreas de Estudo & Ferramentas Técnicas
+                    </h3>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
+                                <span>LaTeX (TikZ, Beamer, abntex2, PGFPlots)</span>
+                                <span class="text-ctaTeal">Avançado</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-ctaTeal h-full rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
+                                <span>Python Científico (SymPy, NumPy, Matplotlib)</span>
+                                <span class="text-ctaTeal">Avançado</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-navNavy h-full rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
+                                <span>EDPs & Mecânica dos Fluidos</span>
+                                <span class="text-ctaTeal">Pesquisa IC</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-iconBlue h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
+                                <span>Probabilidade & Matemática Financeira</span>
+                                <span class="text-ctaTeal">Pesquisa & Ensino</span>
+                            </div>
+                            <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div class="bg-iconOrange h-full rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tags de Tópicos -->
+                    <div class="pt-2">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Tópicos Recorrentes nos Materiais</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Navier-Stokes</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Kármán-Trefftz</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Black-Scholes</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Variáveis Aleatórias</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Álgebra Tensorial</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">História dos Logaritmos</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. SEÇÃO PESQUISA (Com Simulador Matemático Interativo)
+         ========================================== -->
+    <section id="pesquisa" class="py-16 bg-white border-t border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-iconOrange text-xs font-semibold uppercase tracking-wider mb-3">
+                    Iniciação Científica (PIBIC / CNPq)
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                    Linhas de Pesquisa & Visualização Matemática
+                </h2>
+                <p class="text-slate-600 mt-2">
+                    Abaixo você encontra uma síntese das minhas investigações atuais e um laboratório interativo demonstrando a transformação conforme de <strong>Kármán-Trefftz</strong> aplicada a perfis aerodinâmicos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                
+                <!-- Explicação Teórica -->
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Análise Complexa & Dinâmica dos Fluidos</span>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        Transformação de Kármán-Trefftz & Escoamento Potencial
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Generalizando a transformação de Joukowski, o mapeamento conforme de Kármán-Trefftz transforma um círculo no plano complexo <span class="math-formula">ζ</span> em um perfil aerodinâmico no plano <span class="math-formula">z</span> com ângulo de bordo de fuga finito <span class="math-formula">α = (2 - n)π</span>:
+                    </p>
+                    
+                    <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center my-2 shadow-inner">
+                        <span class="math-formula text-base sm:text-lg text-slate-900 font-semibold">
+                            (z − nb) / (z + nb) = [ (ζ − b) / (ζ + b) ]<sup>n</sup>
+                        </span>
+                    </div>
+
+                    <!-- Controles do Simulador -->
+                    <div class="space-y-3 pt-2">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-n">Expoente Conforme (n): <span id="val-n" class="text-ctaTeal font-mono">1.88</span></label>
+                                <span class="text-slate-400">Joukowski = 2.00</span>
+                            </div>
+                            <input id="param-n" type="range" min="1.65" max="2.00" step="0.01" value="1.88" oninput="drawAirfoil()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-camber">Curvatura Vertical (δ<sub>y</sub>): <span id="val-camber" class="text-ctaTeal font-mono">0.10</span></label>
+                                <span class="text-slate-400">Simétrico = 0.00</span>
+                            </div>
+                            <input id="param-camber" type="range" min="-0.15" max="0.25" step="0.01" value="0.10" oninput="drawAirfoil()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-thick">Espessura do Perfil (δ<sub>x</sub>): <span id="val-thick" class="text-ctaTeal font-mono">-0.09</span></label>
+                            </div>
+                            <input id="param-thick" type="range" min="-0.22" max="-0.03" step="0.01" value="-0.09" oninput="drawAirfoil()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas Interativo -->
+                <div class="lg:col-span-7">
+                    <div class="bg-navNavy rounded-xl p-4 shadow-md border border-slate-700">
+                        <div class="flex items-center justify-between text-xs text-slate-300 mb-2 px-1">
+                            <span class="font-mono">Plano Complexo z = x + iy (Perfil Transformado)</span>
+                            <span class="text-navTeal font-medium">Interativo em Tempo Real</span>
+                        </div>
+                        <div class="w-full h-64 sm:h-72 bg-[#111b24] rounded-lg overflow-hidden relative">
+                            <canvas id="airfoil-canvas" class="w-full h-full block"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         6. SEÇÃO PROJETOS (LaTeX & Python SymPy)
+         ========================================== -->
+    <section id="projetos" class="py-16 bg-heroBg border-t border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                        Projetos & Repositórios Abertos
+                    </h2>
+                    <p class="text-slate-600 mt-1">
+                        Templates padronizados em LaTeX e rotinas computacionais em Python para estudantes de exatas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Projeto 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-800 font-mono text-xs font-semibold">LaTeX / abntex2</span>
+                            <span class="text-xs text-slate-400">v2.4 • 2026</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Template Relatório PIBIC & Monografia UnB</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Estrutura pré-configurada com normas da ABNT, ambientes de teoremas (`amsthm`), citações automáticas e capa oficial da Universidade de Brasília.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(3)" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition">
+                        Ver Código LaTeX
+                    </button>
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-blue-50 text-iconBlue font-mono text-xs font-semibold">Python / SymPy</span>
+                            <span class="text-xs text-slate-400">Jupyter Notebook</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Cálculo Tensorial & Navier-Stokes no SymPy</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Scripts simbólicos para expansão de operadores diferenciais em coordenadas cilíndricas e esféricas e dedução automatizada de equações de conservação.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(7)" class="w-full py-2.5 px-4 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-medium transition">
+                        Inspecionar Script Python
+                    </button>
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-orange-50 text-iconOrange font-mono text-xs font-semibold">Finanças Quantitativas</span>
+                            <span class="text-xs text-slate-400">Python + PDF</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Convergência Binomial CRR para Black-Scholes</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Implementação numérica e demonstração analítica da convergência do modelo discreto de Cox-Ross-Rubinstein para a EDP de Black-Scholes.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(5)" class="w-full py-2.5 px-4 rounded-xl bg-ctaSlate hover:bg-ctaSlateHover text-white text-sm font-medium transition">
+                        Acessar Estudo Completo
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         7. SEÇÃO CONTATO & RODAPÉ ACADÊMICO
+         ========================================== -->
+    <section id="contato" class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navNavy rounded-3xl p-8 sm:p-10 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-6 space-y-4">
+                    <span class="text-navTeal text-xs font-bold uppercase tracking-widest">Contato Acadêmico</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold">Dúvidas de Monitoria ou Colaborações de Pesquisa?</h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Se você é estudante da UnB procurando auxílio nas listas de exercícios ou pesquisador interessado em discutir projetos em Matemática Aplicada, envie uma mensagem.
+                    </p>
+                    <div class="pt-2 space-y-2 text-sm text-slate-200">
+                        <p class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-navTeal"></span>
+                            <span>Departamento de Matemática (MAT) — ICC Centro, Campus Darcy Ribeiro, UnB</span>
+                        </p>
+                        <p class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-navTeal"></span>
+                            <span>Brasília — DF, Brasil</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato Interativo -->
+                <div class="lg:col-span-6">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-200 mb-1">Seu Nome</label>
+                            <input type="text" required placeholder="Ex: Maria Silva (UnB)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-200 mb-1">Assunto</label>
+                            <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                                <option>Dúvida de Monitoria (Probabilidade / MAT0028)</option>
+                                <option>Iniciação Científica / Pesquisa</option>
+                                <option>Templates LaTeX / Códigos Python</option>
+                                <option>Outro Assunto Acadêmico</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-200 mb-1">Mensagem</label>
+                            <textarea rows="3" required placeholder="Escreva sua mensagem ou dúvida matemática..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-navTeal hover:bg-[#3da197] text-slate-950 font-bold py-2.5 px-4 rounded-xl transition text-sm">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#141f29] text-slate-400 py-8 text-center text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 <strong class="text-white">Arthur Amorim</strong> • Graduando em Matemática (UnB). Hospedável via GitHub Pages / Quarto.</p>
+            <div class="flex items-center gap-4">
+                <a href="#inicio" class="hover:text-navTeal transition">Voltar ao Topo ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         MODAL INTERATIVO DE VISUALIZAÇÃO DE MATERIAL
+         ========================================== -->
+    <div id="material-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-fadeIn">
+            
+            <!-- Topo do Modal -->
+            <div class="flex items-start justify-between p-6 border-b border-slate-100">
+                <div class="flex items-center gap-3.5">
+                    <div id="modal-icon-container" class="p-3 rounded-xl bg-slate-50 border border-slate-200"></div>
+                    <div>
+                        <span id="modal-category-badge" class="text-xs font-semibold uppercase tracking-wider text-ctaTeal"></span>
+                        <h3 id="modal-title" class="text-lg sm:text-xl font-bold text-slate-900 leading-snug"></h3>
+                    </div>
+                </div>
+                <button onclick="closeMaterialModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Corpo do Modal -->
+            <div class="p-6 space-y-5">
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Resumo do Material</h4>
+                    <p id="modal-description" class="text-sm text-slate-700 leading-relaxed"></p>
+                </div>
+
+                <!-- Destaque de Fórmula / Equação -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80">
+                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 block mb-1">Equação / Conceito-Chave no Documento</span>
+                    <div id="modal-formula" class="math-formula text-base sm:text-lg text-slate-900 text-center py-2 font-semibold"></div>
+                </div>
+
+                <!-- Snippet LaTeX / Python Copiável -->
+                <div>
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Trecho LaTeX / Código Fonte</span>
+                        <button onclick="copyModalSnippet()" class="text-xs font-semibold text-ctaTeal hover:underline flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Copiar Código</span>
+                        </button>
+                    </div>
+                    <pre id="modal-snippet" class="bg-slate-900 text-slate-100 p-4 rounded-xl text-xs font-mono overflow-x-auto leading-relaxed"></pre>
+                </div>
+            </div>
+
+            <!-- Rodapé do Modal -->
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 rounded-b-2xl">
+                <span id="modal-meta" class="text-xs text-slate-500 font-medium"></span>
+                <div class="flex items-center gap-2.5">
+                    <button onclick="closeMaterialModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100 transition">
+                        Fechar
+                    </button>
+                    <button onclick="triggerSimulatedDownload()" class="px-5 py-2 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        <span>Baixar Arquivo (.PDF / .TEX)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- SEÇÃO: SOBRE MIM E PROJETOS -->
-  <section id="sobre" class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div>
-      <h2 class="text-xl font-bold text-slate-900 mb-3">Sobre Mim & Ensino</h2>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Graduando em Matemática pela Universidade de Brasília (UnB). Atuo como monitor em disciplinas de graduação do Departamento de Matemática, incluindo <strong>Cálculo de Probabilidade 1</strong> e <strong>MAT0028</strong>, além de desenvolver projetos voltados ao ensino de Matemática e história dos logaritmos.
-      </p>
+    <!-- ==========================================
+         MODAL CURRÍCULO LATTES / RESUMO ACADÊMICO
+         ========================================== -->
+    <div id="lattes-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-ctaTeal">Plataforma Lattes / CNPq</span>
+                    <h3 class="text-xl font-bold text-slate-900">Arthur Amorim — Síntese Curricular</h3>
+                </div>
+                <button onclick="closeLattesModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100">✕</button>
+            </div>
+
+            <div class="space-y-3 text-sm text-slate-700">
+                <p><strong>Formação:</strong> Graduando em Matemática — Universidade de Brasília (UnB).</p>
+                <p><strong>Atuação Científica:</strong> Bolsista/Pesquisador de Iniciação Científica (CNPq) em Matemática Aplicada (Dinâmica dos Fluidos e Finanças Matemáticas).</p>
+                <p><strong>Atuação Docente (Monitoria):</strong> Cálculo de Probabilidade 1 e MAT0028 (Departamento de Matemática - UnB).</p>
+                <p><strong>Idiomas & Computação:</strong> Português (Nativo), Inglês (Leitura Científica Avançada), LaTeX, Python (SymPy, NumPy, SciPy).</p>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600">
+                <strong>Dica de Configuração:</strong> Ao hospedar este arquivo no seu GitHub Pages (`arthuramorim.github.io`), basta substituir o link deste botão pela URL pública oficial do seu Currículo Lattes ou PDF do seu CV em `static/cv_arthur_amorim.pdf`.
+            </div>
+
+            <div class="flex justify-end gap-3 pt-2">
+                <button onclick="closeLattesModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100">Fechar</button>
+                <button onclick="showToast('Currículo Acadêmico em PDF gerado para visualização!'); closeLattesModal();" class="px-5 py-2 rounded-xl bg-navNavy text-white text-sm font-semibold hover:opacity-95">
+                    Baixar CV em PDF
+                </button>
+            </div>
+        </div>
     </div>
-    <div id="projetos">
-      <h2 class="text-xl font-bold text-slate-900 mb-3">Ferramentas & Projetos</h2>
-      <p class="text-sm text-slate-600 leading-relaxed">
-        Desenvolvimento de materiais tipográficos em <strong>LaTeX</strong> (templates acadêmicos, pôsteres científicos e apresentações Beamer) e rotinas computacionais em <strong>Python</strong> (álgebra tensorial com SymPy e visualizações numéricas com NumPy/Matplotlib).
-      </p>
+
+    <!-- ==========================================
+         MODAL PARA ADICIONAR NOVO MATERIAL (SIMULAÇÃO)
+         ========================================== -->
+    <div id="new-material-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                <h3 class="text-lg font-bold text-slate-900">Publicar Novo Material no Site</h3>
+                <button onclick="closeNewMaterialModal()" class="text-slate-400 hover:text-slate-700">✕</button>
+            </div>
+            <form onsubmit="handleAddMaterial(event)" class="space-y-3.5 text-sm">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Título do Material</label>
+                    <input id="new-title" type="text" required placeholder="Ex: Lista 4 - Variáveis Aleatórias Contínuas" class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Categoria & Ícone</label>
+                    <select id="new-type" class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal">
+                        <option value="pdf-red">Lista de Exercícios PDF (Ícone Vermelho)</option>
+                        <option value="doc-blue">Notas de Aula PDF (Ícone Azul)</option>
+                        <option value="code-dark">Template LaTeX / Script Python (Ícone Escuro)</option>
+                        <option value="slide-orange">Slides Beamer / Pesquisa (Ícone Laranja)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-600 mb-1">Breve Descrição</label>
+                    <textarea id="new-desc" rows="2" required placeholder="Resumo dos tópicos abordados no documento..." class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal"></textarea>
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button type="button" onclick="closeNewMaterialModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 rounded-xl bg-ctaTeal text-white font-semibold">Adicionar à Grade</button>
+                </div>
+            </form>
+        </div>
     </div>
-  </section>
 
-  <!-- RODAPÉ / CONTATO -->
-  <footer id="contato" class="bg-navy text-slate-300 py-8 text-center text-sm">
-    <div class="max-w-5xl mx-auto px-6 space-y-2">
-      <p class="font-semibold text-white">Arthur Amorim — Departamento de Matemática (UnB)</p>
-      <p>Brasília, DF • Contato acadêmico e disponibilização de materiais didáticos</p>
+    <!-- ==========================================
+         TOAST DE NOTIFICAÇÃO (Sem uso de alert!)
+         ========================================== -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 z-50 hidden bg-navNavy text-white px-4 py-3 rounded-xl shadow-xl border border-slate-700 flex items-center gap-3 text-sm font-medium transition-all">
+        <span class="w-2.5 h-2.5 rounded-full bg-navTeal"></span>
+        <span id="toast-message">Ação realizada com sucesso!</span>
     </div>
-  </footer>
 
-  <!-- LISTA DE MATERIAIS (FÁCIL DE EDITAR) -->
-  <script>
-    /*
-     * COMO ADICIONAR OU MUDAR SEUS PDFs:
-     * Basta trocar o "#" dentro de linkPdf pelo link do seu arquivo no Google Drive
-     * ou pelo nome do arquivo salvo no GitHub (ex: "lista1.pdf").
-     */
-    const materiais = [
-      {
-        titulo: "Lista de Exercícios - Cálculo de Probabilidade 1",
-        icone: "pdf",
-        linkPdf: "#"
-      },
-      {
-        titulo: "Notas de Aula: MAT0028 e Teoria da Medida",
-        icone: "notas",
-        linkPdf: "#"
-      },
-      {
-        titulo: "Template LaTeX para Relatórios e Beamer",
-        icone: "codigo",
-        linkPdf: "#"
-      },
-      {
-        titulo: "Slides: Dinâmica dos Fluidos (PIBIC)",
-        icone: "slides",
-        linkPdf: "#"
-      }
-    ];
+    <!-- ==========================================
+         JAVASCRIPT: DADOS, RENDERIZAÇÃO E SIMULAÇÃO
+         ========================================== -->
+    <script>
+        // 1. ÍCONES SVG FIÉIS AO MOCKUP DE REFERÊNCIA
+        function getMaterialIconSVG(type) {
+            switch (type) {
+                case 'pdf-red':
+                    // Ícone PDF Vermelho idêntico ao primeiro card da imagem
+                    return `
+                        <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#c62828"/>
+                            <path d="M29 2L39 12H31C29.8954 12 29 11.1046 29 10V2Z" fill="#ef9a9a"/>
+                            <path d="M24.5 18C23.2 18 22.8 22.2 23.8 25.2C22.4 28.4 19.6 32.8 17.5 33.8C16.2 34.4 15.8 32.8 17.8 31.2C19.8 29.6 25.5 27.6 29.8 28.2C32.4 28.6 33.2 27.2 31.5 26.2C29.8 25.2 26.2 26.2 25.2 24.5C24.2 22.8 25.8 18 24.5 18Z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    `;
+                case 'doc-blue':
+                    // Ícone PDF/Notas Azul idêntico ao segundo card da imagem
+                    return `
+                        <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#1565c0"/>
+                            <path d="M29 2L39 12H31C29.8954 12 29 11.1046 29 10V2Z" fill="#90caf9"/>
+                            <path d="M24.5 18C23.2 18 22.8 22.2 23.8 25.2C22.4 28.4 19.6 32.8 17.5 33.8C16.2 34.4 15.8 32.8 17.8 31.2C19.8 29.6 25.5 27.6 29.8 28.2C32.4 28.6 33.2 27.2 31.5 26.2C29.8 25.2 26.2 26.2 25.2 24.5C24.2 22.8 25.8 18 24.5 18Z" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    `;
+                case 'code-dark':
+                    // Ícone Documento de Código </> Escuro idêntico ao terceiro card da imagem
+                    return `
+                        <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#263238"/>
+                            <path d="M29 2L39 12H31C29.8954 12 29 11.1046 29 10V2Z" fill="#90a4ae"/>
+                            <path d="M20 23L15 28L20 33M29 23L34 28L29 33M26 21L23 35" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    `;
+                case 'slide-orange':
+                    // Ícone Quadro de Apresentação/Slides Laranja idêntico ao quarto card da imagem
+                    return `
+                        <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="7" y="8" width="34" height="24" rx="3" fill="#d84315"/>
+                            <path d="M5 8H43" stroke="#bf360c" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M24 32V42M24 36L16 43M24 36L32 43" stroke="#d84315" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="18" cy="20" r="4.5" fill="white"/>
+                            <path d="M26 16H35M26 21H35M26 26H32" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+                        </svg>
+                    `;
+            }
+        }
 
-    const iconesSvg = {
-      pdf: `<div class="w-12 h-14 bg-red-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
-              <span class="font-bold text-xs tracking-wider">PDF</span>
-            </div>`,
-      notas: `<div class="w-12 h-14 bg-blue-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
-                <span class="font-bold text-xs tracking-wider">DOC</span>
-              </div>`,
-      codigo: `<div class="w-12 h-14 bg-slate-800 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
-                 <span class="font-mono font-bold text-sm">&lt;/&gt;</span>
-               </div>`,
-      slides: `<div class="w-12 h-14 bg-orange-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
-                 <span class="font-bold text-xs tracking-wider">PPT</span>
-               </div>`
-    };
+        // 2. BASE DE DADOS DOS MATERIAIS ACADÊMICOS DE ARTHUR AMORIM
+        const materialsData = [
+            {
+                id: 1,
+                title: "Lista de Exercícios - Cálculo de Probabilidade 1 (2026)",
+                category: "ensino",
+                categoryLabel: "Monitoria UnB • Probabilidade",
+                iconType: "pdf-red",
+                meta: "PDF • 14 páginas • Atualizado em Out 2026",
+                description: "Lista preparatória elaborada para a monitoria de Cálculo de Probabilidade 1 do Departamento de Matemática da UnB. Aborda espaços de probabilidade, axiomas de Kolmogorov, probabilidade condicional, Teorema de Bayes e variáveis aleatórias discretas e contínuas.",
+                formula: "P(A | B) = [ P(B | A) · P(A) ] / ∑ P(B | Aᵢ) P(Aᵢ)",
+                snippet: `\\documentclass[12pt,a4paper]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage{amsmath, amssymb, amsthm}
+\\title{Lista de Monitoria 01 -- Cálculo de Probabilidade 1}
+\\author{Arthur Amorim -- Departamento de Matemática (MAT/UnB)}
 
-    const container = document.getElementById("grade-materiais");
-    materiais.forEach(item => {
-      const card = document.createElement("a");
-      card.href = item.linkPdf;
-      if (item.linkPdf !== "#") {
-        card.target = "_blank";
-        card.rel = "noopener noreferrer";
-      }
-      card.className = "bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition flex flex-col items-center justify-center text-center";
-      card.innerHTML = `
-        ${iconesSvg[item.icone] || iconesSvg.pdf}
-        <h3 class="font-semibold text-slate-800 text-sm leading-snug">${item.titulo}</h3>
-      `;
-      container.appendChild(card);
-    });
-  </script>
+\\begin{document}
+\\maketitle
+\\textbf{Questão 1.} Seja $(\\Omega, \\mathcal{F}, \\mathbb{P})$ um espaço de probabilidade...
+\\end{document}`
+            },
+            {
+                id: 2,
+                title: "Notas de Aula & Monitoria: MAT0028",
+                category: "ensino",
+                categoryLabel: "Monitoria UnB • MAT0028",
+                iconType: "doc-blue",
+                meta: "PDF • 28 páginas • Notas Completas",
+                description: "Caderno de revisão teórica e resolução passo a passo de problemas selecionados da disciplina MAT0028 na UnB. Inclui intuição geométrica, demonstrações rigorosas e contraexemplos clássicos discutidos nos horários de atendimento.",
+                formula: "‖u + v‖² + ‖u − v‖² = 2(‖u‖² + ‖v‖²)  (Identidade do Paralelogramo)",
+                snippet: `% Notas de Aula MAT0028 - Arthur Amorim (UnB)
+\\begin{teorema}[Desigualdade de Cauchy-Schwarz]
+Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
+\\[ |\\langle u, v \\rangle| \\leq \\|u\\| \\cdot \\|v\\| \\]
+\\end{teorema}`
+            },
+            {
+                id: 3,
+                title: "Template LaTeX para Relatórios (abntex2 & Beamer)",
+                category: "codigo",
+                categoryLabel: "Template LaTeX • Padrão UnB",
+                iconType: "code-dark",
+                meta: "ZIP / .TEX • Compatível com Overleaf",
+                description: "Coleção de templates em LaTeX customizados com a identidade visual da Universidade de Brasília para submissão de relatórios parciais e finais de Iniciação Científica (PIBIC/CNPq), pôsteres de congresso e apresentações em Beamer.",
+                formula: "\\documentclass[12pt,openright,twoside,a4paper,english,brazil]{abntex2}",
+                snippet: `\\documentclass[12pt,a4paper]{abntex2}
+\\usepackage{amsmath,amsfonts,amssymb}
+\\usepackage{tikz,pgfplots}
+\\instituicao{Universidade de Brasília -- UnB \\par Instituto de Ciências Exatas \\par Departamento de Matemática}
+\\autor{Arthur Amorim}
+\\titulo{Relatório de Iniciação Científica -- PIBIC/CNPq}`
+            },
+            {
+                id: 4,
+                title: "Slides: Dinâmica dos Fluidos",
+                category: "pesquisa",
+                categoryLabel: "Pesquisa PIBIC • Fluidos",
+                iconType: "slide-orange",
+                meta: "Beamer PDF • 32 slides • Apresentação IC",
+                description: "Apresentação em Beamer sobre a formulação matemática das equações de Euler e Navier-Stokes para escoamentos incompressíveis, vorticidade e aplicação da transformação conforme de Kármán-Trefftz em aerofólios.",
+                formula: "ρ (∂u/∂t + (u · ∇)u) = −∇p + μ ∇²u + f ,   ∇ · u = 0",
+                snippet: `\\begin{frame}{Equações de Navier-Stokes Incompressíveis}
+\\begin{block}{Conservação do Momento Linear}
+\\[ \\rho \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + (\\mathbf{u} \\cdot \\nabla)\\mathbf{u} \\right) = -\\nabla p + \\mu \\nabla^2 \\mathbf{u} + \\mathbf{f} \\]
+\\end{block}
+\\end{frame}`
+            },
+            {
+                id: 5,
+                title: "Precificação de Opções: Modelo CRR & Black-Scholes",
+                category: "pesquisa",
+                categoryLabel: "Pesquisa • Matemática Financeira",
+                iconType: "doc-blue",
+                meta: "PDF + Python • 19 páginas",
+                description: "Estudo analítico da precificação de derivativos em tempo discreto via árvore binomial de Cox-Ross-Rubinstein (medida neutra ao risco) e passagem ao limite contínuo obtendo a equação diferencial parcial de Black-Scholes.",
+                formula: "∂V/∂t + ½ σ² S² (∂²V/∂S²) + r S (∂V/∂S) − r V = 0",
+                snippet: `import numpy as np
 
+def crr_call_price(S0, K, T, r, sigma, N):
+    dt = T / N
+    u = np.exp(sigma * np.sqrt(dt))
+    d = 1 / u
+    p = (np.exp(r * dt) - d) / (u - d)
+    # Backward induction na árvore binomial
+    ST = S0 * (u ** np.arange(N, -1, -1)) * (d ** np.arange(0, N + 1, 1))
+    C = np.maximum(ST - K, 0)
+    for _ in range(N):
+        C = np.exp(-r * dt) * (p * C[:-1] + (1 - p) * C[1:])
+    return C[0]`
+            },
+            {
+                id: 6,
+                title: "História da Matemática: Logaritmos, Prostaferese e Napier",
+                category: "ensino",
+                categoryLabel: "Artigo Didático • História da Matemática",
+                iconType: "pdf-red",
+                meta: "PDF • 12 páginas • Notas Históricas",
+                description: "Exploração histórica sobre como astrônomos e matemáticos do século XVI e XVII simplificavam multiplicações trigonométricas via fórmulas de prostaferese antes da construção cinemática dos logaritmos por John Napier e Jost Bürgi.",
+                formula: "cos(α) cos(β) = ½ [ cos(α − β) + cos(α + β) ]",
+                snippet: `% A construção cinemática de John Napier (1614)
+% Seja um ponto P movendo-se com velocidade proporcional à distância restante:
+\\[ \\frac{dx}{dt} = -x(t), \\quad \\frac{dy}{dt} = v_0 \\implies y(t) = \\text{NapLog}(x) \\]`
+            },
+            {
+                id: 7,
+                title: "Scripts Python: Álgebra Tensorial e Derivadas no SymPy",
+                category: "codigo",
+                categoryLabel: "Python Científico • SymPy",
+                iconType: "code-dark",
+                meta: "Jupyter Notebook (.ipynb) • Python 3",
+                description: "Repositório de notebooks interativos utilizando a biblioteca SymPy para manipulação simbólica de tensores, símbolos de Christoffel e verificação analítica de soluções exatas de equações diferenciais parciais.",
+                formula: "Γᵏᵢⱼ = ½ gᵏᵐ (∂gₘᵢ/∂xʲ + ∂gₘⱼ/∂xⁱ − ∂gᵢⱼ/∂xᵐ)",
+                snippet: `import sympy as sp
+from sympy.vector import CoordSys3D, gradient, divergence, curl
+
+R = CoordSys3D('R')
+u = R.y**2 * R.i + R.x * R.z * R.j + R.z**2 * R.k
+print("Divergente:", divergence(u))
+print("Rotacional:", curl(u))`
+            },
+            {
+                id: 8,
+                title: "Pôster Científico: Transformação de Kármán-Trefftz",
+                category: "pesquisa",
+                categoryLabel: "Congresso de Iniciação Científica UnB",
+                iconType: "slide-orange",
+                meta: "Pôster A0 (PDF + LaTeX TikZ)",
+                description: "Pôster apresentado no Congresso de Iniciação Científica da UnB ilustrando a geometria conforme da família de aerofólios de Kármán-Trefftz, condição de Kutta e distribuição do coeficiente de pressão.",
+                formula: "C_p = 1 − ( |w'(z)| / U_∞ )²",
+                snippet: `\\usepackage{tikzposter}
+\\title{Escoamento Potencial ao Redor de Perfis de Kármán-Trefftz}
+\\author{Arthur Amorim \\and Orientador -- MAT/UnB}
+\\institute{Universidade de Brasília (UnB) -- CNPq}`
+            }
+        ];
+
+        let currentCategory = 'all';
+        let activeModalMaterial = null;
+
+        // 3. RENDERIZAÇÃO DOS CARDS NA GRADE
+        function renderMaterials() {
+            const grid = document.getElementById('materials-grid');
+            const emptyState = document.getElementById('empty-search-state');
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+
+            const filtered = materialsData.filter(item => {
+                const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
+                const matchesSearch = item.title.toLowerCase().includes(searchQuery) ||
+                                      item.description.toLowerCase().includes(searchQuery) ||
+                                      item.categoryLabel.toLowerCase().includes(searchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            grid.innerHTML = filtered.map(item => `
+                <article onclick="openMaterialModal(${item.id})" 
+                         class="academic-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer group min-h-[180px]">
+                    <div class="mb-4 transform group-hover:scale-105 transition duration-200">
+                        ${getMaterialIconSVG(item.iconType)}
+                    </div>
+                    <h3 class="text-[16px] font-bold text-slate-900 leading-snug group-hover:text-ctaTeal transition px-1">
+                        ${item.title}
+                    </h3>
+                    <span class="text-xs text-slate-400 mt-2 font-medium">
+                        ${item.categoryLabel}
+                    </span>
+                </article>
+            `).join('');
+        }
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = "cat-btn bg-navNavy text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap";
+                } else {
+                    btn.className = "cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap";
+                }
+            });
+            renderMaterials();
+        }
+
+        function filterMaterials() {
+            renderMaterials();
+        }
+
+        function resetFilters() {
+            document.getElementById('search-input').value = '';
+            setCategory('all');
+        }
+
+        // 4. CONTROLE DO MODAL DE DETALHES DO MATERIAL
+        function openMaterialModal(id) {
+            const item = materialsData.find(m => m.id === id);
+            if (!item) return;
+            activeModalMaterial = item;
+
+            document.getElementById('modal-icon-container').innerHTML = getMaterialIconSVG(item.iconType);
+            document.getElementById('modal-category-badge').textContent = item.categoryLabel;
+            document.getElementById('modal-title').textContent = item.title;
+            document.getElementById('modal-description').textContent = item.description;
+            document.getElementById('modal-formula').textContent = item.formula;
+            document.getElementById('modal-snippet').textContent = item.snippet;
+            document.getElementById('modal-meta').textContent = item.meta;
+
+            document.getElementById('material-modal').classList.remove('hidden');
+        }
+
+        function closeMaterialModal() {
+            document.getElementById('material-modal').classList.add('hidden');
+        }
+
+        // Cópia compatível com iFrame usando document.execCommand('copy')
+        function copyModalSnippet() {
+            if (!activeModalMaterial) return;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = activeModalMaterial.snippet;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('Código LaTeX/Python copiado para a área de transferência!');
+            } catch (err) {
+                showToast('Não foi possível copiar automaticamente.');
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
+        function triggerSimulatedDownload() {
+            if (!activeModalMaterial) return;
+            showToast(`Iniciando download de "${activeModalMaterial.title}"...`);
+            closeMaterialModal();
+        }
+
+        // 5. UPLOAD LOCAL DE FOTO DE PERFIL (Via FileReader)
+        function handlePhotoUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = document.getElementById('profile-image');
+                const defaultAvatar = document.getElementById('default-scholar-avatar');
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+                defaultAvatar.classList.add('hidden');
+                showToast('Sua foto de perfil foi atualizada na página!');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // 6. SIMULADOR INTERATIVO DE KÁRMÁN-TREFFTZ (HTML5 Canvas)
+        function drawAirfoil() {
+            const canvas = document.getElementById('airfoil-canvas');
+            if (!canvas) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            const ctx = canvas.getContext('2d');
+
+            const n = parseFloat(document.getElementById('param-n').value);
+            const dy = parseFloat(document.getElementById('param-camber').value);
+            const dx = parseFloat(document.getElementById('param-thick').value);
+
+            document.getElementById('val-n').textContent = n.toFixed(2);
+            document.getElementById('val-camber').textContent = dy.toFixed(2);
+            document.getElementById('val-thick').textContent = dx.toFixed(2);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const cx = canvas.width / 2;
+            const cy = canvas.height / 2;
+            const scale = Math.min(canvas.width, canvas.height) * 0.25;
+
+            // Grade sutil de fundo
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < canvas.width; x += 35) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+            }
+            for (let y = 0; y < canvas.height; y += 35) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+            }
+
+            // Linhas de corrente estilizadas ao redor do perfil
+            ctx.strokeStyle = 'rgba(77, 182, 172, 0.28)';
+            ctx.lineWidth = 1.2;
+            for (let s = -3; s <= 3; s++) {
+                if (s === 0) continue;
+                ctx.beginPath();
+                for (let px = -2.4; px <= 2.4; px += 0.08) {
+                    const yOffset = s * 0.32 + (0.14 * s / (px * px + 0.65)) + dy * 0.3 * Math.exp(-px * px);
+                    const screenX = cx + px * scale;
+                    const screenY = cy - yOffset * scale;
+                    if (px === -2.4) ctx.moveTo(screenX, screenY);
+                    else ctx.lineTo(screenX, screenY);
+                }
+                ctx.stroke();
+            }
+
+            // Cálculo conforme de Kármán-Trefftz
+            const b = 1.0;
+            const radius = Math.sqrt((b - dx) ** 2 + dy ** 2);
+            const points = [];
+            const steps = 180;
+
+            for (let i = 0; i <= steps; i++) {
+                const theta = (2 * Math.PI * i) / steps;
+                const zetaR = dx + radius * Math.cos(theta);
+                const zetaI = dy + radius * Math.sin(theta);
+
+                // w1 = zeta - b, w2 = zeta + b
+                const w1R = zetaR - b, w1I = zetaI;
+                const w2R = zetaR + b, w2I = zetaI;
+
+                // R = w1 / w2 em forma polar
+                const mag1 = Math.hypot(w1R, w1I);
+                const ang1 = Math.atan2(w1I, w1R);
+                const mag2 = Math.hypot(w2R, w2I);
+                const ang2 = Math.atan2(w2I, w2R);
+
+                const ratioMag = Math.pow(mag1 / (mag2 || 1e-6), n);
+                let dAng = ang1 - ang2;
+                if (dAng <= -Math.PI) dAng += 2 * Math.PI;
+                if (dAng > Math.PI) dAng -= 2 * Math.PI;
+                const ratioAng = n * dAng;
+
+                // W = R^n = u + i v
+                const u = ratioMag * Math.cos(ratioAng);
+                const v = ratioMag * Math.sin(ratioAng);
+
+                // z = n*b * (1 + W) / (1 - W)
+                const numR = 1 + u, numI = v;
+                const denR = 1 - u, denI = -v;
+                const denMagSq = denR * denR + denI * denI || 1e-6;
+
+                const zR = n * b * ((numR * denR + numI * denI) / denMagSq);
+                const zI = n * b * ((numI * denR - numR * denI) / denMagSq);
+
+                points.push({ x: cx + zR * scale * 0.55, y: cy - zI * scale * 0.55 });
+            }
+
+            // Desenha o Perfil Aerodinâmico Transformado
+            ctx.beginPath();
+            points.forEach((pt, idx) => {
+                if (idx === 0) ctx.moveTo(pt.x, pt.y);
+                else ctx.lineTo(pt.x, pt.y);
+            });
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(77, 182, 172, 0.22)';
+            ctx.fill();
+            ctx.strokeStyle = '#4db6ac';
+            ctx.lineWidth = 2.6;
+            ctx.stroke();
+        }
+
+        // 7. MODAIS AUXILIARES, FORMULÁRIOS E TOAST
+        function openLattesModal() {
+            document.getElementById('lattes-modal').classList.remove('hidden');
+        }
+        function closeLattesModal() {
+            document.getElementById('lattes-modal').classList.add('hidden');
+        }
+        function openNewMaterialModal() {
+            document.getElementById('new-material-modal').classList.remove('hidden');
+        }
+        function closeNewMaterialModal() {
+            document.getElementById('new-material-modal').classList.add('hidden');
+        }
+
+        function handleAddMaterial(event) {
+            event.preventDefault();
+            const title = document.getElementById('new-title').value;
+            const iconType = document.getElementById('new-type').value;
+            const desc = document.getElementById('new-desc').value;
+
+            const newItem = {
+                id: Date.now(),
+                title: title,
+                category: iconType === 'code-dark' ? 'codigo' : (iconType === 'slide-orange' ? 'pesquisa' : 'ensino'),
+                categoryLabel: "Novo Material Adicionado • UnB",
+                iconType: iconType,
+                meta: "PDF / LaTeX • Adicionado agora",
+                description: desc,
+                formula: "∫_Ω (∇ · F) dV = ∮_∂Ω (F · n) dS",
+                snippet: `% Material gerado por Arthur Amorim (MAT/UnB)\n% Título: ${title}\n\\section{Introdução}\n${desc}`
+            };
+
+            materialsData.unshift(newItem);
+            renderMaterials();
+            closeNewMaterialModal();
+            event.target.reset();
+            showToast('Novo material adicionado à grade com sucesso!');
+        }
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            event.target.reset();
+            showToast('Mensagem enviada com sucesso para Arthur Amorim!');
+        }
+
+        let toastTimeout;
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-message').textContent = msg;
+            toast.classList.remove('hidden');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3600);
+        }
+
+        // 8. MENU MOBILE E INICIALIZAÇÃO
+        window.onload = function() {
+            renderMaterials();
+            drawAirfoil();
+
+            window.addEventListener('resize', drawAirfoil);
+
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        };
+    </script>
 </body>
-  </html>
+</html>
