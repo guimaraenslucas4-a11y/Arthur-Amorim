@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur Amorim | Matemática - UnB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
+    .bg-navy { background-color: #1c2b39; }
+    .btn-teal { background-color: #2f7d6d; }
+    .btn-teal:hover { background-color: #246356; }
+    .btn-slate { background-color: #5a6b7c; }
+    .btn-slate:hover { background-color: #475569; }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- BARRA DE NAVEGAÇÃO SUPERIOR -->
+  <header class="bg-navy text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+      <a href="#" class="text-lg font-bold tracking-wider uppercase">ARTHUR AMORIM</a>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-200">
+        <a href="#inicio" class="text-teal-400 font-semibold">Início</a>
+        <a href="#sobre" class="hover:text-white transition">Sobre Mim</a>
+        <a href="#materiais" class="hover:text-white transition">Materiais</a>
+        <a href="#pesquisa" class="hover:text-white transition">Pesquisa</a>
+        <a href="#projetos" class="hover:text-white transition">Projetos</a>
+        <a href="#contato" class="hover:text-white transition">Contato</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <!-- Substitua o # pelo link real do seu Currículo Lattes -->
+        <a href="http://lattes.cnpq.br/" target="_blank" rel="noopener noreferrer"
+           class="bg-slate-600/80 hover:bg-slate-500 text-white text-xs font-semibold px-4 py-2 rounded-full transition">
+          Currículo Lattes
+        </a>
+        <!-- Ícone GitHub -->
+        <a href="https://github.com/guimaraenslucas4-a11y" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-white" title="GitHub">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+        <!-- Ícone LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-white" title="LinkedIn">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEÇÃO PRINCIPAL (HERO) -->
+  <section id="inicio" class="bg-gradient-to-b from-slate-50 to-slate-100/70 border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+      
+      <!-- Foto de Perfil -->
+      <div class="md:col-span-5">
+        <div class="rounded-xl overflow-hidden shadow-lg border border-slate-200 bg-white">
+          <!-- Para usar sua foto, suba um arquivo chamado perfil.jpg no GitHub e troque o src abaixo por "perfil.jpg" -->
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+               alt="Foto de Arthur Amorim" 
+               class="w-full h-80 object-cover">
+        </div>
+      </div>
+
+      <!-- Apresentação Acadêmica -->
+      <div class="md:col-span-7 space-y-4">
+        <h1 class="text-3xl md:text-4xl font-bold text-slate-900">
+          Olá! Sou o Arthur Amorim
+        </h1>
+        <h2 class="text-lg md:text-xl font-semibold text-slate-800 leading-snug">
+          Pesquisador (PIBIC/CNPq), Monitor e Graduando em Matemática na UnB
+        </h2>
+        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+          Este espaço é dedicado a compartilhar materiais didáticos, listas de exercícios, notas de estudo, apresentações de pesquisa e códigos que desenvolvo ao longo da minha trajetória no Departamento de Matemática da Universidade de Brasília (UnB).
+        </p>
+        <div class="pt-2 flex flex-wrap gap-4">
+          <a href="#materiais" class="btn-teal text-white font-medium text-sm px-6 py-3 rounded-lg shadow transition">
+            Ver Materiais (PDFs)
+          </a>
+          <a href="#sobre" class="btn-slate text-white font-medium text-sm px-6 py-3 rounded-lg shadow transition">
+            Meu Currículo
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO: MATERIAIS RECENTES -->
+  <section id="materiais" class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-slate-900 mb-6">Materiais Recentes</h2>
+    
+    <!-- Grade de 4 Cartões -->
+    <div id="grade-materiais" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Os cartões são gerados automaticamente pelo script no final do arquivo -->
+    </div>
+  </section>
+
+  <!-- SEÇÃO: PESQUISA E INICIAÇÃO CIENTÍFICA -->
+  <section id="pesquisa" class="bg-white border-y border-slate-200 py-12">
+    <div class="max-w-5xl mx-auto px-6 space-y-6">
+      <h2 class="text-2xl font-bold text-slate-900">Pesquisa Acadêmica</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+          <span class="text-xs font-semibold uppercase tracking-wider text-teal-700 bg-teal-100 px-3 py-1 rounded-full">PIBIC / CNPq • UnB</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-3">Dinâmica dos Fluidos e Aerodinâmica</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Estudo das equações de Navier-Stokes e Euler, teoria da camada limite de Prandtl e aplicações de variáveis complexas e transformações conformes (Kármán-Trefftz e teorema de Kutta-Joukowski) sob orientação do Prof. Dr. Mauro Patrão.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-200 bg-slate-50">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-700 bg-blue-100 px-3 py-1 rounded-full">Probabilidade & Finanças</span>
+          <h3 class="text-lg font-bold text-slate-900 mt-3">Teoria da Medida e Precificação de Opções</h3>
+          <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+            Investigações em probabilidade com teoria da medida (sigma-álgebras, integração de Lebesgue) e modelagem matemática financeira pelo modelo binomial de Cox-Ross-Rubinstein e equação diferencial parcial de Black-Scholes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO: SOBRE MIM E PROJETOS -->
+  <section id="sobre" class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+      <h2 class="text-xl font-bold text-slate-900 mb-3">Sobre Mim & Ensino</h2>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Graduando em Matemática pela Universidade de Brasília (UnB). Atuo como monitor em disciplinas de graduação do Departamento de Matemática, incluindo <strong>Cálculo de Probabilidade 1</strong> e <strong>MAT0028</strong>, além de desenvolver projetos voltados ao ensino de Matemática e história dos logaritmos.
+      </p>
+    </div>
+    <div id="projetos">
+      <h2 class="text-xl font-bold text-slate-900 mb-3">Ferramentas & Projetos</h2>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        Desenvolvimento de materiais tipográficos em <strong>LaTeX</strong> (templates acadêmicos, pôsteres científicos e apresentações Beamer) e rotinas computacionais em <strong>Python</strong> (álgebra tensorial com SymPy e visualizações numéricas com NumPy/Matplotlib).
+      </p>
+    </div>
+  </section>
+
+  <!-- RODAPÉ / CONTATO -->
+  <footer id="contato" class="bg-navy text-slate-300 py-8 text-center text-sm">
+    <div class="max-w-5xl mx-auto px-6 space-y-2">
+      <p class="font-semibold text-white">Arthur Amorim — Departamento de Matemática (UnB)</p>
+      <p>Brasília, DF • Contato acadêmico e disponibilização de materiais didáticos</p>
+    </div>
+  </footer>
+
+  <!-- LISTA DE MATERIAIS (FÁCIL DE EDITAR) -->
+  <script>
+    /*
+     * COMO ADICIONAR OU MUDAR SEUS PDFs:
+     * Basta trocar o "#" dentro de linkPdf pelo link do seu arquivo no Google Drive
+     * ou pelo nome do arquivo salvo no GitHub (ex: "lista1.pdf").
+     */
+    const materiais = [
+      {
+        titulo: "Lista de Exercícios - Cálculo de Probabilidade 1",
+        icone: "pdf",
+        linkPdf: "#"
+      },
+      {
+        titulo: "Notas de Aula: MAT0028 e Teoria da Medida",
+        icone: "notas",
+        linkPdf: "#"
+      },
+      {
+        titulo: "Template LaTeX para Relatórios e Beamer",
+        icone: "codigo",
+        linkPdf: "#"
+      },
+      {
+        titulo: "Slides: Dinâmica dos Fluidos (PIBIC)",
+        icone: "slides",
+        linkPdf: "#"
+      }
+    ];
+
+    const iconesSvg = {
+      pdf: `<div class="w-12 h-14 bg-red-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
+              <span class="font-bold text-xs tracking-wider">PDF</span>
+            </div>`,
+      notas: `<div class="w-12 h-14 bg-blue-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
+                <span class="font-bold text-xs tracking-wider">DOC</span>
+              </div>`,
+      codigo: `<div class="w-12 h-14 bg-slate-800 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
+                 <span class="font-mono font-bold text-sm">&lt;/&gt;</span>
+               </div>`,
+      slides: `<div class="w-12 h-14 bg-orange-600 rounded-md flex items-center justify-center text-white shadow-sm mx-auto mb-4">
+                 <span class="font-bold text-xs tracking-wider">PPT</span>
+               </div>`
+    };
+
+    const container = document.getElementById("grade-materiais");
+    materiais.forEach(item => {
+      const card = document.createElement("a");
+      card.href = item.linkPdf;
+      if (item.linkPdf !== "#") {
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      }
+      card.className = "bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition flex flex-col items-center justify-center text-center";
+      card.innerHTML = `
+        ${iconesSvg[item.icone] || iconesSvg.pdf}
+        <h3 class="font-semibold text-slate-800 text-sm leading-snug">${item.titulo}</h3>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+  </html>
