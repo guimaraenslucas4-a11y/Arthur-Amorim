@@ -590,26 +590,39 @@
                     </div>
                 </div>
 
-                <!-- Formulário de Contato Interativo -->
+                <!-- Formulário de Contato Funcional (FormSubmit) -->
                 <div class="lg:col-span-6">
-                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-4">
+                    <form action="https://formsubmit.co/guimaraenslucas4@gmail.com" method="POST" class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-4">
+                        
+                        <!-- Configurações ocultas do FormSubmit -->
+                        <input type="hidden" name="_subject" value="Novo contato pelo Portal Acadêmico (UnB)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Seu Nome</label>
-                            <input type="text" required placeholder="Ex: Maria Silva (UnB)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                            <input type="text" name="Nome" required placeholder="Ex: Maria Silva (UnB)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
                         </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-200 mb-1">Seu E-mail (para resposta)</label>
+                            <input type="email" name="Email" required placeholder="Ex: aluno@aluno.unb.br" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                        </div>
+
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Assunto</label>
-                            <select class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
-                                <option>Dúvida de Monitoria (Probabilidade / MAT0028)</option>
-                                <option>Iniciação Científica / Pesquisa</option>
-                                <option>Templates LaTeX / Códigos Python</option>
-                                <option>Outro Assunto Acadêmico</option>
+                            <select name="Assunto" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                                <option value="Dúvida de Monitoria (Probabilidade / MAT0028)">Dúvida de Monitoria (Probabilidade / MAT0028)</option>
+                                <option value="Iniciação Científica / Pesquisa">Iniciação Científica / Pesquisa</option>
+                                <option value="Outro Assunto Acadêmico">Outro Assunto Acadêmico</option>
                             </select>
                         </div>
+
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Mensagem</label>
-                            <textarea rows="3" required placeholder="Escreva sua mensagem ou dúvida matemática..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal"></textarea>
+                            <textarea name="Mensagem" rows="3" required placeholder="Escreva sua mensagem ou dúvida matemática..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal"></textarea>
                         </div>
+
                         <button type="submit" class="w-full bg-navTeal hover:bg-[#3da197] text-slate-950 font-bold py-2.5 px-4 rounded-xl transition text-sm">
                             Enviar Mensagem
                         </button>
