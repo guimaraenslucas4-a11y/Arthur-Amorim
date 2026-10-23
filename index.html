@@ -409,11 +409,11 @@
     </section>
 
     <!-- ==========================================
-         5. SEÇÃO PESQUISA (Com Simulador Matemático Interativo)
+         5. SEÇÃO PESQUISA (Com Simuladores Matemáticos Interativos)
          ========================================== -->
     <section id="pesquisa" class="py-16 bg-white border-t border-slate-200/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mb-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="max-w-3xl">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-iconOrange text-xs font-semibold uppercase tracking-wider mb-3">
                     Iniciação Científica (PIBIC / CNPq)
                 </div>
@@ -421,13 +421,98 @@
                     Linhas de Pesquisa & Visualização Matemática
                 </h2>
                 <p class="text-slate-600 mt-2">
-                    Abaixo você encontra uma síntese das minhas investigações atuais e um laboratório interativo demonstrando a transformação conforme de <strong>Kármán-Trefftz</strong> aplicada a perfis aerodinâmicos.
+                    Abaixo você encontra uma síntese das minhas investigações atuais e laboratórios interativos demonstrando a convergência do modelo binomial de <strong>Cox-Ross-Rubinstein (CRR)</strong> para a EDP de <strong>Black-Scholes</strong> e a transformação conforme de <strong>Kármán-Trefftz</strong>.
                 </p>
             </div>
 
+            <!-- LABORATÓRIO 1: FINANÇAS MATEMÁTICAS (BLACK-SCHOLES & CRR) -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
                 
-                <!-- Explicação Teórica -->
+                <!-- Explicação Teórica & Controles (Black-Scholes) -->
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Finanças Matemáticas & Processos Estocásticos</span>
+                    <h3 class="text-xl font-bold text-slate-900">
+                        EDP de Black-Scholes & Portfólio Replicante
+                    </h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Partindo da árvore binomial discreta de Cox-Ross-Rubinstein sob a medida neutra ao risco e tomando o limite contínuo (<span class="math-formula">Δt → 0</span>), o preço de uma opção sem arbitragem satisfaz a EDP de Black-Scholes:
+                    </p>
+                    
+                    <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center my-2 shadow-inner">
+                        <span class="math-formula text-base sm:text-lg text-slate-900 font-semibold">
+                            ∂V/∂t + ½ σ² S² (∂²V/∂S²) + r S (∂V/∂S) − r V = 0
+                        </span>
+                    </div>
+
+                    <!-- Controles do Simulador Black-Scholes -->
+                    <div class="space-y-3 pt-2">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-sigma">Volatilidade Anual (σ): <span id="val-sigma" class="text-ctaTeal font-mono">30%</span></label>
+                                <span class="text-slate-400">Strike K = 100</span>
+                            </div>
+                            <input id="param-sigma" type="range" min="0.10" max="0.80" step="0.01" value="0.30" oninput="drawBlackScholes()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-t">Tempo até o Vencimento (T): <span id="val-t" class="text-ctaTeal font-mono">1.00 ano</span></label>
+                                <span class="text-slate-400">Expiração → 0.05</span>
+                            </div>
+                            <input id="param-t" type="range" min="0.05" max="2.00" step="0.05" value="1.00" oninput="drawBlackScholes()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+                                <label for="param-r">Taxa Livre de Risco (r): <span id="val-r" class="text-ctaTeal font-mono">10%</span></label>
+                                <span class="text-slate-400">Contínua</span>
+                            </div>
+                            <input id="param-r" type="range" min="0.00" max="0.20" step="0.01" value="0.10" oninput="drawBlackScholes()" class="w-full accent-ctaTeal cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Canvas Interativo Black-Scholes -->
+                <div class="lg:col-span-7">
+                    <div class="bg-navNavy rounded-xl p-4 shadow-md border border-slate-700">
+                        
+                        <!-- Indicadores Numéricos em Tempo Real -->
+                        <div class="grid grid-cols-3 gap-2 mb-3">
+                            <div class="bg-[#111b24] p-2.5 rounded-lg border border-slate-700/80 text-center">
+                                <span class="block text-[10px] uppercase tracking-wider text-slate-400">Call Black-Scholes</span>
+                                <span id="metric-bs" class="text-sm sm:text-base font-mono font-bold text-navTeal">R$ 16.73</span>
+                            </div>
+                            <div class="bg-[#111b24] p-2.5 rounded-lg border border-slate-700/80 text-center">
+                                <span class="block text-[10px] uppercase tracking-wider text-slate-400">Árvore CRR (N=25)</span>
+                                <span id="metric-crr" class="text-sm sm:text-base font-mono font-bold text-white">R$ 16.65</span>
+                            </div>
+                            <div class="bg-[#111b24] p-2.5 rounded-lg border border-slate-700/80 text-center">
+                                <span class="block text-[10px] uppercase tracking-wider text-slate-400">Hedge Δ = ∂C/∂S</span>
+                                <span id="metric-delta" class="text-sm sm:text-base font-mono font-bold text-amber-400">0.685</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-between text-[11px] text-slate-300 mb-2 px-1 gap-2">
+                            <span class="font-mono">Curva V(S, t) vs. Preço do Ativo S</span>
+                            <div class="flex items-center gap-3">
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-0.5 bg-navTeal inline-block"></span> Black-Scholes</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-0.5 bg-amber-400 inline-block"></span> Tangente Δ</span>
+                                <span class="flex items-center gap-1"><span class="w-2.5 h-0.5 bg-orange-500 inline-block"></span> Payoff max(S−K, 0)</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full h-64 sm:h-72 bg-[#111b24] rounded-lg overflow-hidden relative">
+                            <canvas id="bs-canvas" class="w-full h-full block"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- LABORATÓRIO 2: DINÂMICA DOS FLUIDOS (KÁRMÁN-TREFFTZ) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+                
+                <!-- Explicação Teórica (Kármán-Trefftz) -->
                 <div class="lg:col-span-5 space-y-4">
                     <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Análise Complexa & Dinâmica dos Fluidos</span>
                     <h3 class="text-xl font-bold text-slate-900">
@@ -439,15 +524,15 @@
                     
                     <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center my-2 shadow-inner">
                         <span class="math-formula text-base sm:text-lg text-slate-900 font-semibold">
-                            (z − nb) / (z + nb) = [ (ζ − b) / (ζ + b) ]<sup>n</sup>
+                            (z − nb) / (z + nb) = [ (T(z) − b) / (T(z) + b) ]<sup>l</sup>
                         </span>
                     </div>
 
-                    <!-- Controles do Simulador -->
+                    <!-- Controles do Simulador Kármán-Trefftz -->
                     <div class="space-y-3 pt-2">
                         <div>
                             <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
-                                <label for="param-n">Expoente Conforme (n): <span id="val-n" class="text-ctaTeal font-mono">1.88</span></label>
+                                <label for="param-n">Expoente Conforme (l): <span id="val-n" class="text-ctaTeal font-mono">1.88</span></label>
                                 <span class="text-slate-400">Joukowski = 2.00</span>
                             </div>
                             <input id="param-n" type="range" min="1.65" max="2.00" step="0.01" value="1.88" oninput="drawAirfoil()" class="w-full accent-ctaTeal cursor-pointer">
@@ -470,7 +555,7 @@
                     </div>
                 </div>
 
-                <!-- Canvas Interativo -->
+                <!-- Canvas Interativo Kármán-Trefftz -->
                 <div class="lg:col-span-7">
                     <div class="bg-navNavy rounded-xl p-4 shadow-md border border-slate-700">
                         <div class="flex items-center justify-between text-xs text-slate-300 mb-2 px-1">
@@ -725,8 +810,6 @@
                 <p><strong>Idiomas & Computação:</strong> Português (Nativo), Inglês (Leitura Científica Avançada) e LaTeX.</p>
             </div>
 
-            
-
             <div class="flex justify-end gap-3 pt-2">
                 <button onclick="closeLattesModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100">Fechar</button>
                 <button onclick="showToast('Currículo Acadêmico em PDF gerado para visualização!'); closeLattesModal();" class="px-5 py-2 rounded-xl bg-navNavy text-white text-sm font-semibold hover:opacity-95">
@@ -736,7 +819,6 @@
         </div>
     </div>
 
-  
     <!-- ==========================================
          TOAST DE NOTIFICAÇÃO (Sem uso de alert!)
          ========================================== -->
@@ -753,7 +835,6 @@
         function getMaterialIconSVG(type) {
             switch (type) {
                 case 'pdf-red':
-                    // Ícone PDF Vermelho idêntico ao primeiro card da imagem
                     return `
                         <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#c62828"/>
@@ -762,7 +843,6 @@
                         </svg>
                     `;
                 case 'doc-blue':
-                    // Ícone PDF/Notas Azul idêntico ao segundo card da imagem
                     return `
                         <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#1565c0"/>
@@ -771,7 +851,6 @@
                         </svg>
                     `;
                 case 'code-dark':
-                    // Ícone Documento de Código </> Escuro idêntico ao terceiro card da imagem
                     return `
                         <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 6C10 3.79086 11.7909 2 14 2H29L39 12V42C39 44.2091 37.2091 46 35 46H14C11.7909 46 10 44.2091 10 42V6Z" fill="#263238"/>
@@ -780,7 +859,6 @@
                         </svg>
                     `;
                 case 'slide-orange':
-                    // Ícone Quadro de Apresentação/Slides Laranja idêntico ao quarto card da imagem
                     return `
                         <svg class="w-12 h-12 mx-auto" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="7" y="8" width="34" height="24" rx="3" fill="#d84315"/>
@@ -936,8 +1014,10 @@ print("Rotacional:", curl(u))`
         // 3. RENDERIZAÇÃO DOS CARDS NA GRADE
         function renderMaterials() {
             const grid = document.getElementById('materials-grid');
+            if (!grid) return;
             const emptyState = document.getElementById('empty-search-state');
-            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            const searchInput = document.getElementById('search-input');
+            const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
 
             const filtered = materialsData.filter(item => {
                 const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
@@ -949,11 +1029,11 @@ print("Rotacional:", curl(u))`
 
             if (filtered.length === 0) {
                 grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
+                if (emptyState) emptyState.classList.remove('hidden');
                 return;
             }
 
-            emptyState.classList.add('hidden');
+            if (emptyState) emptyState.classList.add('hidden');
             grid.innerHTML = filtered.map(item => `
                 <article onclick="openMaterialModal(${item.id})" 
                          class="academic-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer group min-h-[180px]">
@@ -987,7 +1067,8 @@ print("Rotacional:", curl(u))`
         }
 
         function resetFilters() {
-            document.getElementById('search-input').value = '';
+            const searchInput = document.getElementById('search-input');
+            if (searchInput) searchInput.value = '';
             setCategory('all');
         }
 
@@ -1042,15 +1123,176 @@ print("Rotacional:", curl(u))`
             reader.onload = function(e) {
                 const img = document.getElementById('profile-image');
                 const defaultAvatar = document.getElementById('default-scholar-avatar');
-                img.src = e.target.result;
-                img.classList.remove('hidden');
-                defaultAvatar.classList.add('hidden');
+                if (img) {
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                }
+                if (defaultAvatar) {
+                    defaultAvatar.classList.add('hidden');
+                }
                 showToast('Sua foto de perfil foi atualizada na página!');
             };
             reader.readAsDataURL(file);
         }
 
-        // 6. SIMULADOR INTERATIVO DE KÁRMÁN-TREFFTZ (HTML5 Canvas)
+        // 6A. SIMULADOR INTERATIVO DE BLACK-SCHOLES & BINOMIAL CRR (HTML5 Canvas)
+        function normCDF(x) {
+            const a1 =  0.254829592, a2 = -0.284496736, a3 =  1.421413741;
+            const a4 = -1.453152027, a5 =  1.061405429, p  =  0.3275911;
+            const sign = x < 0 ? -1 : 1;
+            const absX = Math.abs(x) / Math.sqrt(2.0);
+            const t = 1.0 / (1.0 + p * absX);
+            const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-absX * absX);
+            return 0.5 * (1.0 + sign * y);
+        }
+
+        function blackScholesCall(S, K, T, r, sigma) {
+            if (T <= 0 || sigma <= 0) return { price: Math.max(S - K * Math.exp(-r * T), 0), delta: S > K ? 1 : 0 };
+            const d1 = (Math.log(S / K) + (r + 0.5 * sigma * sigma) * T) / (sigma * Math.sqrt(T));
+            const d2 = d1 - sigma * Math.sqrt(T);
+            const delta = normCDF(d1);
+            const price = S * delta - K * Math.exp(-r * T) * normCDF(d2);
+            return { price, delta };
+        }
+
+        function crrBinomialCall(S0, K, T, r, sigma, N) {
+            const dt = T / N;
+            const u = Math.exp(sigma * Math.sqrt(dt));
+            const d = 1 / u;
+            const p = (Math.exp(r * dt) - d) / (u - d);
+            const discount = Math.exp(-r * dt);
+            let values = new Array(N + 1);
+            for (let i = 0; i <= N; i++) {
+                const ST = S0 * Math.pow(u, N - i) * Math.pow(d, i);
+                values[i] = Math.max(ST - K, 0);
+            }
+            for (let step = N - 1; step >= 0; step--) {
+                for (let i = 0; i <= step; i++) {
+                    values[i] = discount * (p * values[i] + (1 - p) * values[i + 1]);
+                }
+            }
+            return values[0];
+        }
+
+        function drawBlackScholes() {
+            const canvas = document.getElementById('bs-canvas');
+            if (!canvas) return;
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+            const ctx = canvas.getContext('2d');
+
+            const sigma = parseFloat(document.getElementById('param-sigma').value);
+            const T = parseFloat(document.getElementById('param-t').value);
+            const r = parseFloat(document.getElementById('param-r').value);
+            const K = 100;
+            const S0 = 100;
+
+            document.getElementById('val-sigma').textContent = Math.round(sigma * 100) + '%';
+            document.getElementById('val-t').textContent = T.toFixed(2) + (T === 1 ? ' ano' : ' anos');
+            document.getElementById('val-r').textContent = Math.round(r * 100) + '%';
+
+            const atTheMoney = blackScholesCall(S0, K, T, r, sigma);
+            const crrPrice = crrBinomialCall(S0, K, T, r, sigma, 25);
+
+            document.getElementById('metric-bs').textContent = 'R$ ' + atTheMoney.price.toFixed(2);
+            document.getElementById('metric-crr').textContent = 'R$ ' + crrPrice.toFixed(2);
+            document.getElementById('metric-delta').textContent = atTheMoney.delta.toFixed(3);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const padLeft = 42, padRight = 20, padTop = 20, padBottom = 32;
+            const plotW = canvas.width - padLeft - padRight;
+            const plotH = canvas.height - padTop - padBottom;
+
+            const sMin = 50, sMax = 150;
+            const vMax = 65;
+
+            const toX = (S) => padLeft + ((S - sMin) / (sMax - sMin)) * plotW;
+            const toY = (V) => padTop + plotH - (V / vMax) * plotH;
+
+            // Grade sutil de fundo
+            ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
+            ctx.lineWidth = 1;
+            ctx.fillStyle = '#94a3b8';
+            ctx.font = '10px JetBrains Mono, monospace';
+
+            for (let s = 60; s <= 140; s += 20) {
+                const x = toX(s);
+                ctx.beginPath(); ctx.moveTo(x, padTop); ctx.lineTo(x, padTop + plotH); ctx.stroke();
+                ctx.fillText('S=' + s, x - 14, canvas.height - 10);
+            }
+            for (let v = 0; v <= 60; v += 15) {
+                const y = toY(v);
+                ctx.beginPath(); ctx.moveTo(padLeft, y); ctx.lineTo(padLeft + plotW, y); ctx.stroke();
+                ctx.fillText(v.toString(), 14, y + 3);
+            }
+
+            // Linha vertical marcando o Strike K = 100
+            ctx.save();
+            ctx.setLineDash([4, 4]);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+            ctx.beginPath();
+            ctx.moveTo(toX(K), padTop);
+            ctx.lineTo(toX(K), padTop + plotH);
+            ctx.stroke();
+            ctx.restore();
+
+            // 1. Payoff no Vencimento: max(S - K, 0)
+            ctx.save();
+            ctx.setLineDash([6, 4]);
+            ctx.strokeStyle = '#f97316';
+            ctx.lineWidth = 1.8;
+            ctx.beginPath();
+            for (let s = sMin; s <= sMax; s += 1) {
+                const payoff = Math.max(s - K, 0);
+                const x = toX(s), y = toY(payoff);
+                if (s === sMin) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.restore();
+
+            // 2. Reta Tangente do Portfólio Replicante (Delta Hedge) em S0 = 100
+            ctx.save();
+            ctx.strokeStyle = '#fbbf24';
+            ctx.lineWidth = 1.6;
+            ctx.beginPath();
+            for (let s = 72; s <= 128; s += 2) {
+                const tangentVal = atTheMoney.price + atTheMoney.delta * (s - S0);
+                if (tangentVal < 0 || tangentVal > vMax) continue;
+                const x = toX(s), y = toY(tangentVal);
+                if (s === 72) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+            ctx.restore();
+
+            // 3. Curva Analítica de Black-Scholes V(S, t)
+            ctx.beginPath();
+            for (let s = sMin; s <= sMax; s += 1) {
+                const bs = blackScholesCall(s, K, T, r, sigma).price;
+                const x = toX(s), y = toY(bs);
+                if (s === sMin) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = '#4db6ac';
+            ctx.lineWidth = 2.8;
+            ctx.stroke();
+
+            // Ponto de Destaque em S0 = 100
+            const ptX = toX(S0);
+            const ptY = toY(atTheMoney.price);
+            ctx.beginPath();
+            ctx.arc(ptX, ptY, 5, 0, 2 * Math.PI);
+            ctx.fillStyle = '#fbbf24';
+            ctx.fill();
+            ctx.strokeStyle = '#111b24';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // 6B. SIMULADOR INTERATIVO DE KÁRMÁN-TREFFTZ (HTML5 Canvas)
         function drawAirfoil() {
             const canvas = document.getElementById('airfoil-canvas');
             if (!canvas) return;
@@ -1110,11 +1352,9 @@ print("Rotacional:", curl(u))`
                 const zetaR = dx + radius * Math.cos(theta);
                 const zetaI = dy + radius * Math.sin(theta);
 
-                // w1 = zeta - b, w2 = zeta + b
                 const w1R = zetaR - b, w1I = zetaI;
                 const w2R = zetaR + b, w2I = zetaI;
 
-                // R = w1 / w2 em forma polar
                 const mag1 = Math.hypot(w1R, w1I);
                 const ang1 = Math.atan2(w1I, w1R);
                 const mag2 = Math.hypot(w2R, w2I);
@@ -1126,11 +1366,9 @@ print("Rotacional:", curl(u))`
                 if (dAng > Math.PI) dAng -= 2 * Math.PI;
                 const ratioAng = n * dAng;
 
-                // W = R^n = u + i v
                 const u = ratioMag * Math.cos(ratioAng);
                 const v = ratioMag * Math.sin(ratioAng);
 
-                // z = n*b * (1 + W) / (1 - W)
                 const numR = 1 + u, numI = v;
                 const denR = 1 - u, denI = -v;
                 const denMagSq = denR * denR + denI * denI || 1e-6;
@@ -1163,10 +1401,12 @@ print("Rotacional:", curl(u))`
             document.getElementById('lattes-modal').classList.add('hidden');
         }
         function openNewMaterialModal() {
-            document.getElementById('new-material-modal').classList.remove('hidden');
+            const modal = document.getElementById('new-material-modal');
+            if (modal) modal.classList.remove('hidden');
         }
         function closeNewMaterialModal() {
-            document.getElementById('new-material-modal').classList.add('hidden');
+            const modal = document.getElementById('new-material-modal');
+            if (modal) modal.classList.add('hidden');
         }
 
         function handleAddMaterial(event) {
@@ -1214,21 +1454,27 @@ print("Rotacional:", curl(u))`
         // 8. MENU MOBILE E INICIALIZAÇÃO
         window.onload = function() {
             renderMaterials();
+            drawBlackScholes();
             drawAirfoil();
 
-            window.addEventListener('resize', drawAirfoil);
+            window.addEventListener('resize', () => {
+                drawBlackScholes();
+                drawAirfoil();
+            });
 
             const mobileBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-
-            document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
                 });
-            });
+
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
         };
     </script>
 </body>
