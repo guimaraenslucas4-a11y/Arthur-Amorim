@@ -612,7 +612,7 @@
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Assunto</label>
                             <select name="Assunto" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
-                                <option value="Dúvida de Monitoria (Probabilidade / MAT0028)">Dúvida de Monitoria (Probabilidade / MAT0028)</option>
+                                <option value="Dúvida de Monitoria (Probabilidade / MAT0028)">Dúvida de Monitoria </option>
                                 <option value="Iniciação Científica / Pesquisa">Iniciação Científica / Pesquisa</option>
                                 <option value="Outro Assunto Acadêmico">Outro Assunto Acadêmico</option>
                             </select>
@@ -726,13 +726,11 @@
             <div class="space-y-3 text-sm text-slate-700">
                 <p><strong>Formação:</strong> Graduando em Matemática — Universidade de Brasília (UnB).</p>
                 <p><strong>Atuação Científica:</strong> Bolsista/Pesquisador de Iniciação Científica (CNPq) em Matemática Aplicada (Dinâmica dos Fluidos e Finanças Matemáticas).</p>
-                <p><strong>Atuação Docente (Monitoria):</strong> Cálculo de Probabilidade 1 e MAT0028 (Departamento de Matemática - UnB).</p>
-                <p><strong>Idiomas & Computação:</strong> Português (Nativo), Inglês (Leitura Científica Avançada), LaTeX, Python (SymPy, NumPy, SciPy).</p>
+                
+                <p><strong>Idiomas & Computação:</strong> Português (Nativo), Inglês (Leitura Científica Avançada) e LaTeX.</p>
             </div>
 
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-600">
-                <strong>Dica de Configuração:</strong> Ao hospedar este arquivo no seu GitHub Pages (`arthuramorim.github.io`), basta substituir o link deste botão pela URL pública oficial do seu Currículo Lattes ou PDF do seu CV em `static/cv_arthur_amorim.pdf`.
-            </div>
+            
 
             <div class="flex justify-end gap-3 pt-2">
                 <button onclick="closeLattesModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100">Fechar</button>
@@ -743,41 +741,7 @@
         </div>
     </div>
 
-    <!-- ==========================================
-         MODAL PARA ADICIONAR NOVO MATERIAL (SIMULAÇÃO)
-         ========================================== -->
-    <div id="new-material-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-slate-200 space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-                <h3 class="text-lg font-bold text-slate-900">Publicar Novo Material no Site</h3>
-                <button onclick="closeNewMaterialModal()" class="text-slate-400 hover:text-slate-700">✕</button>
-            </div>
-            <form onsubmit="handleAddMaterial(event)" class="space-y-3.5 text-sm">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Título do Material</label>
-                    <input id="new-title" type="text" required placeholder="Ex: Lista 4 - Variáveis Aleatórias Contínuas" class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Categoria & Ícone</label>
-                    <select id="new-type" class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal">
-                        <option value="pdf-red">Lista de Exercícios PDF (Ícone Vermelho)</option>
-                        <option value="doc-blue">Notas de Aula PDF (Ícone Azul)</option>
-                        <option value="code-dark">Template LaTeX / Script Python (Ícone Escuro)</option>
-                        <option value="slide-orange">Slides Beamer / Pesquisa (Ícone Laranja)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Breve Descrição</label>
-                    <textarea id="new-desc" rows="2" required placeholder="Resumo dos tópicos abordados no documento..." class="w-full px-3 py-2 border border-slate-300 rounded-xl focus:outline-none focus:border-ctaTeal"></textarea>
-                </div>
-                <div class="flex justify-end gap-2 pt-2">
-                    <button type="button" onclick="closeNewMaterialModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600">Cancelar</button>
-                    <button type="submit" class="px-4 py-2 rounded-xl bg-ctaTeal text-white font-semibold">Adicionar à Grade</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
+  
     <!-- ==========================================
          TOAST DE NOTIFICAÇÃO (Sem uso de alert!)
          ========================================== -->
