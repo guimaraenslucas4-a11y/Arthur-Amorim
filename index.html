@@ -974,13 +974,118 @@ def crr_call_price(S0, K, T, r, sigma, N):
                 meta: "Jupyter Notebook (.ipynb) • Python 3",
                 description: "Repositório de notebooks interativos utilizando a biblioteca SymPy para manipulação simbólica de tensores, símbolos de Christoffel e verificação analítica de soluções exatas de equações diferenciais parciais.",
                 formula: "Γᵏᵢⱼ = ½ gᵏᵐ (∂gₘᵢ/∂xʲ + ∂gₘⱼ/∂xⁱ − ∂gᵢⱼ/∂xᵐ)",
-                snippet: `import sympy as sp
-from sympy.vector import CoordSys3D, gradient, divergence, curl
+                snippet: `# ==============================================================================
+# UNIVERSIDADE DE BRASÍLIA (UnB) - DEPARTAMENTO DE MATEMÁTICA (MAT)
+# Autor: Arthur Amorim
+# Material: Álgebra Tensorial, Símbolos de Christoffel e EDPs no SymPy
+# ==============================================================================
 
+import sympy as sp
+from sympy.vector import CoordSys3D, gradient, divergence, curl
+from IPython.display import display, Math
+
+sp.init_printing(use_unicode=True)
+
+# ------------------------------------------------------------------------------
+# PARTE 1: CÁLCULO VETORIAL (GRADIENTE, DIVERGENTE E ROTACIONAL)
+# ------------------------------------------------------------------------------
+print("=== 1. CÁLCULO VETORIAL EM 3D ===")
 R = CoordSys3D('R')
+
+# Campo vetorial u(x, y, z) = y^2 i + x*z j + z^2 k
 u = R.y**2 * R.i + R.x * R.z * R.j + R.z**2 * R.k
-print("Divergente:", divergence(u))
-print("Rotacional:", curl(u))`
+
+# Campo escalar potencial phi(x, y, z) = x^2 * y + z^3
+phi = R.x**2 * R.y + R.z**3
+
+print("Campo Vetorial u       :", u)
+print("Divergente (div u)     :", divergence(u))
+print("Rotacional (rot u)     :", curl(u))
+print("Gradiente (grad phi)   :", gradient(phi))
+print("\n" + "="*60 + "\n")
+
+
+# ------------------------------------------------------------------------------
+# PARTE 2: ÁLGEBRA TENSORIAL E SÍMBOLOS DE CHRISTOFFEL (2ª ESPÉCIE)
+# Fórmula: \Gamma^k_{ij} = 1/2 g^{km} (\partial_j g_{mi} + \partial_i g_{mj} - \partial_m g_{ij})
+# ------------------------------------------------------------------------------
+print("=== 2. SÍMBOLOS DE CHRISTOFFEL (COORDENADAS ESFÉRICAS) ===")
+
+# Definindo variáveis simbólicas (r, theta, varphi)
+r, theta, varphi = sp.symbols('r theta varphi', positive=True, real=True)
+coords = [r, theta, varphi]
+dim = len(coords)
+
+# Tensor Métrico Covariante g_{ij} em Coordenadas Esféricas
+g = sp.Matrix([
+    [1, 0, 0],
+    [0, r**2, 0],
+    [0, 0, r**2 * sp.sin(theta)**2]
+])
+
+# Tensor Métrico Contravariante g^{km} (Inversa direta e segura para matriz diagonal)
+g_inv = sp.Matrix([
+    [1, 0, 0],
+    [0, 1 / r**2, 0],
+    [0, 0, 1 / (r**2 * sp.sin(theta)**2)]
+])
+
+def calcular_christoffel(g_mat, g_inv_mat, variaveis):
+    n = len(variaveis)
+    # Array 3D nativo do SymPy para armazenar \Gamma^k_{ij}
+    Gamma = sp.MutableDenseNDimArray.zeros(n, n, n)
+    
+    for k in range(n):
+        for i in range(n):
+            for j in range(n):
+                soma = sp.Integer(0)
+                for m in range(n):
+                    termo = (sp.diff(g_mat[m, i], variaveis[j]) +
+                             sp.diff(g_mat[m, j], variaveis[i]) -
+                             sp.diff(g_mat[i, j], variaveis[m]))
+                    soma += sp.Rational(1, 2) * g_inv_mat[k, m] * termo
+                Gamma[k, i, j] = sp.simplify(soma)
+    return Gamma
+
+Gamma_esferico = calcular_christoffel(g, g_inv, coords)
+
+# Exibindo os componentes não-nulos formatados em LaTeX no Colab
+nomes_latex = ['r', '\\theta', '\\varphi']
+for k in range(dim):
+    for i in range(dim):
+        for j in range(i, dim):
+            val = Gamma_esferico[k, i, j]
+            if val != 0:
+                eq_latex = f"\\Gamma^{{{nomes_latex[k]}}}_{{{nomes_latex[i]} {nomes_latex[j]}}} = {sp.latex(val)}"
+                display(Math(eq_latex))
+
+print("\n" + "="*60 + "\n")
+
+
+# ------------------------------------------------------------------------------
+# PARTE 3: VERIFICAÇÃO ANALÍTICA DE SOLUÇÕES EXATAS DE EDPs
+# Exemplo: Equação do Calor 1D -> \partial u / \partial t = alpha * \partial^2 u / \partial x^2
+# ------------------------------------------------------------------------------
+print("=== 3. VERIFICAÇÃO DE SOLUÇÃO EXATA DE EDP (EQUAÇÃO DO CALOR) ===")
+
+x, t, alpha, k_onda = sp.symbols('x t alpha k', real=True, positive=True)
+
+# Candidata a solução exata: u(x, t) = exp(-alpha * k^2 * t) * sin(k * x)
+u_sol = sp.exp(-alpha * k_onda**2 * t) * sp.sin(k_onda * x)
+
+# Derivadas parciais simbólicas
+du_dt = sp.diff(u_sol, t)
+d2u_dx2 = sp.diff(u_sol, x, 2)
+
+# Resíduo da EDP: du/dt - alpha * d^2u/dx^2
+residuo = sp.simplify(du_dt - alpha * d2u_dx2)
+
+print("Solução testada u(x,t) :", u_sol)
+print("Derivada temporal du/dt:", du_dt)
+print("Laplaciano d²u/dx²     :", d2u_dx2)
+print("Resíduo da EDP         :", residuo)
+if residuo == 0:
+    print("-> VERIFICADO: u(x,t) satisfaz exatamente a Equação Diferencial Parcial!")`
             },
             {
                 id: 8,
