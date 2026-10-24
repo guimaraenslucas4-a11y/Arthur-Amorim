@@ -1076,24 +1076,47 @@ print("Rotacional:", curl(u))`
             document.getElementById('modal-snippet').textContent = item.snippet;
             document.getElementById('modal-meta').textContent = item.meta;
 
-            document.getElementById('material-modal').classList.remove('hidden');
+            const modal = document.getElementById('material-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
         }
 
+        // FUNÇÃO QUE FAZ O BOTÃO "X" E O BOTÃO "FECHAR" FUNCIONAREM
+        function closeMaterialModal() {
+            const modal = document.getElementById('material-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+            activeModalMaterial = null;
+        }
+
+        // Cópia compatível com iFrame usando document.execCommand('copy')
+        function copyModalSnippet() {
+            if (!activeModalMaterial) return;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = activeModalMaterial.snippet;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                showToast('Código LaTeX/Python copiado para a área de transferência!');
+            } catch (err) {
+                showToast('Não foi possível copiar automaticamente.');
+            }
+            document.body.removeChild(tempTextArea);
+        }
+
+        // FUNÇÃO DE DOWNLOAD DO PDF
         function triggerSimulatedDownload() {
             if (!activeModalMaterial) return;
 
             if (activeModalMaterial.fileUrl) {
-                // Codifica espaços e parênteses como (4) para o navegador não falhar
                 const safeUrl = encodeURI(activeModalMaterial.fileUrl);
-
-                // Tenta abrir o PDF em uma nova guia (funciona mesmo em arquivo local file://)
                 const novaGuia = window.open(safeUrl, '_blank');
-
-                // Caso o bloqueador de pop-ups impeça, força o redirecionamento/download
                 if (!novaGuia) {
                     window.location.href = safeUrl;
                 }
-
                 showToast(`Abrindo "${activeModalMaterial.fileUrl}"...`);
             } else {
                 showToast(`Iniciando download de "${activeModalMaterial.title}"...`);
@@ -1101,6 +1124,13 @@ print("Rotacional:", curl(u))`
 
             closeMaterialModal();
         }
+
+        // BÔNUS: Permite fechar o modal apertando a tecla ESC do teclado
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMaterialModal();
+            }
+        });
         // 5. UPLOAD LOCAL DE FOTO DE PERFIL (Via FileReader)
         function handlePhotoUpload(event) {
             const file = event.target.files[0];
