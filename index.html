@@ -259,7 +259,7 @@
             <!-- Abas de Categorias -->
             <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-slate-100">
                 <button onclick="setCategory('all')" data-cat="all" class="cat-btn bg-navNavy text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Todos os Materiais (9)
+                    Todos os Materiais (<span id="count-all">10</span>)
                 </button>
                 <button onclick="setCategory('ensino universitario')" data-cat="ensino universitario" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
                     Monitoria & Ensino (UnB)
@@ -392,6 +392,7 @@
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Navier-Stokes</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Kármán-Trefftz</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Black-Scholes</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Teoria dos Números</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Variáveis Aleatórias</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Álgebra Tensorial</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">História dos Logaritmos</span>
@@ -637,7 +638,7 @@
                     </button>
                 </div>
 
-                <!-- Projeto 4: NOVO - Simulador de Marés e Gravitação Universal -->
+                <!-- Projeto 4: Simulador de Marés e Gravitação Universal -->
                 <div class="bg-white rounded-2xl p-6 border border-teal-500/40 shadow-sm flex flex-col justify-between relative overflow-hidden">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -791,15 +792,20 @@
             <!-- Rodapé do Modal -->
             <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 rounded-b-2xl">
                 <span id="modal-meta" class="text-xs text-slate-500 font-medium"></span>
-                <div class="flex items-center gap-2.5">
+                <div class="flex flex-wrap items-center gap-2.5">
                     <button onclick="closeMaterialModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100 transition">
                         Fechar
                     </button>
-                    <button onclick="triggerSimulatedDownload()" class="px-5 py-2 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
+                    <!-- Botão secundário para abrir o PDF diretamente em nova aba -->
+                    <button id="modal-open-tab-btn" onclick="openMaterialInNewTab()" class="hidden px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-semibold transition items-center gap-1.5">
+                        <span>Abrir PDF ↗</span>
+                    </button>
+                    <!-- Botão principal configurado via JS para baixar o PDF -->
+                    <button id="modal-download-btn" onclick="triggerSimulatedDownload()" class="px-5 py-2 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                         </svg>
-                        <span>Abrir / Baixar Material</span>
+                        <span id="modal-download-label">Baixar PDF</span>
                     </button>
                 </div>
             </div>
@@ -894,7 +900,7 @@
                 category: "ensino universitario",
                 categoryLabel: "Monitoria UnB • Probabilidade",
                 iconType: "pdf-red",
-                fileUrl: "tnnotas.pdf",
+                fileUrl: "lista_probabilidade1.pdf", // Troque pelo nome do PDF de probabilidade quando subir
                 meta: "PDF • 14 páginas • Atualizado em Out 2026",
                 description: "Lista preparatória elaborada para a monitoria de Cálculo de Probabilidade 1 do Departamento de Matemática da UnB. Aborda espaços de probabilidade, axiomas de Kolmogorov, probabilidade condicional, Teorema de Bayes e variáveis aleatórias discretas e contínuas.",
                 formula: "P(A | B) = [ P(B | A) · P(A) ] / ∑ P(B | Aᵢ) P(Aᵢ)",
@@ -907,6 +913,32 @@
 \\begin{document}
 \\maketitle
 \\textbf{Questão 1.} Seja $(\\Omega, \\mathcal{F}, \\mathbb{P})$ um espaço de probabilidade...
+\\end{document}`
+            },
+            {
+                id: 10,
+                title: "Notas de Aula — Teoria dos Números",
+                category: "ensino universitario",
+                categoryLabel: "Notas de Estudo • Teoria dos Números (UnB)",
+                iconType: "pdf-red",
+                fileUrl: "tnnotas.pdf",
+                meta: "PDF • tnnotas.pdf • Notas Completas",
+                description: "Notas de aula e estudo sobre Teoria dos Números no Departamento de Matemática da UnB. Contém resultados fundamentais sobre divisibilidade, Algoritmo de Euclides, equações diofantinas lineares, Teorema Fundamental da Aritmética, aritmética modular e os teoremas clássicos de Fermat, Euler e Wilson.",
+                formula: "a^φ(n) ≡ 1 (mod n) ,   mdc(a, n) = 1",
+                snippet: `\\documentclass[12pt,a4paper]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage{amsmath, amssymb, amsthm}
+\\newtheorem{teorema}{Teorema}[section]
+
+\\title{Notas de Aula -- Teoria dos Números}
+\\author{Arthur Amorim -- MAT/UnB}
+
+\\begin{document}
+\\maketitle
+\\begin{teorema}[Teorema de Euler-Fermat]
+Sejam $a, n \\in \\mathbb{Z}$ com $n \\geq 1$ e $\\gcd(a, n) = 1$. Então:
+\\[ a^{\\varphi(n)} \\equiv 1 \\pmod{n} \\]
+\\end{teorema}
 \\end{document}`
             },
             {
@@ -984,7 +1016,7 @@ def crr_call_price(S0, K, T, r, sigma, N):
                 category: "ensino",
                 categoryLabel: "Artigo Didático • História da Matemática",
                 iconType: "pdf-red",
-                meta: "PDF • Aula_de_logaritmo(4).pdf • 12 páginas",
+                meta: "PDF • Aula_de_logaritmo (4).pdf • 12 páginas",
                 fileUrl: "Aula_de_logaritmo (4).pdf",
                 description: "Exploração histórica sobre como astrônomos e matemáticos do século XVI e XVII simplificavam multiplicações trigonométricas via fórmulas de prostaferese antes da construção cinemática dos logaritmos por John Napier e Jost Bürgi.",
                 formula: "cos(α) cos(β) = ½ [ cos(α − β) + cos(α + β) ]",
@@ -1155,6 +1187,10 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
         function renderMaterials() {
             const grid = document.getElementById('materials-grid');
             if (!grid) return;
+
+            const countAllEl = document.getElementById('count-all');
+            if (countAllEl) countAllEl.textContent = materialsData.length;
+
             const emptyState = document.getElementById('empty-search-state');
             const searchInput = document.getElementById('search-input');
             const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -1212,7 +1248,7 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             setCategory('all');
         }
 
-        // 4. CONTROLE DO MODAL DE DETALHES DO MATERIAL
+        // 4. CONTROLE DO MODAL DE DETALHES E BOTÃO DE DOWNLOAD DO PDF
         function openMaterialModal(id) {
             const item = materialsData.find(m => m.id === id);
             if (!item) return;
@@ -1225,6 +1261,33 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             document.getElementById('modal-formula').textContent = item.formula;
             document.getElementById('modal-snippet').textContent = item.snippet;
             document.getElementById('modal-meta').textContent = item.meta;
+
+            // Configura dinamicamente os botões de download/abertura conforme o tipo de arquivo
+            const downloadLabel = document.getElementById('modal-download-label');
+            const openTabBtn = document.getElementById('modal-open-tab-btn');
+
+            if (item.fileUrl) {
+                const isExternalUrl = /^https?:\/\//i.test(item.fileUrl);
+                const isPdf = item.fileUrl.toLowerCase().endsWith('.pdf');
+
+                if (isExternalUrl) {
+                    downloadLabel.textContent = 'Abrir Aplicação Web ↗';
+                    openTabBtn.classList.add('hidden');
+                    openTabBtn.classList.remove('inline-flex');
+                } else if (isPdf) {
+                    downloadLabel.textContent = 'Baixar PDF';
+                    openTabBtn.classList.remove('hidden');
+                    openTabBtn.classList.add('inline-flex');
+                } else {
+                    downloadLabel.textContent = 'Baixar Arquivo';
+                    openTabBtn.classList.add('hidden');
+                    openTabBtn.classList.remove('inline-flex');
+                }
+            } else {
+                downloadLabel.textContent = 'Baixar Código (.tex / .py)';
+                openTabBtn.classList.add('hidden');
+                openTabBtn.classList.remove('inline-flex');
+            }
 
             const modal = document.getElementById('material-modal');
             if (modal) {
@@ -1255,18 +1318,54 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             document.body.removeChild(tempTextArea);
         }
 
+        // Abre o PDF em uma nova aba do navegador para leitura direta
+        function openMaterialInNewTab() {
+            if (!activeModalMaterial || !activeModalMaterial.fileUrl) return;
+            const safeUrl = encodeURI(activeModalMaterial.fileUrl);
+            window.open(safeUrl, '_blank', 'noopener,noreferrer');
+            showToast(`Abrindo "${activeModalMaterial.title}" em nova guia...`);
+        }
+
+        // Força o download do arquivo PDF (ou abre link externo/baixa snippet caso não tenha PDF)
         function triggerSimulatedDownload() {
             if (!activeModalMaterial) return;
 
             if (activeModalMaterial.fileUrl) {
+                const isExternalUrl = /^https?:\/\//i.test(activeModalMaterial.fileUrl);
                 const safeUrl = encodeURI(activeModalMaterial.fileUrl);
-                const novaGuia = window.open(safeUrl, '_blank');
-                if (!novaGuia) {
-                    window.location.href = safeUrl;
+
+                if (isExternalUrl) {
+                    window.open(safeUrl, '_blank', 'noopener,noreferrer');
+                    showToast(`Abrindo "${activeModalMaterial.title}"...`);
+                } else {
+                    // Cria elemento <a> temporário com atributo download para baixar o PDF diretamente
+                    const fileName = activeModalMaterial.fileUrl.split('/').pop();
+                    const link = document.createElement('a');
+                    link.href = safeUrl;
+                    link.setAttribute('download', fileName);
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    showToast(`Baixando PDF: "${fileName}"...`);
                 }
-                showToast(`Abrindo "${activeModalMaterial.title}"...`);
             } else {
-                showToast(`Iniciando download de "${activeModalMaterial.title}"...`);
+                // Caso o card seja apenas código (LaTeX/Python) sem PDF externo, baixa o snippet como arquivo
+                const isPython = activeModalMaterial.snippet.includes('import ');
+                const ext = isPython ? '.py' : '.tex';
+                const blob = new Blob([activeModalMaterial.snippet], { type: 'text/plain;charset=utf-8' });
+                const blobUrl = URL.createObjectURL(blob);
+
+                const link = document.createElement('a');
+                link.href = blobUrl;
+                link.setAttribute('download', `material_${activeModalMaterial.id}${ext}`);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(blobUrl);
+
+                showToast(`Código de "${activeModalMaterial.title}" baixado!`);
             }
 
             closeMaterialModal();
