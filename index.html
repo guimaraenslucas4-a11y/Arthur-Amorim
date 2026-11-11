@@ -599,7 +599,7 @@
                             Estrutura pré-configurada com normas da ABNT, ambientes de teoremas (`amsthm`), citações automáticas e capa oficial da Universidade de Brasília.
                         </p>
                     </div>
-                    <button onclick="openMaterialModal(3)" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition">
+                    <button onclick="openMaterialModal(4)" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition">
                         Ver Código LaTeX
                     </button>
                 </div>
@@ -616,7 +616,7 @@
                             Scripts simbólicos para expansão de operadores diferenciais em coordenadas cilíndricas e esféricas e dedução automatizada de equações de conservação.
                         </p>
                     </div>
-                    <button onclick="openMaterialModal(7)" class="w-full py-2.5 px-4 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-medium transition">
+                    <button onclick="openMaterialModal(8)" class="w-full py-2.5 px-4 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-medium transition">
                         Inspecionar Script Python
                     </button>
                 </div>
@@ -633,7 +633,7 @@
                             Implementação numérica e demonstração analítica da convergência do modelo discreto de Cox-Ross-Rubinstein para a EDP de Black-Scholes.
                         </p>
                     </div>
-                    <button onclick="openMaterialModal(5)" class="w-full py-2.5 px-4 rounded-xl bg-ctaSlate hover:bg-ctaSlateHover text-white text-sm font-medium transition">
+                    <button onclick="openMaterialModal(6)" class="w-full py-2.5 px-4 rounded-xl bg-ctaSlate hover:bg-ctaSlateHover text-white text-sm font-medium transition">
                         Acessar Estudo Completo
                     </button>
                 </div>
@@ -900,10 +900,10 @@
                 category: "ensino universitario",
                 categoryLabel: "Monitoria UnB • Probabilidade",
                 iconType: "pdf-red",
-                fileUrl: "lista_probabilidade1.pdf", // Troque pelo nome do PDF de probabilidade quando subir
+                fileUrl: "lista_probabilidade1.pdf",
                 meta: "PDF • 14 páginas • Atualizado em Out 2026",
                 description: "Lista preparatória elaborada para a monitoria de Cálculo de Probabilidade 1 do Departamento de Matemática da UnB. Aborda espaços de probabilidade, axiomas de Kolmogorov, probabilidade condicional, Teorema de Bayes e variáveis aleatórias discretas e contínuas.",
-                formula: "P(A | B) = [ P(B | A) · P(A) ] / ∑ P(B | Aᵢ) P(Aᵢ)",
+                formula: "P(A | B) = [ P(B | A) · P(A) ] / ∑ P(B | A<sub>i</sub>) P(A<sub>i</sub>)",
                 snippet: `\\documentclass[12pt,a4paper]{article}
 \\usepackage[utf8]{inputenc}
 \\usepackage{amsmath, amssymb, amsthm}
@@ -916,40 +916,54 @@
 \\end{document}`
             },
             {
-                id: 10,
+                id: 2,
                 title: "Notas de Aula — Teoria dos Números",
                 category: "ensino universitario",
                 categoryLabel: "Notas de Estudo • Teoria dos Números (UnB)",
                 iconType: "pdf-red",
-                fileUrl: "tnnotas.pdf",
-                meta: "PDF • tnnotas.pdf • Notas Completas",
-                description: "Notas de aula e estudo sobre Teoria dos Números no Departamento de Matemática da UnB. Contém resultados fundamentais sobre divisibilidade, Algoritmo de Euclides, equações diofantinas lineares, Teorema Fundamental da Aritmética, aritmética modular e os teoremas clássicos de Fermat, Euler e Wilson.",
-                formula: "a^φ(n) ≡ 1 (mod n) ,   mdc(a, n) = 1",
+                fileUrl: "./tnnotas.pdf",
+                meta: "PDF • Notas de Aula Completas • MAT/UnB",
+                description: "Notas de aula e estudo sobre Teoria dos Números no Departamento de Matemática da UnB. Aborda divisibilidade em Z, Algoritmo da Divisão de Euclides, Identidade de Bézout, equações diofantinas lineares, Teorema Fundamental da Aritmética, congruências lineares, Teorema Chinês dos Restos e os teoremas clássicos de Fermat, Euler e Wilson.",
+                formula: "a<sup>φ(n)</sup> ≡ 1 (mod n), &nbsp; mdc(a, n) = 1",
                 snippet: `\\documentclass[12pt,a4paper]{article}
 \\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage[brazil]{babel}
 \\usepackage{amsmath, amssymb, amsthm}
+
 \\newtheorem{teorema}{Teorema}[section]
+\\newtheorem{lema}[teorema]{Lema}
+\\newcommand{\\mdc}{\\operatorname{mdc}}
 
 \\title{Notas de Aula -- Teoria dos Números}
-\\author{Arthur Amorim -- MAT/UnB}
+\\author{Arthur Amorim -- Departamento de Matemática (MAT/UnB)}
+\\date{2026}
 
 \\begin{document}
 \\maketitle
+
+\\begin{lema}[Identidade de Bézout]
+Sejam $a, b \\in \\mathbb{Z}$ não ambos nulos e $d = \\mdc(a, b)$. Então existem inteiros $x, y \\in \\mathbb{Z}$ tais que:
+\\[ ax + by = d \\]
+\\end{lema}
+
 \\begin{teorema}[Teorema de Euler-Fermat]
-Sejam $a, n \\in \\mathbb{Z}$ com $n \\geq 1$ e $\\gcd(a, n) = 1$. Então:
+Sejam $a, n \\in \\mathbb{Z}$ com $n \\geq 1$ e $\\mdc(a, n) = 1$. Então:
 \\[ a^{\\varphi(n)} \\equiv 1 \\pmod{n} \\]
+onde $\\varphi(n)$ denota a função totiente de Euler.
 \\end{teorema}
+
 \\end{document}`
             },
             {
-                id: 2,
+                id: 3,
                 title: "Notas de Aula & Monitoria: MAT0028",
                 category: "ensino universitario",
                 categoryLabel: "Monitoria UnB • MAT0028",
                 iconType: "doc-blue",
                 meta: "PDF • 28 páginas • Notas Completas",
                 description: "Caderno de revisão teórica e resolução passo a passo de problemas selecionados da disciplina MAT0028 na UnB. Inclui intuição geométrica, demonstrações rigorosas e contraexemplos clássicos discutidos nos horários de atendimento.",
-                formula: "‖u + v‖² + ‖u − v‖² = 2(‖u‖² + ‖v‖²)  (Identidade do Paralelogramo)",
+                formula: "‖u + v‖² + ‖u − v‖² = 2(‖u‖² + ‖v‖²) &nbsp; (Identidade do Paralelogramo)",
                 snippet: `% Notas de Aula MAT0028 - Arthur Amorim (UnB)
 \\begin{teorema}[Desigualdade de Cauchy-Schwarz]
 Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
@@ -957,7 +971,7 @@ Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
 \\end{teorema}`
             },
             {
-                id: 3,
+                id: 4,
                 title: "Template LaTeX para Relatórios (abntex2 & Beamer)",
                 category: "codigo",
                 categoryLabel: "Template LaTeX • Padrão UnB",
@@ -973,14 +987,14 @@ Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
 \\titulo{Relatório de Iniciação Científica -- PIBIC/CNPq}`
             },
             {
-                id: 4,
+                id: 5,
                 title: "Slides: Dinâmica dos Fluidos",
                 category: "pesquisa",
                 categoryLabel: "Pesquisa PIBIC • Fluidos",
                 iconType: "slide-orange",
                 meta: "Beamer PDF • 32 slides • Apresentação IC",
                 description: "Apresentação em Beamer sobre a formulação matemática das equações de Euler e Navier-Stokes para escoamentos incompressíveis, vorticidade e aplicação da transformação conforme de Kármán-Trefftz em aerofólios.",
-                formula: "ρ (∂u/∂t + (u · ∇)u) = −∇p + μ ∇²u + f ,   ∇ · u = 0",
+                formula: "ρ (∂u/∂t + (u · ∇)u) = −∇p + μ ∇²u + f , &nbsp; ∇ · u = 0",
                 snippet: `\\begin{frame}{Equações de Navier-Stokes Incompressíveis}
 \\begin{block}{Conservação do Momento Linear}
 \\[ \\rho \\left( \\frac{\\partial \\mathbf{u}}{\\partial t} + (\\mathbf{u} \\cdot \\nabla)\\mathbf{u} \\right) = -\\nabla p + \\mu \\nabla^2 \\mathbf{u} + \\mathbf{f} \\]
@@ -988,7 +1002,7 @@ Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
 \\end{frame}`
             },
             {
-                id: 5,
+                id: 6,
                 title: "Precificação de Opções: Modelo CRR & Black-Scholes",
                 category: "pesquisa",
                 categoryLabel: "Pesquisa • Matemática Financeira",
@@ -1011,7 +1025,7 @@ def crr_call_price(S0, K, T, r, sigma, N):
     return C[0]`
             },
             {
-                id: 6,
+                id: 7,
                 title: "História da Matemática: Logaritmos, Prostaferese e Napier",
                 category: "ensino",
                 categoryLabel: "Artigo Didático • História da Matemática",
@@ -1025,14 +1039,14 @@ def crr_call_price(S0, K, T, r, sigma, N):
 \\[ \\frac{dx}{dt} = -x(t), \\quad \\frac{dy}{dt} = v_0 \\implies y(t) = \\text{NapLog}(x) \\]`
             },
             {
-                id: 7,
+                id: 8,
                 title: "Scripts Python: Álgebra Tensorial e Derivadas no SymPy",
                 category: "codigo",
                 categoryLabel: "Python Científico • SymPy",
                 iconType: "code-dark",
                 meta: "Jupyter Notebook (.ipynb) • Python 3",
                 description: "Repositório de notebooks interativos utilizando a biblioteca SymPy para manipulação simbólica de tensores, símbolos de Christoffel e verificação analítica de soluções exatas de equações diferenciais parciais.",
-                formula: "Γᵏᵢⱼ = ½ gᵏᵐ (∂gₘᵢ/∂xʲ + ∂gₘⱼ/∂xⁱ − ∂gᵢⱼ/∂xᵐ)",
+                formula: "Γ<sup>k</sup><sub>ij</sub> = ½ g<sup>km</sup> (∂g<sub>mi</sub>/∂x<sup>j</sup> + ∂g<sub>mj</sub>/∂x<sup>i</sup> − ∂g<sub>ij</sub>/∂x<sup>m</sup>)",
                 snippet: `# ==============================================================================
 # UNIVERSIDADE DE BRASÍLIA (UnB) - DEPARTAMENTO DE MATEMÁTICA (MAT)
 # Autor: Arthur Amorim
@@ -1091,7 +1105,6 @@ g_inv = sp.Matrix([
 
 def calcular_christoffel(g_mat, g_inv_mat, variaveis):
     n = len(variaveis)
-    # Array 3D nativo do SymPy para armazenar \\Gamma^k_{ij}
     Gamma = sp.MutableDenseNDimArray.zeros(n, n, n)
     
     for k in range(n):
@@ -1108,7 +1121,6 @@ def calcular_christoffel(g_mat, g_inv_mat, variaveis):
 
 Gamma_esferico = calcular_christoffel(g, g_inv, coords)
 
-# Exibindo os componentes não-nulos formatados em LaTeX no Colab
 nomes_latex = ['r', '\\\\theta', '\\\\varphi']
 for k in range(dim):
     for i in range(dim):
@@ -1123,20 +1135,14 @@ print("\\n" + "="*60 + "\\n")
 
 # ------------------------------------------------------------------------------
 # PARTE 3: VERIFICAÇÃO ANALÍTICA DE SOLUÇÕES EXATAS DE EDPs
-# Exemplo: Equação do Calor 1D -> \\partial u / \\partial t = alpha * \\partial^2 u / \\partial x^2
 # ------------------------------------------------------------------------------
 print("=== 3. VERIFICAÇÃO DE SOLUÇÃO EXATA DE EDP (EQUAÇÃO DO CALOR) ===")
 
 x, t, alpha, k_onda = sp.symbols('x t alpha k', real=True, positive=True)
-
-# Candidata a solução exata: u(x, t) = exp(-alpha * k^2 * t) * sin(k * x)
 u_sol = sp.exp(-alpha * k_onda**2 * t) * sp.sin(k_onda * x)
 
-# Derivadas parciais simbólicas
 du_dt = sp.diff(u_sol, t)
 d2u_dx2 = sp.diff(u_sol, x, 2)
-
-# Resíduo da EDP: du/dt - alpha * d^2u/dx^2
 residuo = sp.simplify(du_dt - alpha * d2u_dx2)
 
 print("Solução testada u(x,t) :", u_sol)
@@ -1147,21 +1153,21 @@ if residuo == 0:
     print("-> VERIFICADO: u(x,t) satisfaz exatamente a Equação Diferencial Parcial!")`
             },
             {
-                id: 8,
+                id: 9,
                 title: "Pôster Científico: Transformação de Kármán-Trefftz",
                 category: "pesquisa",
                 categoryLabel: "Congresso de Iniciação Científica UnB",
                 iconType: "slide-orange",
                 meta: "Pôster A0 (PDF + LaTeX TikZ)",
                 description: "Pôster apresentado no Congresso de Iniciação Científica da UnB ilustrando a geometria conforme da família de aerofólios de Kármán-Trefftz, condição de Kutta e distribuição do coeficiente de pressão.",
-                formula: "C_p = 1 − ( |w'(z)| / U_∞ )²",
+                formula: "C<sub>p</sub> = 1 − ( |w'(z)| / U<sub>∞</sub> )²",
                 snippet: `\\usepackage{tikzposter}
 \\title{Escoamento Potencial ao Redor de Perfis de Kármán-Trefftz}
 \\author{Arthur Amorim \\and Orientador -- MAT/UnB}
 \\institute{Universidade de Brasília (UnB) -- CNPq}`
             },
             {
-                id: 9,
+                id: 10,
                 title: "Simulador Interativo: Marés e Gravitação Universal",
                 category: "ensino",
                 categoryLabel: "Simulador Web • Ensino Médio",
@@ -1169,7 +1175,7 @@ if residuo == 0:
                 meta: "Aplicação Web Interativa (HTML5 Canvas)",
                 fileUrl: "https://guimaraenslucas4-a11y.github.io/Teste/",
                 description: "Simulador interativo da deformação oceânica terrestre provocada pelo campo gravitacional diferencial da Lua. Inclui visualização da rotação de 24h (duas marés altas e duas baixas diárias) e dedução algébrica via Produtos Notáveis da dependência com o inverso do cubo da distância.",
-                formula: "Δa = a_A − a_C ≈ (2 · G · M_L · R) / d³",
+                formula: "Δa = a<sub>A</sub> − a<sub>C</sub> ≈ (2 · G · M<sub>L</sub> · R) / d³",
                 snippet: `// Cálculo da aceleração de maré (diferencial gravitacional) no Ensino Médio:
 const aC = (G * M_MOON) / Math.pow(d_m, 2);
 const aA = (G * M_MOON) / Math.pow((d_km - R_EARTH_KM) * 1000, 2);
@@ -1258,11 +1264,10 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             document.getElementById('modal-category-badge').textContent = item.categoryLabel;
             document.getElementById('modal-title').textContent = item.title;
             document.getElementById('modal-description').textContent = item.description;
-            document.getElementById('modal-formula').textContent = item.formula;
+            document.getElementById('modal-formula').innerHTML = item.formula;
             document.getElementById('modal-snippet').textContent = item.snippet;
             document.getElementById('modal-meta').textContent = item.meta;
 
-            // Configura dinamicamente os botões de download/abertura conforme o tipo de arquivo
             const downloadLabel = document.getElementById('modal-download-label');
             const openTabBtn = document.getElementById('modal-open-tab-btn');
 
@@ -1318,7 +1323,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             document.body.removeChild(tempTextArea);
         }
 
-        // Abre o PDF em uma nova aba do navegador para leitura direta
         function openMaterialInNewTab() {
             if (!activeModalMaterial || !activeModalMaterial.fileUrl) return;
             const safeUrl = encodeURI(activeModalMaterial.fileUrl);
@@ -1326,7 +1330,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             showToast(`Abrindo "${activeModalMaterial.title}" em nova guia...`);
         }
 
-        // Força o download do arquivo PDF (ou abre link externo/baixa snippet caso não tenha PDF)
         function triggerSimulatedDownload() {
             if (!activeModalMaterial) return;
 
@@ -1338,7 +1341,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                     window.open(safeUrl, '_blank', 'noopener,noreferrer');
                     showToast(`Abrindo "${activeModalMaterial.title}"...`);
                 } else {
-                    // Cria elemento <a> temporário com atributo download para baixar o PDF diretamente
                     const fileName = activeModalMaterial.fileUrl.split('/').pop();
                     const link = document.createElement('a');
                     link.href = safeUrl;
@@ -1351,7 +1353,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                     showToast(`Baixando PDF: "${fileName}"...`);
                 }
             } else {
-                // Caso o card seja apenas código (LaTeX/Python) sem PDF externo, baixa o snippet como arquivo
                 const isPython = activeModalMaterial.snippet.includes('import ');
                 const ext = isPython ? '.py' : '.tex';
                 const blob = new Blob([activeModalMaterial.snippet], { type: 'text/plain;charset=utf-8' });
@@ -1473,7 +1474,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             const toX = (S) => padLeft + ((S - sMin) / (sMax - sMin)) * plotW;
             const toY = (V) => padTop + plotH - (V / vMax) * plotH;
 
-            // Grade sutil de fundo
             ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
             ctx.lineWidth = 1;
             ctx.fillStyle = '#94a3b8';
@@ -1490,7 +1490,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                 ctx.fillText(v.toString(), 14, y + 3);
             }
 
-            // Linha vertical marcando o Strike K = 100
             ctx.save();
             ctx.setLineDash([4, 4]);
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
@@ -1500,7 +1499,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             ctx.stroke();
             ctx.restore();
 
-            // 1. Payoff no Vencimento: max(S - K, 0)
             ctx.save();
             ctx.setLineDash([6, 4]);
             ctx.strokeStyle = '#f97316';
@@ -1515,7 +1513,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             ctx.stroke();
             ctx.restore();
 
-            // 2. Reta Tangente do Portfólio Replicante (Delta Hedge) em S0 = 100
             ctx.save();
             ctx.strokeStyle = '#fbbf24';
             ctx.lineWidth = 1.6;
@@ -1530,7 +1527,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             ctx.stroke();
             ctx.restore();
 
-            // 3. Curva Analítica de Black-Scholes V(S, t)
             ctx.beginPath();
             for (let s = sMin; s <= sMax; s += 1) {
                 const bs = blackScholesCall(s, K, T, r, sigma).price;
@@ -1542,7 +1538,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             ctx.lineWidth = 2.8;
             ctx.stroke();
 
-            // Ponto de Destaque em S0 = 100
             const ptX = toX(S0);
             const ptY = toY(atTheMoney.price);
             ctx.beginPath();
@@ -1577,7 +1572,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
             const cy = canvas.height / 2;
             const scale = Math.min(canvas.width, canvas.height) * 0.25;
 
-            // Grade sutil de fundo
             ctx.strokeStyle = 'rgba(148, 163, 184, 0.12)';
             ctx.lineWidth = 1;
             for (let x = 0; x < canvas.width; x += 35) {
@@ -1587,7 +1581,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                 ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
             }
 
-            // Linhas de corrente estilizadas ao redor do perfil
             ctx.strokeStyle = 'rgba(77, 182, 172, 0.28)';
             ctx.lineWidth = 1.2;
             for (let s = -3; s <= 3; s++) {
@@ -1603,7 +1596,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                 ctx.stroke();
             }
 
-            // Cálculo conforme de Kármán-Trefftz
             const b = 1.0;
             const radius = Math.sqrt((b - dx) ** 2 + dy ** 2);
             const points = [];
@@ -1641,7 +1633,6 @@ const diffB = aB - aC; // Força de maré oposta à Lua (-)`
                 points.push({ x: cx + zR * scale * 0.55, y: cy - zI * scale * 0.55 });
             }
 
-            // Desenha o Perfil Aerodinâmico Transformado
             ctx.beginPath();
             points.forEach((pt, idx) => {
                 if (idx === 0) ctx.moveTo(pt.x, pt.y);
