@@ -259,7 +259,7 @@
             <!-- Abas de Categorias -->
             <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-slate-100">
                 <button onclick="setCategory('all')" data-cat="all" class="cat-btn bg-navNavy text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Todos os Materiais (<span id="count-all">10</span>)
+                    Todos os Materiais (<span id="count-all">11</span>)
                 </button>
                 <button onclick="setCategory('ensino universitario')" data-cat="ensino universitario" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
                     Monitoria & Ensino (UnB)
@@ -397,6 +397,7 @@
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Álgebra Tensorial</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">História dos Logaritmos</span>
                             <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Gravitação & Marés</span>
+                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Conjuntos de Julia & Fractais</span>
                         </div>
                     </div>
                 </div>
@@ -585,7 +586,7 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Projeto 1: Template LaTeX -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
@@ -652,6 +653,26 @@
                     </div>
                     <div class="flex flex-col gap-2">
                         <a href="https://guimaraenslucas4-a11y.github.io/Teste/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
+                            <span>Abrir Simulador Interativo</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projeto 5: Explorador de Fractais & Conjuntos de Julia -->
+                <div class="bg-white rounded-2xl p-6 border border-teal-500/40 shadow-sm flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-teal-50 text-ctaTeal font-mono text-xs font-semibold">HTML5 Canvas / Fractais</span>
+                            <span class="text-xs text-slate-400">Sistemas Dinâmicos</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Explorador de Fractais & Conjuntos de Julia</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Simulador interativo (<em>O Pulso do Horizonte de Eventos</em>) com zoom contínuo na fronteira fractal, lançamento de sondas para rastrear órbitas estáveis ou caóticas sob a iteração <span class="math-formula">z<sub>n+1</sub> = z<sub>n</sub>² + c</span> e cenários pré-definidos.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://guimaraenslucas4-a11y.github.io/fractais/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
                             <span>Abrir Simulador Interativo</span>
                             <span>↗</span>
                         </a>
@@ -1183,6 +1204,25 @@ const aB = (G * M_MOON) / Math.pow((d_km + R_EARTH_KM) * 1000, 2);
 
 const diffA = aA - aC; // Força de maré voltada para a Lua (+)
 const diffB = aB - aC; // Força de maré oposta à Lua (-)`
+            },
+            {
+                id: 11,
+                title: "Simulador Interativo: Conjuntos de Julia e Dinâmica Fractal",
+                category: "ensino",
+                categoryLabel: "Simulador Web • Sistemas Dinâmicos",
+                iconType: "code-dark",
+                meta: "Aplicação Web Interativa (HTML5 Canvas)",
+                fileUrl: "https://guimaraenslucas4-a11y.github.io/fractais/",
+                description: "Explorador interativo com zoom de Conjuntos de Julia (O Pulso do Horizonte de Eventos). Permite alterar o parâmetro complexo c (vento cósmico), lançar sondas no plano complexo para visualizar órbitas limitadas ou que escapam para o infinito e explorar a fronteira fractal em alta nitidez.",
+                formula: "z<sub>n+1</sub> = z<sub>n</sub>² + c , &nbsp; |z<sub>n</sub>| ≤ 2",
+                snippet: `// Iteração do sistema dinâmico complexo z_{n+1} = z_n^2 + c (Conjunto de Julia):
+let x = x0, y = y0, iter = 0;
+while (x * x + y * y <= 4 && iter < maxIter) {
+    const xTemp = x * x - y * y + cr;
+    y = 2 * x * y + ci;
+    x = xTemp;
+    iter++;
+}`
             }
         ];
 
