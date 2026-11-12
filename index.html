@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arthur Amorim | Matemática — UnB | Portal Acadêmico</title>
+    <title>Arthur Amorim | Professor de Matemática — UnB | Portfólio Docente</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter & JetBrains Mono para estética acadêmica -->
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -101,30 +101,30 @@
                 <!-- Links de Navegação (Desktop) -->
                 <nav class="hidden lg:flex items-center space-x-7 text-[15px] font-medium">
                     <a href="#inicio" data-nav="inicio" class="nav-link text-navTeal hover:text-navTeal transition-colors">Início</a>
-                    <a href="#sobre" data-nav="sobre" class="nav-link text-gray-200 hover:text-white transition-colors">Sobre Mim</a>
-                    <a href="#materiais" data-nav="materiais" class="nav-link text-gray-200 hover:text-white transition-colors">Materiais</a>
-                    <a href="#pesquisa" data-nav="pesquisa" class="nav-link text-gray-200 hover:text-white transition-colors">Pesquisa</a>
-                    <a href="#projetos" data-nav="projetos" class="nav-link text-gray-200 hover:text-white transition-colors">Projetos</a>
+                    <a href="#materiais" data-nav="materiais" class="nav-link text-gray-200 hover:text-white transition-colors">Recursos Didáticos</a>
+                    <a href="#projetos" data-nav="projetos" class="nav-link text-gray-200 hover:text-white transition-colors">Simuladores</a>
+                    <a href="#sobre" data-nav="sobre" class="nav-link text-gray-200 hover:text-white transition-colors">Formação & Prática</a>
+                    <a href="#pesquisa" data-nav="pesquisa" class="nav-link text-gray-200 hover:text-white transition-colors">Pesquisa UnB</a>
                     <a href="#contato" data-nav="contato" class="nav-link text-gray-200 hover:text-white transition-colors">Contato</a>
                 </nav>
 
-                <!-- Botão Currículo Lattes + Ícones Sociais (Direita) -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <button onclick="openLattesModal()" class="bg-navPill hover:bg-[#5b7083] text-white font-semibold text-sm px-4 py-2 rounded-lg transition shadow-sm">
-                        Currículo Lattes
+                <!-- Botão Currículo + Ícones de Contato (Direita) -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button onclick="openCvModal()" class="bg-navPill hover:bg-[#5b7083] text-white font-semibold text-sm px-4 py-2 rounded-lg transition shadow-sm">
+                        Currículo Docente
                     </button>
                     
                     <!-- GitHub Icon -->
-                    <a href="https://github.com/guimaraenslucas4-a11y" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="GitHub">
+                    <a href="https://github.com/guimaraenslucas4-a11y" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="Repositórios no GitHub">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                         </svg>
                     </a>
 
-                    <!-- LinkedIn Icon -->
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="LinkedIn">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                    <!-- E-mail Direto Icon -->
+                    <a href="mailto:guimaraenslucas4@gmail.com" aria-label="E-mail" class="text-gray-200 hover:text-white transition p-1.5 rounded-lg hover:bg-white/10" title="Enviar E-mail Direto">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                     </a>
                 </div>
@@ -143,79 +143,105 @@
         <!-- Menu Mobile -->
         <div id="mobile-menu" class="hidden lg:hidden bg-[#16222e] border-t border-slate-700 px-4 pt-3 pb-5 space-y-2">
             <a href="#inicio" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-navTeal">Início</a>
-            <a href="#sobre" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Sobre Mim</a>
-            <a href="#materiais" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Materiais</a>
-            <a href="#pesquisa" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Pesquisa</a>
-            <a href="#projetos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Projetos</a>
+            <a href="#materiais" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Recursos Didáticos</a>
+            <a href="#projetos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Simuladores</a>
+            <a href="#sobre" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Formação & Prática</a>
+            <a href="#pesquisa" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Pesquisa UnB</a>
             <a href="#contato" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:bg-slate-800">Contato</a>
             <div class="pt-3 flex items-center justify-between border-t border-slate-700">
-                <button onclick="openLattesModal()" class="bg-navPill text-white font-semibold text-sm px-4 py-2 rounded-lg">
-                    Currículo Lattes
+                <button onclick="openCvModal()" class="bg-navPill text-white font-semibold text-sm px-4 py-2 rounded-lg">
+                    Currículo Docente
                 </button>
-                <div class="flex space-x-3">
+                <div class="flex space-x-3 text-sm">
                     <a href="https://github.com/guimaraenslucas4-a11y" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-white p-2">GitHub</a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-gray-200 hover:text-white p-2">LinkedIn</a>
+                    <a href="mailto:guimaraenslucas4@gmail.com" class="text-gray-200 hover:text-white p-2">E-mail</a>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- ==========================================
-         2. HERO SECTION
+         2. HERO SECTION (Posicionamento Docente)
          ========================================== -->
     <section id="inicio" class="bg-heroBg py-10 sm:py-14 md:py-16 border-b border-slate-200/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                <!-- Coluna Esquerda: Paisagem de Copacabana, Rio de Janeiro -->
+                <!-- Coluna Esquerda: Foto de Perfil Profissional (com fallback automático) -->
                 <div class="lg:col-span-5">
-                    <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] group border border-slate-300/60 bg-slate-900">
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] group border border-slate-300/60 bg-gradient-to-br from-navNavy via-[#24384a] to-[#2e5a56] flex items-center justify-center">
                         
-                        <!-- Foto da Orla de Copacabana / Rio de Janeiro -->
-                        <img src="Copacabana-Rio-de-Janeiro-shutterstock_317866670.jpg" 
-                             alt="Paisagem da Praia de Copacabana, Rio de Janeiro" 
+                        <!-- Suba sua foto com o nome "foto-perfil.jpg" na pasta do repositório -->
+                        <img id="hero-profile-photo"
+                             src="foto-perfil.jpg" 
+                             alt="Arthur Amorim — Professor de Matemática" 
+                             onerror="this.style.display='none'; document.getElementById('hero-photo-fallback').classList.remove('hidden');"
                              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105" />
 
-                        <!-- Gradiente sutil na base para dar acabamento -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
-
-                        <!-- Badge discreto da UnB no canto superior -->
-                        <div class="absolute top-3 left-3 bg-black/45 backdrop-blur-md text-white/95 text-xs font-medium px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
-                            <span class="w-2 h-2 rounded-full bg-navTeal animate-pulse"></span>
-                            MAT / UnB
+                        <!-- Fallback elegante caso foto-perfil.jpg ainda não tenha sido enviada -->
+                        <div id="hero-photo-fallback" class="hidden flex flex-col items-center justify-center text-center p-6 text-white">
+                            <div class="w-20 h-20 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-2xl font-bold tracking-wider text-navTeal mb-3 shadow-inner">
+                                AA
+                            </div>
+                            <p class="font-bold text-lg tracking-tight">Arthur Amorim</p>
+                            <p class="text-xs text-slate-300 mt-1">Licenciatura em Matemática • UnB</p>
+                            <p class="text-[11px] font-mono text-navTeal/90 mt-3 bg-black/25 px-3 py-1 rounded-full">
+                                Ensino Fundamental II & Ensino Médio
+                            </p>
                         </div>
 
-                        <!-- Legenda discreta da localização no canto inferior -->
-                        <div class="absolute bottom-3 left-3 text-white/90 text-xs font-medium flex items-center gap-1.5 drop-shadow">
-                            <svg class="w-3.5 h-3.5 text-navTeal" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>Copacabana, Rio de Janeiro</span>
+                        <!-- Gradiente sutil na base -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none"></div>
+
+                        <!-- Badge Institucional UnB -->
+                        <div class="absolute top-3 left-3 bg-black/45 backdrop-blur-md text-white/95 text-xs font-medium px-3 py-1 rounded-full border border-white/15 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-navTeal animate-pulse"></span>
+                            Licenciatura em Matemática • UnB
+                        </div>
+
+                        <!-- Legenda inferior -->
+                        <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white/95 text-xs font-medium drop-shadow">
+                            <span>Brasília — DF</span>
+                            <span class="bg-white/15 backdrop-blur-sm px-2.5 py-0.5 rounded-md text-[11px]">Pesquisador CNPq • Monitor</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Direita: Apresentação Acadêmica & Botões CTA -->
+                <!-- Coluna Direita: Apresentação Docente & Botões CTA -->
                 <div class="lg:col-span-7 space-y-4 text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-ctaTeal text-xs font-semibold">
+                        Portfólio Docente • Educação Básica (EF II e EM)
+                    </div>
+
                     <h1 class="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#142330] tracking-tight leading-tight">
                         Olá! Sou o Arthur Amorim
                     </h1>
                     
                     <h2 class="text-xl sm:text-2xl font-bold text-[#1f2d3a] leading-snug">
-                        Pesquisador de Iniciação Científica (CNPq), Monitor e Graduando em Matemática — UnB
+                        Professor e Licenciando em Matemática (UnB), com atuação em Monitoria, Tecnologia Educacional e Pesquisa (CNPq)
                     </h2>
                     
                     <p class="text-slate-700 text-base sm:text-[17px] leading-relaxed pt-1 max-w-2xl">
-                        Este espaço é dedicado a compartilhar materiais didáticos, listas de exercícios de monitoria, notas de estudo, apresentações de pesquisa e códigos em LaTeX que desenvolvo ao longo da minha trajetória acadêmica na Universidade de Brasília.
+                        Reúno neste portfólio listas de exercícios diagramadas em <strong>LaTeX</strong> (incluindo materiais bilíngues), roteiros de aula contextualizados pela História da Matemática e <strong>simuladores interativos</strong> desenvolvidos para tornar conceitos abstratos visuais e acessíveis em sala de aula.
                     </p>
+
+                    <!-- Destaques rápidos para coordenação pedagógica -->
+                    <div class="flex flex-wrap gap-2 pt-1 text-xs font-medium text-slate-600">
+                        <span class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg">✓ BNCC, ENEM, PAS/UnB & OBMEP</span>
+                        <span class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg">✓ Materiais Bilíngues (EN/PT)</span>
+                        <span class="bg-white border border-slate-200 px-3 py-1.5 rounded-lg">✓ Simuladores Interativos Próprios</span>
+                    </div>
 
                     <!-- Botões de Ação -->
                     <div class="pt-3 flex flex-wrap items-center gap-4">
                         <a href="#materiais" class="bg-ctaTeal hover:bg-ctaTealHover text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition transform active:scale-95 inline-flex items-center gap-2">
-                            <span>Ver Materiais (PDFs)</span>
+                            <span>Explorar Materiais Didáticos</span>
                         </a>
-                        <button onclick="openLattesModal()" class="bg-ctaSlate hover:bg-ctaSlateHover text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition transform active:scale-95 inline-flex items-center gap-2">
-                            <span>Meu Currículo</span>
+                        <button onclick="downloadTeacherCV()" class="bg-ctaSlate hover:bg-ctaSlateHover text-white font-semibold px-6 py-3 rounded-xl shadow-sm transition transform active:scale-95 inline-flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                            <span>Baixar Currículo (PDF)</span>
                         </button>
                     </div>
                 </div>
@@ -225,7 +251,7 @@
     </section>
 
     <!-- ==========================================
-         3. MATERIAIS RECENTES & REPOSITÓRIO INTERATIVO
+         3. RECURSOS DIDÁTICOS & REPOSITÓRIO INTERATIVO
          ========================================== -->
     <section id="materiais" class="py-12 sm:py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -234,10 +260,10 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
                     <h2 class="text-2xl sm:text-[26px] font-bold text-slate-900 tracking-tight">
-                        Materiais Recentes
+                        Recursos Didáticos & Produção Acadêmica
                     </h2>
                     <p class="text-sm text-slate-500 mt-1">
-                        Clique em qualquer cartão para visualizar o resumo, fórmulas, código LaTeX/BibTeX e fazer o download.
+                        Materiais organizados com foco na Educação Básica (Ensino Fundamental e Médio), seguidos de produções universitárias. Clique para visualizar ou baixar.
                     </p>
                 </div>
 
@@ -247,7 +273,7 @@
                         <input id="search-input" 
                                type="text" 
                                oninput="filterMaterials()"
-                               placeholder="Buscar lista, código, tema..." 
+                               placeholder="Buscar tema, série, inglês..." 
                                class="w-full sm:w-64 pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-ctaTeal focus:bg-white transition">
                         <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -256,22 +282,22 @@
                 </div>
             </div>
 
-            <!-- Abas de Categorias -->
+            <!-- Abas de Categorias (Educação Básica em destaque) -->
             <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-slate-100">
                 <button onclick="setCategory('all')" data-cat="all" class="cat-btn bg-navNavy text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Todos os Materiais (<span id="count-all">11</span>)
-                </button>
-                <button onclick="setCategory('ensino universitario')" data-cat="ensino universitario" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Monitoria & Ensino (UnB)
+                    Todos os Materiais (<span id="count-all">12</span>)
                 </button>
                 <button onclick="setCategory('ensino')" data-cat="ensino" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Ensino Médio e Fundamental
+                    Educação Básica (EF & EM)
+                </button>
+                <button onclick="setCategory('ensino universitario')" data-cat="ensino universitario" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
+                    Monitoria & Ensino Superior (UnB)
                 </button>
                 <button onclick="setCategory('pesquisa')" data-cat="pesquisa" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Pesquisa & PIBIC
+                    Pesquisa & PIBIC (CNPq)
                 </button>
                 <button onclick="setCategory('codigo')" data-cat="codigo" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-4 py-2 rounded-lg transition whitespace-nowrap">
-                    Templates LaTeX & Python
+                    Diagramação LaTeX & Python
                 </button>
             </div>
 
@@ -289,115 +315,229 @@
     </section>
 
     <!-- ==========================================
-         4. SEÇÃO SOBRE MIM (Trajetória na UnB)
+         4. SIMULADORES INTERATIVOS & PROJETOS EDUCACIONAIS
          ========================================== -->
-    <section id="sobre" class="py-14 bg-heroBg border-t border-slate-200/80">
+    <section id="projetos" class="py-16 bg-heroBg border-t border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-ctaTeal text-xs font-semibold uppercase tracking-wider mb-2">
+                        Metodologias Ativas & Tecnologia
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
+                        Simuladores para Sala de Aula & Ferramentas Didáticas
+                    </h2>
+                    <p class="text-slate-600 mt-1">
+                        Aplicações web desenvolvidas para visualização geométrica, interdisciplinaridade (Matemática e Física) e padronização de avaliações.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Simulador 1: Marés e Gravitação Universal (Destaque Escolar) -->
+                <div class="bg-white rounded-2xl p-6 border-2 border-teal-500/50 shadow-sm flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-teal-50 text-ctaTeal font-mono text-xs font-semibold">Ensino Médio • Física & Mat</span>
+                            <span class="text-xs font-semibold text-ctaTeal">Interativo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Simulador de Marés & Gravitação Universal</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Visualização interativa da deformação oceânica pela gravidade diferencial da Lua, rotação terrestre de 24h e dedução algébrica com produtos notáveis da lei de <span class="math-formula">1/d³</span>.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://guimaraenslucas4-a11y.github.io/Teste/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
+                            <span>Abrir Simulador em Sala</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Simulador 2: Explorador de Fractais & Conjuntos de Julia (Destaque Escolar) -->
+                <div class="bg-white rounded-2xl p-6 border-2 border-teal-500/50 shadow-sm flex flex-col justify-between relative overflow-hidden">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-teal-50 text-ctaTeal font-mono text-xs font-semibold">Ensino Médio • Complexos</span>
+                            <span class="text-xs font-semibold text-ctaTeal">Interativo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Explorador de Fractais & Conjuntos de Julia</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Atividade investigativa (<em>O Pulso do Horizonte de Eventos</em>) com zoom contínuo e lançamento de sondas para explorar iterações no plano complexo <span class="math-formula">z<sub>n+1</sub> = z<sub>n</sub>² + c</span>.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <a href="https://guimaraenslucas4-a11y.github.io/fractais/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
+                            <span>Abrir Simulador em Sala</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Diagramação Profissional de Provas & Listas em LaTeX -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-800 font-mono text-xs font-semibold">LaTeX / TikZ / PGFPlots</span>
+                            <span class="text-xs text-slate-400">Avaliações & Apostilas</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Diagramação de Provas, Listas & Gráficos Vetoriais</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Produção editorial de simulados, listas de exercícios e apostilas com gráficos geométricos precisos (TikZ) e gabaritos comentados passo a passo.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(11)" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition">
+                        Ver Estrutura LaTeX
+                    </button>
+                </div>
+
+                <!-- Projeto 4: Finanças Quantitativas -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-orange-50 text-iconOrange font-mono text-xs font-semibold">Educação Financeira & Mat</span>
+                            <span class="text-xs text-slate-400">Python + PDF</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Modelagem Binomial & Precificação de Opções</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Estudo sobre árvores binomiais de probabilidade e convergência para modelos contínuos (Black-Scholes), conectando combinatória e finanças.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(9)" class="w-full py-2.5 px-4 rounded-xl bg-ctaSlate hover:bg-ctaSlateHover text-white text-sm font-medium transition">
+                        Acessar Estudo Completo
+                    </button>
+                </div>
+
+                <!-- Projeto 5: Python / SymPy -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-md bg-blue-50 text-iconBlue font-mono text-xs font-semibold">Python / SymPy</span>
+                            <span class="text-xs text-slate-400">Computação Simbólica</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Verificação Simbólica & Cálculo Vetorial no SymPy</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                            Rotinas em Python para manipulação algébrica simbólica, verificação de soluções de equações diferenciais e geração automática de expressões LaTeX.
+                        </p>
+                    </div>
+                    <button onclick="openMaterialModal(12)" class="w-full py-2.5 px-4 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-medium transition">
+                        Inspecionar Script Python
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         5. SEÇÃO FORMAÇÃO & PRÁTICA DOCENTE
+         ========================================== -->
+    <section id="sobre" class="py-14 bg-white border-t border-slate-200/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 
                 <!-- Coluna Sobre & Formação -->
                 <div class="lg:col-span-7 space-y-5">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-ctaTeal text-xs font-semibold uppercase tracking-wider">
-                        Trajetória Acadêmica
+                        Perfil Docente & Formação
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-                        Departamento de Matemática — Universidade de Brasília (MAT/UnB)
+                        Compromisso Pedagógico & Formação na Universidade de Brasília (UnB)
                     </h2>
                     <p class="text-slate-700 leading-relaxed">
-                        Sou graduando em Matemática na <strong>Universidade de Brasília (UnB)</strong>, atuando como pesquisador de Iniciação Científica (PIBIC/CNPq) e monitor em disciplinas do ciclo básico e profissionalizante da Matemática.
+                        Sou licenciando em Matemática pela <strong>Universidade de Brasília (UnB)</strong> e professor de Matemática, com experiência no acompanhamento individualizado de estudantes, preparação de materiais didáticos e mediação de aprendizagem nos Ensinos Fundamental e Médio.
                     </p>
                     <p class="text-slate-700 leading-relaxed">
-                        Meus interesses acadêmicos concentram-se na interseção entre <strong>Equações Diferenciais Parciais</strong> (com foco nas equações de Euler e Navier-Stokes na Dinâmica dos Fluidos), <strong>Teoria da Probabilidade e Finanças Quantitativas</strong> (processos estocásticos em tempo discreto e contínuo) e no uso de ferramentas computacionais livres e <strong>LaTeX</strong> para ensino e documentação científica.
+                        Minha prática em sala de aula alia <strong>clareza conceitual e rigor matemático</strong> a recursos visuais — como a História da Matemática e simuladores digitais — para desenvolver o raciocínio lógico e preparar os estudantes para as demandas da <strong>BNCC</strong>, <strong>ENEM</strong>, <strong>PAS/UnB</strong> e olimpíadas científicas (<strong>OBMEP</strong>).
                     </p>
 
-                    <!-- Linha do Tempo Acadêmica -->
+                    <!-- Linha do Tempo Docente & Acadêmica -->
                     <div class="pt-4 space-y-4">
-                        <!-- Item 1: IC 2026-2027 -->
-                        <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
-                            <div class="w-10 h-10 rounded-lg bg-navNavy text-navTeal flex items-center justify-center font-bold shrink-0 text-sm">
-                                IC
+                        <!-- Item 1: Docência & Educação Básica -->
+                        <div class="flex gap-4 items-start bg-slate-50 p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-ctaTeal text-white flex items-center justify-center font-bold shrink-0 text-xs">
+                                DOC
                             </div>
                             <div>
                                 <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <h3 class="font-bold text-slate-900">Pesquisador de Iniciação Científica (PIBIC / CNPq)</h3>
-                                    <span class="text-xs font-medium bg-teal-50 text-ctaTeal px-2.5 py-0.5 rounded-full">2026-2027</span>
+                                    <h3 class="font-bold text-slate-900">Atuação Docente & Produção Didática (EF II e EM)</h3>
+                                    <span class="text-xs font-medium bg-teal-100 text-ctaTeal px-2.5 py-0.5 rounded-full">Atual</span>
                                 </div>
                                 <p class="text-sm text-slate-600 mt-1">
-                                    Modelos matemáticos de precificação de derivativos (Cox-Ross-Rubinstein e Black-Scholes)
+                                    Planejamento de aulas, elaboração de listas de exercícios (português e inglês), atendimento em plantões de dúvidas e desenvolvimento de applets interativos de Física e Matemática.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Item 2: IC 2025-2026 -->
-                        <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
-                            <div class="w-10 h-10 rounded-lg bg-navNavy text-navTeal flex items-center justify-center font-bold shrink-0 text-sm">
-                                IC
-                            </div>
-                            <div>
-                                <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <h3 class="font-bold text-slate-900">Pesquisador de Iniciação Científica (PIBIC / CNPq)</h3>
-                                    <span class="text-xs font-medium bg-teal-50 text-ctaTeal px-2.5 py-0.5 rounded-full">2025-2026</span>
-                                </div>
-                                <p class="text-sm text-slate-600 mt-1">
-                                    Investigação matemática em Dinâmica dos Fluidos e Transformação de Kármán-Trefftz e equações de Navier-Stokes.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Item 3: Monitoria — Variáveis Complexas -->
-                        <div class="flex gap-4 items-start bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                        <!-- Item 2: Monitorias na UnB -->
+                        <div class="flex gap-4 items-start bg-slate-50 p-4 rounded-xl border border-slate-200/80 shadow-sm">
                             <div class="w-10 h-10 rounded-lg bg-blue-900 text-blue-200 flex items-center justify-center font-bold shrink-0 text-sm">
                                 UnB
                             </div>
                             <div class="w-full">
                                 <div class="flex flex-wrap items-center justify-between gap-2">
-                                    <h3 class="font-bold text-slate-900">Monitoria Acadêmica — Variáveis Complexas</h3>
-                                    <span class="text-xs font-medium bg-slate-100 text-slate-700 px-2.5 py-0.5 rounded-full">2025 – 2026</span>
+                                    <h3 class="font-bold text-slate-900">Monitoria Acadêmica — Departamento de Matemática (MAT/UnB)</h3>
+                                    <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full">2025 – 2026</span>
                                 </div>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Atendimento didático, resolução de listas e apoio pedagógico nas disciplinas de Cálculo de Probabilidade 1, Variáveis Complexas e MAT0028.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: IC CNPq -->
+                        <div class="flex gap-4 items-start bg-slate-50 p-4 rounded-xl border border-slate-200/80 shadow-sm">
+                            <div class="w-10 h-10 rounded-lg bg-navNavy text-navTeal flex items-center justify-center font-bold shrink-0 text-sm">
+                                IC
+                            </div>
+                            <div>
+                                <div class="flex flex-wrap items-center justify-between gap-2">
+                                    <h3 class="font-bold text-slate-900">Iniciação Científica (PIBIC / CNPq — UnB)</h3>
+                                    <span class="text-xs font-medium bg-slate-200 text-slate-700 px-2.5 py-0.5 rounded-full">2025 – 2027</span>
+                                </div>
+                                <p class="text-sm text-slate-600 mt-1">
+                                    Pesquisa em Matemática Aplicada: Dinâmica dos Fluidos (Transformação de Kármán-Trefftz) e Modelos Matemáticos de Precificação de Derivativos (CRR e Black-Scholes).
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Competências & Ferramentas -->
-                <div class="lg:col-span-5 bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm space-y-6">
-                    <h3 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3">
-                        Áreas de Estudo & Ferramentas Técnicas
+                <!-- Coluna Competências Pedagógicas & Ferramentas -->
+                <div class="lg:col-span-5 bg-heroBg rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-lg font-bold text-slate-900 border-b border-slate-200 pb-3">
+                        Competências Pedagógicas & Técnicas
                     </h3>
 
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
-                                <span>LaTeX (TikZ, Beamer, abntex2, PGFPlots)</span>
-                            </div>
+                    <div class="space-y-3 text-sm text-slate-700">
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                            <p class="font-bold text-slate-900">Currículo & Exames Nacionais</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Alinhamento à BNCC, matrizes do ENEM, PAS/UnB (1ª, 2ª e 3ª etapas) e preparação para OBMEP.</p>
                         </div>
 
-                        <div>
-                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
-                                <span>EDPs & Mecânica dos Fluidos</span>
-                            </div>
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                            <p class="font-bold text-slate-900">Didática & História da Matemática</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Contextualização histórica de conceitos (logaritmos, geometria, álgebra) para engajamento dos estudantes.</p>
                         </div>
 
-                        <div>
-                            <div class="flex justify-between text-sm font-semibold text-slate-800 mb-1.5">
-                                <span>Probabilidade & Matemática Financeira</span>
-                            </div>
+                        <div class="bg-white p-3.5 rounded-xl border border-slate-200/80">
+                            <p class="font-bold text-slate-900">Produção Editorial & Tecnologia</p>
+                            <p class="text-xs text-slate-600 mt-0.5">Diagramação profissional em LaTeX (TikZ/Beamer), GeoGebra e desenvolvimento de simuladores web em HTML5/JS.</p>
                         </div>
                     </div>
 
                     <!-- Tags de Tópicos -->
-                    <div class="pt-2">
-                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Tópicos Recorrentes nos Materiais</p>
+                    <div class="pt-1">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Frentes de Atuação</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Navier-Stokes</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Kármán-Trefftz</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Black-Scholes</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Teoria dos Números</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Variáveis Aleatórias</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Álgebra Tensorial</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">História dos Logaritmos</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Gravitação & Marés</span>
-                            <span class="text-xs bg-slate-100 text-slate-700 px-3 py-1 rounded-full font-medium">Conjuntos de Julia & Fractais</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">Ensino Fundamental II</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">Ensino Médio</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">PAS / UnB & ENEM</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">Matemática Bilíngue</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">Plantão de Dúvidas</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">Simuladores Interativos</span>
+                            <span class="text-xs bg-white border border-slate-200 text-slate-700 px-3 py-1 rounded-full font-medium">LaTeX & TikZ</span>
                         </div>
                     </div>
                 </div>
@@ -407,36 +547,36 @@
     </section>
 
     <!-- ==========================================
-         5. SEÇÃO PESQUISA (Com Simuladores Matemáticos Interativos)
+         6. SEÇÃO PESQUISA (Laboratórios Interativos UnB)
          ========================================== -->
-    <section id="pesquisa" class="py-16 bg-white border-t border-slate-200/80">
+    <section id="pesquisa" class="py-16 bg-heroBg border-t border-slate-200/80">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div class="max-w-3xl">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-iconOrange text-xs font-semibold uppercase tracking-wider mb-3">
-                    Iniciação Científica (PIBIC / CNPq)
+                    Aprofundamento Científico (PIBIC / CNPq — UnB)
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-                    Linhas de Pesquisa & Visualização Matemática
+                    Pesquisa Acadêmica & Visualização Matemática
                 </h2>
                 <p class="text-slate-600 mt-2">
-                    Abaixo você encontra uma síntese das minhas investigações atuais e laboratórios interativos demonstrando a convergência do modelo binomial de <strong>Cox-Ross-Rubinstein (CRR)</strong> para a EDP de <strong>Black-Scholes</strong> e a transformação conforme de <strong>Kármán-Trefftz</strong>.
+                    Exemplos de como aplico programação e visualização gráfica na minha pesquisa na UnB — mesma abordagem utilizada para criar recursos didáticos interativos no Ensino Básico.
                 </p>
             </div>
 
             <!-- LABORATÓRIO 1: FINANÇAS MATEMÁTICAS (BLACK-SCHOLES & CRR) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 
                 <!-- Explicação Teórica & Controles (Black-Scholes) -->
                 <div class="lg:col-span-5 space-y-4">
-                    <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Finanças Matemáticas & Processos Estocásticos</span>
+                    <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Probabilidade & Matemática Financeira</span>
                     <h3 class="text-xl font-bold text-slate-900">
-                        EDP de Black-Scholes & Portfólio Replicante
+                        EDP de Black-Scholes & Árvore Binomial CRR
                     </h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
                         Partindo da árvore binomial discreta de Cox-Ross-Rubinstein sob a medida neutra ao risco e tomando o limite contínuo (<span class="math-formula">Δt → 0</span>), o preço de uma opção sem arbitragem satisfaz a EDP de Black-Scholes:
                     </p>
                     
-                    <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center my-2 shadow-inner">
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center my-2">
                         <span class="math-formula text-base sm:text-lg text-slate-900 font-semibold">
                             ∂V/∂t + ½ σ² S² (∂²V/∂S²) + r S (∂V/∂S) − r V = 0
                         </span>
@@ -508,19 +648,19 @@
             </div>
 
             <!-- LABORATÓRIO 2: DINÂMICA DOS FLUIDOS (KÁRMÁN-TREFFTZ) -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
                 
                 <!-- Explicação Teórica (Kármán-Trefftz) -->
                 <div class="lg:col-span-5 space-y-4">
                     <span class="text-xs font-mono font-semibold text-ctaTeal uppercase">Análise Complexa & Dinâmica dos Fluidos</span>
                     <h3 class="text-xl font-bold text-slate-900">
-                        Transformação de Kármán-Trefftz & Escoamento Potencial
+                        Transformação de Kármán-Trefftz & Aerofólios
                     </h3>
                     <p class="text-sm text-slate-600 leading-relaxed">
                         Generalizando a transformação de Joukowski, o mapeamento conforme de Kármán-Trefftz transforma um círculo no plano complexo <span class="math-formula">ζ</span> em um perfil aerodinâmico no plano <span class="math-formula">z</span> com ângulo de bordo de fuga finito <span class="math-formula">α = (2 - n)π</span>:
                     </p>
                     
-                    <div class="bg-white p-3.5 rounded-xl border border-slate-200 text-center my-2 shadow-inner">
+                    <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-center my-2">
                         <span class="math-formula text-base sm:text-lg text-slate-900 font-semibold">
                             (z − nb) / (z + nb) = [ (T(z) − b) / (T(z) + b) ]<sup>l</sup>
                         </span>
@@ -571,139 +711,30 @@
     </section>
 
     <!-- ==========================================
-         6. SEÇÃO PROJETOS (LaTeX, Python SymPy & Simuladores)
-         ========================================== -->
-    <section id="projetos" class="py-16 bg-heroBg border-t border-slate-200/80">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
-                <div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-                        Projetos & Repositórios Abertos
-                    </h2>
-                    <p class="text-slate-600 mt-1">
-                        Templates padronizados em LaTeX, rotinas computacionais em Python e simuladores interativos para estudantes de exatas.
-                    </p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Projeto 1: Template LaTeX -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-md bg-slate-100 text-slate-800 font-mono text-xs font-semibold">LaTeX / abntex2</span>
-                            <span class="text-xs text-slate-400">v2.4 • 2026</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Template Relatório PIBIC & Monografia UnB</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Estrutura pré-configurada com normas da ABNT, ambientes de teoremas (`amsthm`), citações automáticas e capa oficial da Universidade de Brasília.
-                        </p>
-                    </div>
-                    <button onclick="openMaterialModal(4)" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium transition">
-                        Ver Código LaTeX
-                    </button>
-                </div>
-
-                <!-- Projeto 2: Python / SymPy -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-md bg-blue-50 text-iconBlue font-mono text-xs font-semibold">Python / SymPy</span>
-                            <span class="text-xs text-slate-400">Notebook</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Cálculo Tensorial & Navier-Stokes no SymPy</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Scripts simbólicos para expansão de operadores diferenciais em coordenadas cilíndricas e esféricas e dedução automatizada de equações de conservação.
-                        </p>
-                    </div>
-                    <button onclick="openMaterialModal(8)" class="w-full py-2.5 px-4 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-medium transition">
-                        Inspecionar Script Python
-                    </button>
-                </div>
-
-                <!-- Projeto 3: Finanças Quantitativas -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-md bg-orange-50 text-iconOrange font-mono text-xs font-semibold">Finanças Quant</span>
-                            <span class="text-xs text-slate-400">Python + PDF</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Convergência Binomial CRR para Black-Scholes</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Implementação numérica e demonstração analítica da convergência do modelo discreto de Cox-Ross-Rubinstein para a EDP de Black-Scholes.
-                        </p>
-                    </div>
-                    <button onclick="openMaterialModal(6)" class="w-full py-2.5 px-4 rounded-xl bg-ctaSlate hover:bg-ctaSlateHover text-white text-sm font-medium transition">
-                        Acessar Estudo Completo
-                    </button>
-                </div>
-
-                <!-- Projeto 4: Simulador de Marés e Gravitação Universal -->
-                <div class="bg-white rounded-2xl p-6 border border-teal-500/40 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-md bg-teal-50 text-ctaTeal font-mono text-xs font-semibold">HTML5 Canvas / Física</span>
-                            <span class="text-xs text-slate-400">Ensino Médio</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Simulador de Marés & Gravitação Universal</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Visualização interativa da deformação oceânica pela gravidade diferencial da Lua, rotação terrestre de 24h e dedução algébrica com produtos notáveis da lei de <span class="math-formula">1/d³</span>.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://guimaraenslucas4-a11y.github.io/Teste/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
-                            <span>Abrir Simulador Interativo</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Projeto 5: Explorador de Fractais & Conjuntos de Julia -->
-                <div class="bg-white rounded-2xl p-6 border border-teal-500/40 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-md bg-teal-50 text-ctaTeal font-mono text-xs font-semibold">HTML5 Canvas / Fractais</span>
-                            <span class="text-xs text-slate-400">Sistemas Dinâmicos</span>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 mb-2">Explorador de Fractais & Conjuntos de Julia</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">
-                            Simulador interativo (<em>O Pulso do Horizonte de Eventos</em>) com zoom contínuo na fronteira fractal, lançamento de sondas para rastrear órbitas estáveis ou caóticas sob a iteração <span class="math-formula">z<sub>n+1</sub> = z<sub>n</sub>² + c</span> e cenários pré-definidos.
-                        </p>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://guimaraenslucas4-a11y.github.io/fractais/" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-navNavy hover:bg-slate-800 text-navTeal text-sm font-semibold transition text-center inline-flex items-center justify-center gap-1.5 shadow-sm">
-                            <span>Abrir Simulador Interativo</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         7. SEÇÃO CONTATO & RODAPÉ ACADÊMICO
+         7. SEÇÃO CONTATO & RODAPÉ
          ========================================== -->
     <section id="contato" class="py-16 bg-white border-t border-slate-200">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="bg-navNavy rounded-3xl p-8 sm:p-10 text-white shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 <div class="lg:col-span-6 space-y-4">
-                    <span class="text-navTeal text-xs font-bold uppercase tracking-widest">Contato Acadêmico</span>
-                    <h2 class="text-2xl sm:text-3xl font-bold">Dúvidas de Monitoria ou Colaborações de Pesquisa?</h2>
+                    <span class="text-navTeal text-xs font-bold uppercase tracking-widest">Contato Profissional & Acadêmico</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold">Processos Seletivos, Coordenação Pedagógica ou Monitoria</h2>
                     <p class="text-slate-300 text-sm leading-relaxed">
-                        Se você é estudante da UnB procurando auxílio nas listas de exercícios ou pesquisador interessado em discutir projetos em Matemática Aplicada, envie uma mensagem.
+                        Estou à disposição para entrevistas, aulas-teste, apresentação de projetos didáticos ou esclarecimentos sobre minha formação na Universidade de Brasília.
                     </p>
                     <div class="pt-2 space-y-2 text-sm text-slate-200">
                         <p class="flex items-center gap-2.5">
                             <span class="w-2 h-2 rounded-full bg-navTeal"></span>
-                            <span>Departamento de Matemática (MAT) — ICC Centro, Campus Darcy Ribeiro, UnB</span>
+                            <span>E-mail: <a href="mailto:guimaraenslucas4@gmail.com" class="underline hover:text-navTeal">guimaraenslucas4@gmail.com</a></span>
                         </p>
                         <p class="flex items-center gap-2.5">
                             <span class="w-2 h-2 rounded-full bg-navTeal"></span>
-                            <span>Brasília — DF, Brasil</span>
+                            <span>Departamento de Matemática (MAT) — Universidade de Brasília (UnB)</span>
+                        </p>
+                        <p class="flex items-center gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-navTeal"></span>
+                            <span>Plano Piloto, Brasília — DF</span>
                         </p>
                     </div>
                 </div>
@@ -712,33 +743,33 @@
                 <div class="lg:col-span-6">
                     <form action="https://formsubmit.co/guimaraenslucas4@gmail.com" method="POST" class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/15 space-y-4">
                         
-                        <!-- Configurações ocultas do FormSubmit -->
-                        <input type="hidden" name="_subject" value="Novo contato pelo Portal Acadêmico (UnB)">
+                        <input type="hidden" name="_subject" value="Contato Profissional / Escolar — Portfólio Arthur Amorim">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
 
                         <div>
-                            <label class="block text-xs font-medium text-slate-200 mb-1">Seu Nome</label>
-                            <input type="text" name="Nome" required placeholder="Ex: Maria Silva (UnB)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                            <label class="block text-xs font-medium text-slate-200 mb-1">Seu Nome / Instituição</label>
+                            <input type="text" name="Nome" required placeholder="Ex: Coordenação Pedagógica — Colégio..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
                         </div>
 
                         <div>
-                            <label class="block text-xs font-medium text-slate-200 mb-1">Seu E-mail (para resposta)</label>
-                            <input type="email" name="Email" required placeholder="Ex: aluno@aluno.unb.br" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
+                            <label class="block text-xs font-medium text-slate-200 mb-1">E-mail para Retorno</label>
+                            <input type="email" name="Email" required placeholder="Ex: coordenacao@colegio.com.br" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
                         </div>
 
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Assunto</label>
                             <select name="Assunto" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal">
-                                <option value="Dúvida de Monitoria (Probabilidade / MAT0028)">Dúvida de Monitoria</option>
-                                <option value="Iniciação Científica / Pesquisa">Iniciação Científica / Pesquisa</option>
-                                <option value="Outro Assunto Acadêmico">Outro Assunto Acadêmico</option>
+                                <option value="Processo Seletivo / Vaga Docente">Processo Seletivo / Vaga Docente</option>
+                                <option value="Solicitação de Aula-Teste / Entrevista">Solicitação de Aula-Teste / Entrevista</option>
+                                <option value="Dúvida de Monitoria / Materiais Didáticos">Dúvida de Monitoria / Materiais Didáticos</option>
+                                <option value="Outro Assunto">Outro Assunto</option>
                             </select>
                         </div>
 
                         <div>
                             <label class="block text-xs font-medium text-slate-200 mb-1">Mensagem</label>
-                            <textarea name="Mensagem" rows="3" required placeholder="Escreva sua mensagem ou dúvida matemática..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal"></textarea>
+                            <textarea name="Mensagem" rows="3" required placeholder="Escreva sua mensagem..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/60 border border-slate-600 text-white text-sm focus:outline-none focus:border-navTeal"></textarea>
                         </div>
 
                         <button type="submit" class="w-full bg-navTeal hover:bg-[#3da197] text-slate-950 font-bold py-2.5 px-4 rounded-xl transition text-sm">
@@ -753,7 +784,7 @@
 
     <footer class="bg-[#141f29] text-slate-400 py-8 text-center text-xs border-t border-slate-800">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p>© 2026 <strong class="text-white">Arthur Amorim</strong> • Graduando em Matemática (UnB). Hospedável via GitHub Pages / Quarto.</p>
+            <p>© 2026 <strong class="text-white">Arthur Amorim</strong> • Professor e Licenciando em Matemática (UnB) — Educação Básica & Tecnologia Educacional.</p>
             <div class="flex items-center gap-4">
                 <a href="#inicio" class="hover:text-navTeal transition">Voltar ao Topo ↑</a>
             </div>
@@ -785,13 +816,13 @@
             <!-- Corpo do Modal -->
             <div class="p-6 space-y-5">
                 <div>
-                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Resumo do Material</h4>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1.5">Objetivo Pedagógico & Resumo</h4>
                     <p id="modal-description" class="text-sm text-slate-700 leading-relaxed"></p>
                 </div>
 
                 <!-- Destaque de Fórmula / Equação -->
                 <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80">
-                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 block mb-1">Equação / Conceito-Chave no Documento</span>
+                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 block mb-1">Equação / Conceito-Chave Trabalhado</span>
                     <div id="modal-formula" class="math-formula text-base sm:text-lg text-slate-900 text-center py-2 font-semibold"></div>
                 </div>
 
@@ -817,11 +848,9 @@
                     <button onclick="closeMaterialModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100 transition">
                         Fechar
                     </button>
-                    <!-- Botão secundário para abrir o PDF diretamente em nova aba -->
                     <button id="modal-open-tab-btn" onclick="openMaterialInNewTab()" class="hidden px-4 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 text-sm font-semibold transition items-center gap-1.5">
                         <span>Abrir PDF ↗</span>
                     </button>
-                    <!-- Botão principal configurado via JS para baixar o PDF -->
                     <button id="modal-download-btn" onclick="triggerSimulatedDownload()" class="px-5 py-2 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -834,28 +863,32 @@
     </div>
 
     <!-- ==========================================
-         MODAL CURRÍCULO LATTES / RESUMO ACADÊMICO
+         MODAL CURRÍCULO DOCENTE & LATTES
          ========================================== -->
-    <div id="lattes-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
+    <div id="cv-modal" class="fixed inset-0 z-50 hidden bg-slate-900/65 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-5">
             <div class="flex items-center justify-between border-b border-slate-100 pb-4">
                 <div>
-                    <span class="text-xs font-bold uppercase tracking-wider text-ctaTeal">Plataforma Lattes / CNPq</span>
-                    <h3 class="text-xl font-bold text-slate-900">Arthur Amorim — Síntese Curricular</h3>
+                    <span class="text-xs font-bold uppercase tracking-wider text-ctaTeal">Síntese Curricular • Educação Básica</span>
+                    <h3 class="text-xl font-bold text-slate-900">Arthur Amorim — Professor de Matemática</h3>
                 </div>
-                <button onclick="closeLattesModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100">✕</button>
+                <button onclick="closeCvModal()" class="text-slate-400 hover:text-slate-700 p-1.5 rounded-lg hover:bg-slate-100">✕</button>
             </div>
 
-            <div class="space-y-3 text-sm text-slate-700">
-                <p><strong>Formação:</strong> Graduando em Matemática — Universidade de Brasília (UnB).</p>
-                <p><strong>Atuação Científica:</strong> Bolsista/Pesquisador de Iniciação Científica (CNPq) em Matemática Aplicada (Dinâmica dos Fluidos e Finanças Matemáticas).</p>
-                <p><strong>Idiomas & Computação:</strong> Português (Nativo), Inglês (Leitura Científica Avançada) e LaTeX.</p>
+            <div class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                <p><strong>Formação:</strong> Licenciatura em Matemática — Universidade de Brasília (UnB) • 6º semestre (IRA 4,33).</p>
+                <p><strong>Experiência Docente & Monitoria:</strong> Professor de Matemática na Educação Básica e Monitor no Departamento de Matemática da UnB (Cálculo de Probabilidade 1, Variáveis Complexas e MAT0028).</p>
+                <p><strong>Diferenciais Pedagógicos:</strong> Elaboração de listas e avaliações em LaTeX (português e inglês), alinhamento à BNCC/ENEM/PAS-UnB e desenvolvimento de simuladores web interativos.</p>
+                <p><strong>Pesquisa Científica:</strong> Bolsista PIBIC/CNPq (UnB) em Matemática Aplicada (Dinâmica dos Fluidos e Matemática Financeira).</p>
             </div>
 
-            <div class="flex justify-end gap-3 pt-2">
-                <button onclick="closeLattesModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100">Fechar</button>
-                <button onclick="showToast('Currículo Acadêmico em PDF gerado para visualização!'); closeLattesModal();" class="px-5 py-2 rounded-xl bg-navNavy text-white text-sm font-semibold hover:opacity-95">
-                    Baixar CV em PDF
+            <div class="flex flex-wrap justify-end gap-3 pt-2">
+                <button onclick="closeCvModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 text-sm font-medium hover:bg-slate-100">Fechar</button>
+                <button onclick="downloadTeacherCV(); closeCvModal();" class="px-5 py-2 rounded-xl bg-ctaTeal hover:bg-ctaTealHover text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    <span>Baixar CV Completo (PDF)</span>
                 </button>
             </div>
         </div>
@@ -913,17 +946,85 @@
             }
         }
 
-        // 2. BASE DE DADOS DOS MATERIAIS ACADÊMICOS DE ARTHUR AMORIM
+        // 2. BASE DE DADOS (EDUCAÇÃO BÁSICA EM PRIMEIRO LUGAR)
         const materialsData = [
             {
                 id: 1,
-                title: "Lista de Exercícios - Cálculo de Probabilidade 1 (2026)",
+                title: "Simulador Interativo: Marés e Gravitação Universal",
+                category: "ensino",
+                categoryLabel: "Ensino Médio • Simulador Interativo",
+                iconType: "code-dark",
+                meta: "Aplicação Web Interativa (HTML5 Canvas)",
+                fileUrl: "https://guimaraenslucas4-a11y.github.io/Teste/",
+                description: "Recurso didático interativo para aulas de Física e Matemática no Ensino Médio. Visualiza a deformação oceânica provocada pela gravidade diferencial da Lua, a rotação terrestre de 24h (duas marés altas e duas baixas diárias) e a dedução algébrica via Produtos Notáveis da lei do inverso do cubo da distância.",
+                formula: "Δa = a<sub>A</sub> − a<sub>C</sub> ≈ (2 · G · M<sub>L</sub> · R) / d³",
+                snippet: `// Cálculo da aceleração de maré (diferencial gravitacional) no Ensino Médio:
+const aC = (G * M_MOON) / Math.pow(d_m, 2);
+const aA = (G * M_MOON) / Math.pow((d_km - R_EARTH_KM) * 1000, 2);
+const aB = (G * M_MOON) / Math.pow((d_km + R_EARTH_KM) * 1000, 2);
+
+const diffA = aA - aC; // Força de maré voltada para a Lua (+)
+const diffB = aB - aC; // Força de maré oposta à Lua (-)`
+            },
+            {
+                id: 2,
+                title: "Simulador Interativo: Conjuntos de Julia e Fractais",
+                category: "ensino",
+                categoryLabel: "Ensino Médio • Números Complexos",
+                iconType: "code-dark",
+                meta: "Aplicação Web Interativa (HTML5 Canvas)",
+                fileUrl: "https://guimaraenslucas4-a11y.github.io/fractais/",
+                description: "Explorador interativo com zoom contínuo de Conjuntos de Julia (O Pulso do Horizonte de Eventos). Permite que estudantes do Ensino Médio visualizem operações com números complexos na prática, lançando sondas no plano de Argand-Gauss para observar órbitas estáveis ou que escapam para o infinito.",
+                formula: "z<sub>n+1</sub> = z<sub>n</sub>² + c , &nbsp; |z<sub>n</sub>| ≤ 2",
+                snippet: `// Iteração do sistema dinâmico complexo z_{n+1} = z_n^2 + c (Conjunto de Julia):
+let x = x0, y = y0, iter = 0;
+while (x * x + y * y <= 4 && iter < maxIter) {
+    const xTemp = x * x - y * y + cr;
+    y = 2 * x * y + ci;
+    x = xTemp;
+    iter++;
+}`
+            },
+            {
+                id: 3,
+                title: "Lista Bilíngue (EN/PT): Systems of Linear Equations (8º Ano)",
+                category: "ensino",
+                categoryLabel: "Ensino Fundamental II • Matemática Bilíngue",
+                iconType: "pdf-red",
+                meta: "PDF • Grade 8 • Gabarito Passo a Passo",
+                fileUrl: "linear_systems_grade8.pdf",
+                description: "Lista de exercícios elaborada em inglês para turmas de 8º ano (Grade 8 / Ensino Bilíngue). Contempla resolução algébrica (substituição e eliminação), interpretação gráfica de retas concorrentes/paralelas/coincidentes, análise de erro (Error Analysis), problemas contextualizados e gabarito comentado.",
+                formula: "{ 2x + y = 11 , &nbsp; 3x − y = 9 } &nbsp; ⇒ &nbsp; (x, y) = (4, 3)",
+                snippet: `% Grade 8 Mathematics - Systems of Linear Equations
+\\textbf{Part A -- Computation:} Solve each system using substitution or elimination.
+\\begin{enumerate}
+  \\item $\\begin{cases} y = 2x - 1 \\\\ 3x + y = 14 \\end{cases}$
+  \\item $\\begin{cases} 4x + 3y = 18 \\\\ 2x - 3y = 0 \\end{cases}$
+\\end{enumerate}`
+            },
+            {
+                id: 4,
+                title: "Aula Contextualizada: Logaritmos, Prostaferese e Napier",
+                category: "ensino",
+                categoryLabel: "Ensino Médio • História da Matemática",
+                iconType: "pdf-red",
+                meta: "PDF • Roteiro de Aula • 12 páginas",
+                fileUrl: "Aula_de_logaritmo (4).pdf",
+                description: "Sequência didática que introduz Logaritmos no Ensino Médio a partir do problema histórico da astronomia nos séculos XVI e XVII: como transformar produtos em somas antes das calculadoras, partindo das fórmulas de prostaferese até a construção cinemática de John Napier.",
+                formula: "cos(α) cos(β) = ½ [ cos(α − β) + cos(α + β) ]",
+                snippet: `% A construção cinemática de John Napier (1614)
+% Seja um ponto P movendo-se com velocidade proporcional à distância restante:
+\\[ \\frac{dx}{dt} = -x(t), \\quad \\frac{dy}{dt} = v_0 \\implies y(t) = \\text{NapLog}(x) \\]`
+            },
+            {
+                id: 5,
+                title: "Lista de Exercícios - Cálculo de Probabilidade 1 (UnB)",
                 category: "ensino universitario",
                 categoryLabel: "Monitoria UnB • Probabilidade",
                 iconType: "pdf-red",
                 fileUrl: "lista_probabilidade1.pdf",
-                meta: "PDF • 14 páginas • Atualizado em Out 2026",
-                description: "Lista preparatória elaborada para a monitoria de Cálculo de Probabilidade 1 do Departamento de Matemática da UnB. Aborda espaços de probabilidade, axiomas de Kolmogorov, probabilidade condicional, Teorema de Bayes e variáveis aleatórias discretas e contínuas.",
+                meta: "PDF • 14 páginas • MAT/UnB",
+                description: "Lista preparatória elaborada para a monitoria de Cálculo de Probabilidade 1 do Departamento de Matemática da UnB. Aborda espaços de probabilidade, axiomas de Kolmogorov, probabilidade condicional, Teorema de Bayes e variáveis aleatórias.",
                 formula: "P(A | B) = [ P(B | A) · P(A) ] / ∑ P(B | A<sub>i</sub>) P(A<sub>i</sub>)",
                 snippet: `\\documentclass[12pt,a4paper]{article}
 \\usepackage[utf8]{inputenc}
@@ -937,53 +1038,28 @@
 \\end{document}`
             },
             {
-                id: 2,
+                id: 6,
                 title: "Notas de Aula — Teoria dos Números",
                 category: "ensino universitario",
                 categoryLabel: "Notas de Estudo • Teoria dos Números (UnB)",
                 iconType: "pdf-red",
                 fileUrl: "tnotas.pdf",
-                meta: "PDF • Notas de Aula Completas • MAT/UnB",
-                description: "Notas de aula e estudo sobre Teoria dos Números no Departamento de Matemática da UnB. Aborda divisibilidade em Z, Algoritmo da Divisão de Euclides, Identidade de Bézout, equações diofantinas lineares, Teorema Fundamental da Aritmética, congruências lineares, Teorema Chinês dos Restos e os teoremas clássicos de Fermat, Euler e Wilson.",
+                meta: "PDF • Notas Completas • MAT/UnB",
+                description: "Notas de estudo sobre Teoria dos Números no Departamento de Matemática da UnB: divisibilidade em Z, Algoritmo de Euclides, Identidade de Bézout, equações diofantinas lineares, congruências, Teorema Chinês dos Restos e teoremas de Fermat, Euler e Wilson.",
                 formula: "a<sup>φ(n)</sup> ≡ 1 (mod n), &nbsp; mdc(a, n) = 1",
-                snippet: `\\documentclass[12pt,a4paper]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage[brazil]{babel}
-\\usepackage{amsmath, amssymb, amsthm}
-
-\\newtheorem{teorema}{Teorema}[section]
-\\newtheorem{lema}[teorema]{Lema}
-\\newcommand{\\mdc}{\\operatorname{mdc}}
-
-\\title{Notas de Aula -- Teoria dos Números}
-\\author{Arthur Amorim -- Departamento de Matemática (MAT/UnB)}
-\\date{2026}
-
-\\begin{document}
-\\maketitle
-
-\\begin{lema}[Identidade de Bézout]
+                snippet: `\\begin{lema}[Identidade de Bézout]
 Sejam $a, b \\in \\mathbb{Z}$ não ambos nulos e $d = \\mdc(a, b)$. Então existem inteiros $x, y \\in \\mathbb{Z}$ tais que:
 \\[ ax + by = d \\]
-\\end{lema}
-
-\\begin{teorema}[Teorema de Euler-Fermat]
-Sejam $a, n \\in \\mathbb{Z}$ com $n \\geq 1$ e $\\mdc(a, n) = 1$. Então:
-\\[ a^{\\varphi(n)} \\equiv 1 \\pmod{n} \\]
-onde $\\varphi(n)$ denota a função totiente de Euler.
-\\end{teorema}
-
-\\end{document}`
+\\end{lema}`
             },
             {
-                id: 3,
+                id: 7,
                 title: "Notas de Aula & Monitoria: MAT0028",
                 category: "ensino universitario",
                 categoryLabel: "Monitoria UnB • MAT0028",
                 iconType: "doc-blue",
                 meta: "PDF • 28 páginas • Notas Completas",
-                description: "Caderno de revisão teórica e resolução passo a passo de problemas selecionados da disciplina MAT0028 na UnB. Inclui intuição geométrica, demonstrações rigorosas e contraexemplos clássicos discutidos nos horários de atendimento.",
+                description: "Caderno de revisão teórica e resolução passo a passo de problemas selecionados da disciplina MAT0028 na UnB, enfatizando intuição geométrica, demonstrações rigorosas e contraexemplos clássicos discutidos nos atendimentos.",
                 formula: "‖u + v‖² + ‖u − v‖² = 2(‖u‖² + ‖v‖²) &nbsp; (Identidade do Paralelogramo)",
                 snippet: `% Notas de Aula MAT0028 - Arthur Amorim (UnB)
 \\begin{teorema}[Desigualdade de Cauchy-Schwarz]
@@ -992,29 +1068,13 @@ Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
 \\end{teorema}`
             },
             {
-                id: 4,
-                title: "Template LaTeX para Relatórios (abntex2 & Beamer)",
-                category: "codigo",
-                categoryLabel: "Template LaTeX • Padrão UnB",
-                iconType: "code-dark",
-                meta: "ZIP / .TEX • Compatível com Overleaf",
-                description: "Coleção de templates em LaTeX customizados com a identidade visual da Universidade de Brasília para submissão de relatórios parciais e finais de Iniciação Científica (PIBIC/CNPq), pôsteres de congresso e apresentações em Beamer.",
-                formula: "\\documentclass[12pt,openright,twoside,a4paper,english,brazil]{abntex2}",
-                snippet: `\\documentclass[12pt,a4paper]{abntex2}
-\\usepackage{amsmath,amsfonts,amssymb}
-\\usepackage{tikz,pgfplots}
-\\instituicao{Universidade de Brasília -- UnB \\par Instituto de Ciências Exatas \\par Departamento de Matemática}
-\\autor{Arthur Amorim}
-\\titulo{Relatório de Iniciação Científica -- PIBIC/CNPq}`
-            },
-            {
-                id: 5,
-                title: "Slides: Dinâmica dos Fluidos",
+                id: 8,
+                title: "Slides: Dinâmica dos Fluidos (PIBIC/CNPq)",
                 category: "pesquisa",
                 categoryLabel: "Pesquisa PIBIC • Fluidos",
                 iconType: "slide-orange",
                 meta: "Beamer PDF • 32 slides • Apresentação IC",
-                description: "Apresentação em Beamer sobre a formulação matemática das equações de Euler e Navier-Stokes para escoamentos incompressíveis, vorticidade e aplicação da transformação conforme de Kármán-Trefftz em aerofólios.",
+                description: "Apresentação em Beamer sobre a formulação matemática das equações de Euler e Navier-Stokes para escoamentos incompressíveis e aplicação da transformação conforme de Kármán-Trefftz em aerofólios.",
                 formula: "ρ (∂u/∂t + (u · ∇)u) = −∇p + μ ∇²u + f , &nbsp; ∇ · u = 0",
                 snippet: `\\begin{frame}{Equações de Navier-Stokes Incompressíveis}
 \\begin{block}{Conservação do Momento Linear}
@@ -1023,13 +1083,13 @@ Para quaisquer vetores $u, v$ em um espaço com produto interno $V$, tem-se:
 \\end{frame}`
             },
             {
-                id: 6,
+                id: 9,
                 title: "Precificação de Opções: Modelo CRR & Black-Scholes",
                 category: "pesquisa",
                 categoryLabel: "Pesquisa • Matemática Financeira",
                 iconType: "doc-blue",
                 meta: "PDF + Python • 19 páginas",
-                description: "Estudo analítico da precificação de derivativos em tempo discreto via árvore binomial de Cox-Ross-Rubinstein (medida neutra ao risco) e passagem ao limite contínuo obtendo a equação diferencial parcial de Black-Scholes.",
+                description: "Estudo analítico da precificação de derivativos em tempo discreto via árvore binomial de Cox-Ross-Rubinstein (medida neutra ao risco) e passagem ao limite contínuo obtendo a EDP de Black-Scholes.",
                 formula: "∂V/∂t + ½ σ² S² (∂²V/∂S²) + r S (∂V/∂S) − r V = 0",
                 snippet: `import numpy as np
 
@@ -1038,7 +1098,6 @@ def crr_call_price(S0, K, T, r, sigma, N):
     u = np.exp(sigma * np.sqrt(dt))
     d = 1 / u
     p = (np.exp(r * dt) - d) / (u - d)
-    # Backward induction na árvore binomial
     ST = S0 * (u ** np.arange(N, -1, -1)) * (d ** np.arange(0, N + 1, 1))
     C = np.maximum(ST - K, 0)
     for _ in range(N):
@@ -1046,135 +1105,7 @@ def crr_call_price(S0, K, T, r, sigma, N):
     return C[0]`
             },
             {
-                id: 7,
-                title: "História da Matemática: Logaritmos, Prostaferese e Napier",
-                category: "ensino",
-                categoryLabel: "Artigo Didático • História da Matemática",
-                iconType: "pdf-red",
-                meta: "PDF • Aula_de_logaritmo (4).pdf • 12 páginas",
-                fileUrl: "Aula_de_logaritmo (4).pdf",
-                description: "Exploração histórica sobre como astrônomos e matemáticos do século XVI e XVII simplificavam multiplicações trigonométricas via fórmulas de prostaferese antes da construção cinemática dos logaritmos por John Napier e Jost Bürgi.",
-                formula: "cos(α) cos(β) = ½ [ cos(α − β) + cos(α + β) ]",
-                snippet: `% A construção cinemática de John Napier (1614)
-% Seja um ponto P movendo-se com velocidade proporcional à distância restante:
-\\[ \\frac{dx}{dt} = -x(t), \\quad \\frac{dy}{dt} = v_0 \\implies y(t) = \\text{NapLog}(x) \\]`
-            },
-            {
-                id: 8,
-                title: "Scripts Python: Álgebra Tensorial e Derivadas no SymPy",
-                category: "codigo",
-                categoryLabel: "Python Científico • SymPy",
-                iconType: "code-dark",
-                meta: "Jupyter Notebook (.ipynb) • Python 3",
-                description: "Repositório de notebooks interativos utilizando a biblioteca SymPy para manipulação simbólica de tensores, símbolos de Christoffel e verificação analítica de soluções exatas de equações diferenciais parciais.",
-                formula: "Γ<sup>k</sup><sub>ij</sub> = ½ g<sup>km</sup> (∂g<sub>mi</sub>/∂x<sup>j</sup> + ∂g<sub>mj</sub>/∂x<sup>i</sup> − ∂g<sub>ij</sub>/∂x<sup>m</sup>)",
-                snippet: `# ==============================================================================
-# UNIVERSIDADE DE BRASÍLIA (UnB) - DEPARTAMENTO DE MATEMÁTICA (MAT)
-# Autor: Arthur Amorim
-# Material: Álgebra Tensorial, Símbolos de Christoffel e EDPs no SymPy
-# ==============================================================================
-
-import sympy as sp
-from sympy.vector import CoordSys3D, gradient, divergence, curl
-from IPython.display import display, Math
-
-sp.init_printing(use_unicode=True)
-
-# ------------------------------------------------------------------------------
-# PARTE 1: CÁLCULO VETORIAL (GRADIENTE, DIVERGENTE E ROTACIONAL)
-# ------------------------------------------------------------------------------
-print("=== 1. CÁLCULO VETORIAL EM 3D ===")
-R = CoordSys3D('R')
-
-# Campo vetorial u(x, y, z) = y^2 i + x*z j + z^2 k
-u = R.y**2 * R.i + R.x * R.z * R.j + R.z**2 * R.k
-
-# Campo escalar potencial phi(x, y, z) = x^2 * y + z^3
-phi = R.x**2 * R.y + R.z**3
-
-print("Campo Vetorial u       :", u)
-print("Divergente (div u)     :", divergence(u))
-print("Rotacional (rot u)     :", curl(u))
-print("Gradiente (grad phi)   :", gradient(phi))
-print("\\n" + "="*60 + "\\n")
-
-
-# ------------------------------------------------------------------------------
-# PARTE 2: ÁLGEBRA TENSORIAL E SÍMBOLOS DE CHRISTOFFEL (2ª ESPÉCIE)
-# Fórmula: \\Gamma^k_{ij} = 1/2 g^{km} (\\partial_j g_{mi} + \\partial_i g_{mj} - \\partial_m g_{ij})
-# ------------------------------------------------------------------------------
-print("=== 2. SÍMBOLOS DE CHRISTOFFEL (COORDENADAS ESFÉRICAS) ===")
-
-# Definindo variáveis simbólicas (r, theta, varphi)
-r, theta, varphi = sp.symbols('r theta varphi', positive=True, real=True)
-coords = [r, theta, varphi]
-dim = len(coords)
-
-# Tensor Métrico Covariante g_{ij} em Coordenadas Esféricas
-g = sp.Matrix([
-    [1, 0, 0],
-    [0, r**2, 0],
-    [0, 0, r**2 * sp.sin(theta)**2]
-])
-
-# Tensor Métrico Contravariante g^{km} (Inversa direta e segura para matriz diagonal)
-g_inv = sp.Matrix([
-    [1, 0, 0],
-    [0, 1 / r**2, 0],
-    [0, 0, 1 / (r**2 * sp.sin(theta)**2)]
-])
-
-def calcular_christoffel(g_mat, g_inv_mat, variaveis):
-    n = len(variaveis)
-    Gamma = sp.MutableDenseNDimArray.zeros(n, n, n)
-    
-    for k in range(n):
-        for i in range(n):
-            for j in range(n):
-                soma = sp.Integer(0)
-                for m in range(n):
-                    termo = (sp.diff(g_mat[m, i], variaveis[j]) +
-                             sp.diff(g_mat[m, j], variaveis[i]) -
-                             sp.diff(g_mat[i, j], variaveis[m]))
-                    soma += sp.Rational(1, 2) * g_inv_mat[k, m] * termo
-                Gamma[k, i, j] = sp.simplify(soma)
-    return Gamma
-
-Gamma_esferico = calcular_christoffel(g, g_inv, coords)
-
-nomes_latex = ['r', '\\\\theta', '\\\\varphi']
-for k in range(dim):
-    for i in range(dim):
-        for j in range(i, dim):
-            val = Gamma_esferico[k, i, j]
-            if val != 0:
-                eq_latex = f"\\\\Gamma^{{{nomes_latex[k]}}}_{{{nomes_latex[i]} {nomes_latex[j]}}} = {sp.latex(val)}"
-                display(Math(eq_latex))
-
-print("\\n" + "="*60 + "\\n")
-
-
-# ------------------------------------------------------------------------------
-# PARTE 3: VERIFICAÇÃO ANALÍTICA DE SOLUÇÕES EXATAS DE EDPs
-# ------------------------------------------------------------------------------
-print("=== 3. VERIFICAÇÃO DE SOLUÇÃO EXATA DE EDP (EQUAÇÃO DO CALOR) ===")
-
-x, t, alpha, k_onda = sp.symbols('x t alpha k', real=True, positive=True)
-u_sol = sp.exp(-alpha * k_onda**2 * t) * sp.sin(k_onda * x)
-
-du_dt = sp.diff(u_sol, t)
-d2u_dx2 = sp.diff(u_sol, x, 2)
-residuo = sp.simplify(du_dt - alpha * d2u_dx2)
-
-print("Solução testada u(x,t) :", u_sol)
-print("Derivada temporal du/dt:", du_dt)
-print("Laplaciano d²u/dx²     :", d2u_dx2)
-print("Resíduo da EDP         :", residuo)
-if residuo == 0:
-    print("-> VERIFICADO: u(x,t) satisfaz exatamente a Equação Diferencial Parcial!")`
-            },
-            {
-                id: 9,
+                id: 10,
                 title: "Pôster Científico: Transformação de Kármán-Trefftz",
                 category: "pesquisa",
                 categoryLabel: "Congresso de Iniciação Científica UnB",
@@ -1188,41 +1119,40 @@ if residuo == 0:
 \\institute{Universidade de Brasília (UnB) -- CNPq}`
             },
             {
-                id: 10,
-                title: "Simulador Interativo: Marés e Gravitação Universal",
-                category: "ensino",
-                categoryLabel: "Simulador Web • Ensino Médio",
+                id: 11,
+                title: "Template LaTeX para Listas, Provas e Relatórios",
+                category: "codigo",
+                categoryLabel: "Diagramação LaTeX • Padrão Editorial",
                 iconType: "code-dark",
-                meta: "Aplicação Web Interativa (HTML5 Canvas)",
-                fileUrl: "https://guimaraenslucas4-a11y.github.io/Teste/",
-                description: "Simulador interativo da deformação oceânica terrestre provocada pelo campo gravitacional diferencial da Lua. Inclui visualização da rotação de 24h (duas marés altas e duas baixas diárias) e dedução algébrica via Produtos Notáveis da dependência com o inverso do cubo da distância.",
-                formula: "Δa = a<sub>A</sub> − a<sub>C</sub> ≈ (2 · G · M<sub>L</sub> · R) / d³",
-                snippet: `// Cálculo da aceleração de maré (diferencial gravitacional) no Ensino Médio:
-const aC = (G * M_MOON) / Math.pow(d_m, 2);
-const aA = (G * M_MOON) / Math.pow((d_km - R_EARTH_KM) * 1000, 2);
-const aB = (G * M_MOON) / Math.pow((d_km + R_EARTH_KM) * 1000, 2);
+                meta: ".TEX • Compatível com Overleaf",
+                description: "Modelos em LaTeX configurados para diagramação limpa de avaliações escolares, listas de exercícios com gabarito e relatórios científicos com gráficos vetoriais em TikZ e PGFPlots.",
+                formula: "\\documentclass[12pt,a4paper]{article} % TikZ + PGFPlots + amsthm",
+                snippet: `\\documentclass[12pt,a4paper]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[brazil]{babel}
+\\usepackage{amsmath,amssymb,amsthm}
+\\usepackage{tikz,pgfplots}
+\\pgfplotsset{compat=1.18}
 
-const diffA = aA - aC; // Força de maré voltada para a Lua (+)
-const diffB = aB - aC; // Força de maré oposta à Lua (-)`
+\\title{Lista de Exercícios -- Matemática}
+\\author{Prof. Arthur Amorim}`
             },
             {
-                id: 11,
-                title: "Simulador Interativo: Conjuntos de Julia e Dinâmica Fractal",
-                category: "ensino",
-                categoryLabel: "Simulador Web • Sistemas Dinâmicos",
+                id: 12,
+                title: "Scripts Python: Álgebra Tensorial e EDPs no SymPy",
+                category: "codigo",
+                categoryLabel: "Python Científico • SymPy",
                 iconType: "code-dark",
-                meta: "Aplicação Web Interativa (HTML5 Canvas)",
-                fileUrl: "https://guimaraenslucas4-a11y.github.io/fractais/",
-                description: "Explorador interativo com zoom de Conjuntos de Julia (O Pulso do Horizonte de Eventos). Permite alterar o parâmetro complexo c (vento cósmico), lançar sondas no plano complexo para visualizar órbitas limitadas ou que escapam para o infinito e explorar a fronteira fractal em alta nitidez.",
-                formula: "z<sub>n+1</sub> = z<sub>n</sub>² + c , &nbsp; |z<sub>n</sub>| ≤ 2",
-                snippet: `// Iteração do sistema dinâmico complexo z_{n+1} = z_n^2 + c (Conjunto de Julia):
-let x = x0, y = y0, iter = 0;
-while (x * x + y * y <= 4 && iter < maxIter) {
-    const xTemp = x * x - y * y + cr;
-    y = 2 * x * y + ci;
-    x = xTemp;
-    iter++;
-}`
+                meta: "Python 3 • Computação Simbólica",
+                description: "Rotinas simbólicas utilizando a biblioteca SymPy para manipulação algébrica, cálculo vetorial em coordenadas curvilíneas e verificação analítica de soluções exatas de equações diferenciais.",
+                formula: "Γ<sup>k</sup><sub>ij</sub> = ½ g<sup>km</sup> (∂g<sub>mi</sub>/∂x<sup>j</sup> + ∂g<sub>mj</sub>/∂x<sup>i</sup> − ∂g<sub>ij</sub>/∂x<sup>m</sup>)",
+                snippet: `import sympy as sp
+from sympy.vector import CoordSys3D, gradient, divergence, curl
+
+R = CoordSys3D('R')
+u = R.y**2 * R.i + R.x * R.z * R.j + R.z**2 * R.k
+print("Divergente:", divergence(u))
+print("Rotacional:", curl(u))`
             }
         ];
 
@@ -1258,14 +1188,14 @@ while (x * x + y * y <= 4 && iter < maxIter) {
             if (emptyState) emptyState.classList.add('hidden');
             grid.innerHTML = filtered.map(item => `
                 <article onclick="openMaterialModal(${item.id})" 
-                         class="academic-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer group min-h-[180px]">
+                         class="academic-card bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center cursor-pointer group min-h-[185px]">
                     <div class="mb-4 transform group-hover:scale-105 transition duration-200">
                         ${getMaterialIconSVG(item.iconType)}
                     </div>
                     <h3 class="text-[16px] font-bold text-slate-900 leading-snug group-hover:text-ctaTeal transition px-1">
                         ${item.title}
                     </h3>
-                    <span class="text-xs text-slate-400 mt-2 font-medium">
+                    <span class="text-xs text-slate-500 mt-2 font-medium">
                         ${item.categoryLabel}
                     </span>
                 </article>
@@ -1294,7 +1224,7 @@ while (x * x + y * y <= 4 && iter < maxIter) {
             setCategory('all');
         }
 
-        // 4. CONTROLE DO MODAL DE DETALHES E BOTÃO DE DOWNLOAD DO PDF
+        // 4. CONTROLE DO MODAL DE DETALHES E BOTÃO DE DOWNLOAD
         function openMaterialModal(id) {
             const item = materialsData.find(m => m.id === id);
             if (!item) return;
@@ -1316,7 +1246,7 @@ while (x * x + y * y <= 4 && iter < maxIter) {
                 const isPdf = item.fileUrl.toLowerCase().endsWith('.pdf');
 
                 if (isExternalUrl) {
-                    downloadLabel.textContent = 'Abrir Aplicação Web ↗';
+                    downloadLabel.textContent = 'Abrir Simulador Web ↗';
                     openTabBtn.classList.add('hidden');
                     openTabBtn.classList.remove('inline-flex');
                 } else if (isPdf) {
@@ -1412,31 +1342,25 @@ while (x * x + y * y <= 4 && iter < maxIter) {
             closeMaterialModal();
         }
 
+        // 5. DOWNLOAD REAL DO CURRÍCULO DOCENTE EM PDF
+        function downloadTeacherCV() {
+            const cvFileName = 'curriculo_arthur_amorim.pdf';
+            const link = document.createElement('a');
+            link.href = cvFileName;
+            link.setAttribute('download', cvFileName);
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('Iniciando download de "curriculo_arthur_amorim.pdf"...');
+        }
+
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeMaterialModal();
+                closeCvModal();
             }
         });
-
-        // 5. UPLOAD LOCAL DE FOTO DE PERFIL (Via FileReader)
-        function handlePhotoUpload(event) {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = document.getElementById('profile-image');
-                const defaultAvatar = document.getElementById('default-scholar-avatar');
-                if (img) {
-                    img.src = e.target.result;
-                    img.classList.remove('hidden');
-                }
-                if (defaultAvatar) {
-                    defaultAvatar.classList.add('hidden');
-                }
-                showToast('Sua foto de perfil foi atualizada na página!');
-            };
-            reader.readAsDataURL(file);
-        }
 
         // 6A. SIMULADOR INTERATIVO DE BLACK-SCHOLES & BINOMIAL CRR (HTML5 Canvas)
         function normCDF(x) {
@@ -1686,12 +1610,12 @@ while (x * x + y * y <= 4 && iter < maxIter) {
             ctx.stroke();
         }
 
-        // 7. MODAIS AUXILIARES, FORMULÁRIOS E TOAST
-        function openLattesModal() {
-            document.getElementById('lattes-modal').classList.remove('hidden');
+        // 7. MODAIS AUXILIARES E TOAST
+        function openCvModal() {
+            document.getElementById('cv-modal').classList.remove('hidden');
         }
-        function closeLattesModal() {
-            document.getElementById('lattes-modal').classList.add('hidden');
+        function closeCvModal() {
+            document.getElementById('cv-modal').classList.add('hidden');
         }
 
         let toastTimeout;
@@ -1702,7 +1626,7 @@ while (x * x + y * y <= 4 && iter < maxIter) {
             clearTimeout(toastTimeout);
             toastTimeout = setTimeout(() => {
                 toast.classList.add('hidden');
-            }, 3600);
+            }, 3800);
         }
 
         // 8. MENU MOBILE E INICIALIZAÇÃO
