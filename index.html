@@ -1646,9 +1646,169 @@ print("Rotacional:", curl(u))`
             }, 3800);
         }
 
+
+        // 7B. DETECÇÃO AUTOMÁTICA DE NOVOS PDFs NO REPOSITÓRIO GITHUB
+        const GITHUB_OWNER = 'guimaraenslucas4-a11y';
+        const GITHUB_REPO = 'Arthur-Amorim';
+
+        function normalizeSlug(str) {
+            if (!str) return '';
+            return str
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .replace(/\.pdf$/i, '')
+                .replace(/[^a-z0-9]+/g, '');
+        }
+
+        function formatPdfTitleFromFilename(fileName) {
+            let base = fileName.replace(/\.pdf$/i, '').trim();
+            // Remove eventual prefixo de categoria como [ensino], [unb], [pesquisa]
+            base = base.replace(/^\[[^\]]+\]\s*/, '');
+
+            // Se não houver espaços, substitui underscores e hífens por espaço
+            if (!base.includes(' ')) {
+                base = base.replace(/[_-]+/g, ' ');
+            } else {
+                base = base.replace(/_/g, ' ');
+            }
+
+            const lowerWords = new Set(['de', 'da', 'do', 'das', 'dos', 'e', 'em', 'para', 'com', 'no', 'na', 'nos', 'nas', 'a', 'o', 'as', 'os', 'por']);
+            const upperAcronyms = new Set(['unb', 'pas', 'enem', 'bncc', 'obmep', 'cnpq', 'pibic', 'edo', 'edp', 'crr', 'ii', 'iii', 'ef', 'em', 'mat', 'pdf']);
+
+            return base.split(/\s+/).map((word, idx) => {
+                const clean = word.toLowerCase();
+                if (upperAcronyms.has(clean)) return clean.toUpperCase();
+                if (idx > 0 && lowerWords.has(clean)) return clean;
+                return word.charAt(0).toUpperCase() + word.slice(1);
+            }).join(' ');
+        }
+
+        function inferCategoryFromFilename(fileName) {
+            const lower = fileName.toLowerCase();
+            if (lower.startsWith('[pesquisa]') || /(pibic|cnpq|pesquisa|fluido|aerofolio|karman|trefftz|scholes|opcoes|derivativo)/.test(lower)) {
+                return { category: 'pesquisa', categoryLabel: 'Pesquisa & Divulgação Científica • PDF' };
+            }
+            if (lower.startsWith('[unb]') || lower.startsWith('[universitario]') || /(unb|monitoria|calculo|probabilidade|teoria|mat0|linear_algebra|variaveis)/.test(lower)) {
+                return { category: 'ensino universitario', categoryLabel: 'Monitoria & Ensino Superior (UnB) • PDF' };
+            }
+            if (lower.startsWith('[codigo]')) {
+                return { category: 'codigo', categoryLabel: 'Diagramação LaTeX • PDF' };
+            }
+            return { category: 'ensino', categoryLabel: 'Educação Básica & Recursos Didáticos • PDF' };
+        }
+
+        function formatFileSize(bytes) {
+            if (!bytes || isNaN(bytes)) return 'PDF • Documento LaTeX';
+            const kb = bytes / 1024;
+            if (kb < 1024) return `PDF • ${Math.round(kb)} KB • Repositório GitHub`;
+            return `PDF • ${(kb / 1024).toFixed(1)} MB • Repositório GitHub`;
+        }
+
+        function integrateDiscoveredPdfs(files) {
+            if (!Array.isArray(files)) return;
+
+            const pdfFiles = files.filter(f =>
+                f && f.type === 'file' &&
+                typeof f.name === 'string' &&
+                f.name.toLowerCase().endsWith('.pdf') &&
+                f.name.toLowerCase() !== 'curriculo_arthur_amorim.pdf'
+            );
+
+            let addedOrUpdated = false;
+            let nextAutoId = 1000;
+
+            pdfFiles.forEach(pdf => {
+                const pdfSlug = normalizeSlug(pdf.name);
+
+                // Verifica se o PDF já corresponde a algum card existente (pelo fileUrl ou pelo título)
+                const existingItem = materialsData.find(item => {
+                    if (item.fileUrl && (item.fileUrl === pdf.path || item.fileUrl === pdf.name)) return true;
+                    const itemUrlSlug = normalizeSlug(item.fileUrl);
+                    const itemTitleSlug = normalizeSlug(item.title);
+                    return (itemUrlSlug && itemUrlSlug === pdfSlug) ||
+                           (itemTitleSlug && (itemTitleSlug.includes(pdfSlug) || pdfSlug.includes(itemTitleSlug)));
+                });
+
+                if (existingItem) {
+                    // Garante que o fileUrl aponte exatamente para o nome real do arquivo no GitHub (evita erro 404)
+                    if (existingItem.fileUrl !== pdf.path) {
+                        existingItem.fileUrl = pdf.path;
+                        addedOrUpdated = true;
+                    }
+                } else {
+                    // Cria automaticamente um novo card para o PDF recém-enviado ao GitHub
+                    const title = formatPdfTitleFromFilename(pdf.name);
+                    const { category, categoryLabel } = inferCategoryFromFilename(pdf.name);
+                    const meta = formatFileSize(pdf.size);
+
+                    const newCard = {
+                        id: nextAutoId++,
+                        title: title,
+                        category: category,
+                        categoryLabel: categoryLabel,
+                        iconType: 'pdf-red',
+                        meta: meta,
+                        fileUrl: pdf.path,
+                        description: `Material didático/acadêmico diagramado em LaTeX ("${title}"), sincronizado automaticamente a partir do repositório do portfólio.`,
+                        formula: `\\text{Documento PDF} \\;\\cdot\\; \\text{${title}}`,
+                        snippet: `% ${title}\n\\documentclass[12pt, a4paper]{article}\n\\usepackage[utf8]{inputenc}\n\\usepackage[brazil]{babel}\n\\usepackage{amsmath, amssymb, amsthm}\n\n\\title{${title}}\n\\author{Arthur Amorim}\n\\date{\\today}`
+                    };
+
+                    materialsData.unshift(newCard);
+                    addedOrUpdated = true;
+                }
+            });
+
+            if (addedOrUpdated) {
+                renderMaterials();
+            }
+        }
+
+        async function autoSyncGitHubPDFs() {
+            const cacheKey = 'arthur_portfolio_github_pdfs_v1';
+            // 1. Renderiza imediatamente do cache local (se existir) para carregamento instantâneo
+            try {
+                const cached = sessionStorage.getItem(cacheKey);
+                if (cached) {
+                    integrateDiscoveredPdfs(JSON.parse(cached));
+                }
+            } catch (e) {}
+
+            // 2. Busca a lista atualizada de arquivos no repositório do GitHub
+            try {
+                const response = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/`);
+                if (!response.ok) return;
+                const rootFiles = await response.json();
+
+                let allFiles = Array.isArray(rootFiles) ? [...rootFiles] : [];
+
+                // Se existir uma subpasta "pdfs" no repositório, busca nela também
+                const pdfFolder = allFiles.find(f => f && f.type === 'dir' && f.name.toLowerCase() === 'pdfs');
+                if (pdfFolder) {
+                    const subResp = await fetch(pdfFolder.url);
+                    if (subResp.ok) {
+                        const subFiles = await subResp.json();
+                        if (Array.isArray(subFiles)) {
+                            allFiles = allFiles.concat(subFiles);
+                        }
+                    }
+                }
+
+                try {
+                    sessionStorage.setItem(cacheKey, JSON.stringify(allFiles));
+                } catch (e) {}
+
+                integrateDiscoveredPdfs(allFiles);
+            } catch (err) {
+                // Silencioso caso esteja offline ou sem acesso à API
+            }
+        }
+
         // 8. MENU MOBILE E INICIALIZAÇÃO
         window.onload = function() {
             renderMaterials();
+            autoSyncGitHubPDFs();
             drawBlackScholes();
             drawAirfoil();
 
